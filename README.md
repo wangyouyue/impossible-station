@@ -1,5 +1,7 @@
 # The Impossible Station
 
+> This is a small creative experiment conceived and implemented by ChatGPT in response to an open-ended request. Its concept was not based on the user's personal interests or background and does not represent the repository owner's views or research.
+
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
 A small, playable railway to places that do not exist. Choose a platform, send a little train into the night, and bring back a ticket from each impossible world. Collect four tickets to uncover a fifth destination—and give it a name of your own.
@@ -7,6 +9,8 @@ A small, playable railway to places that do not exist. Choose a platform, send a
 Everything is drawn in code. The app runs offline, without installation, external assets, accounts or tracking.
 
 ## Open the station
+
+Play online: [The Impossible Station](https://wangyouyue.github.io/impossible-station/). The interface follows your browser language and also offers a language selector.
 
 Open one of these self-contained files in a browser:
 
