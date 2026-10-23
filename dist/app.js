@@ -12,7 +12,7 @@
     introEyebrow:['A SMALL JOURNEY OUT OF THE ORDINARY','A SMALL JOURNEY OUT OF THE ORDINARY','日常から、ほんの少し遠くへ'],title:['不可能车站','The Impossible Station','ありえない駅'],
     introOne:['不问你从哪里来。','No need to say where you came from.','どこから来たかは、聞きません。'],introTwo:['今天，去一个地图上没有的地方。','Today, go somewhere no map can find.','今日は、地図にない場所へ。'],
     worldAria:['可交互车站地图','Interactive railway map','操作できる路線図'],mapAria:['悬浮铁路地图。使用站名按钮或数字键选择目的地。','Floating railway map. Choose a station with its button or a number key.','浮かぶ鉄道の路線図。駅名ボタンか数字キーで行き先を選べます。'],
-    windowAria:['车窗视角：窗外风景随当前列车的目的地变化。可用右侧换轨或键盘数字选择下一站。','Window view follows the current train. Use Change track or number keys to choose the next trip.','車窓は今の列車の行き先に合わせて変わります。線路変更ボタンか数字キーで次の行き先を選べます。'],
+    windowAria:['车窗从此时此地出发，经过沿途风景抵达目的地，再返回始发站。选站只安排下一班列车。','The window starts at Here and now, passes through the countryside and reaches the destination before returning home. Choosing a station only plans the next train.','車窓は「いま、ここ」から沿線の景色を経て目的地へ向かい、始発駅へ戻ります。駅の選択は次の列車の予定だけを変えます。'],
     viewGroup:['切换观看视角','Choose a view','表示を切り替え'],viewMap:['线路图','Map','路線図'],viewWindow:['车窗','Window','車窓'],mapHeading:['无边界铁路 / 线路示意','Borderless Railway / Route map','境界のない鉄道 / 路線図'],windowHeading:['窗外 / {name}','Outside / {name}','窓の外 / {name}'],here:['此时此地','Here and now','いま、ここ'],hereEn:['YOU ARE HERE','YOU ARE HERE','現在地'],
     speedTitle:['列车速度','Train speed','列車の速度'],speedAria:['切换列车速度，当前 {speed} 倍速','Change train speed; currently {speed}×','列車の速度を変更。現在 {speed} 倍速'],motionOn:['减少装饰动效','Reduce decorative motion','装飾の動きを減らす'],motionOff:['恢复装饰动效','Restore decorative motion','装飾の動きを戻す'],soundOn:['开启声音','Turn sound on','音をオン'],soundOff:['关闭声音','Turn sound off','音をオフ'],
     dispatchAria:['列车调度与车票','Train controls and ticket','列車の操作ときっぷ'],nextStop:['YOUR NEXT STOP','YOUR NEXT STOP','次の行き先'],ticketType:['想象力专线','Imagination Line','想像力専用線'],from:['出发地','From','出発地'],arrival:['抵达时间','Arrival','到着まで'],luggage:['随身行李','Bring along','持ちもの'],curiosity:['一点点好奇心','A little curiosity','少しの好奇心'],progressAria:['当前往返旅程进度','Current round-trip progress','現在の往復の進み具合'],
@@ -31,7 +31,7 @@
     stampEarned:['{name}车票，已获得，点击阅读','{name} ticket, collected. Read the story.','{name}のきっぷ。収集済み。押すと物語を読めます。'],stampLocked:['{name}车票，尚未获得，点击选择此站','{name} ticket, not collected. Choose this station.','{name}のきっぷ。未収集。押すと行き先に選べます。'],soundUnavailable:['这个浏览器暂不支持声音。列车照常运行。','Sound is unavailable in this browser. The train will run as usual.','このブラウザーでは音を使えません。列車は通常どおり走ります。'],soundFailed:['声音没有启动；可以稍后再试。','Sound did not start. You can try again later.','音を開始できませんでした。あとでもう一度お試しください。'],bookEmpty:['第一张车票，正等着你出发。','Your first ticket is waiting for you to set off.','最初のきっぷが、出発を待っています。'],bookSerial:['ELSEWHERE RAILWAY / 00{number} / BEEN THERE','ELSEWHERE RAILWAY / 00{number} / BEEN THERE','どこか遠くの鉄道 / 00{number} / 訪問済み'],
     journalMeta:['首次抵达：第 {train} 班 · 已到访 {visits} 次','First arrival: train {train} · Visits: {visits}','初めての到着：第 {train} 便 · 訪問 {visits} 回'],journalOption:['{name} · {visits} 次','{name} · visits: {visits}','{name} · {visits} 回'],souvenirPrefix:['随信附上：{souvenir}','Enclosed: {souvenir}','同封のおみやげ：{souvenir}'],noteSession:['仅保存在本次页面中。','Kept in this page only.','このページの中だけに保存されます。'],noteSaved:['已记下，刷新前可导出收藏。','Noted. Export before reloading to keep it.','書きとめました。再読み込みの前に書き出せます。'],noteTruncated:['已保留前 160 个字符。','The first 160 characters have been kept.','最初の160文字を残しました。'],downloadStarted:['已发起明信片下载。文件名以车站编号结尾，可在下载列表中查看。','Postcard download started. Look for the station number at the end of the filename.','絵はがきのダウンロードを開始しました。ファイル名の末尾は駅の番号です。'],downloadFailed:['这个浏览器未能导出。手记仍在本页中，可以选中文字复制。','This browser could not export. Your note is still here; you can select and copy it.','書き出せませんでした。手帖はここに残っています。文字を選択してコピーできます。'],
     drawn:['抽到了{name}。准备好就出发。','You drew {name}. Set off when you’re ready.','選ばれたのは{name}。準備ができたら出発しよう。'],nameInvalid:['请写下 1–12 个字符的站名。','Please enter a station name of 1–12 characters.','駅名を1〜12文字で入力してください。'],nameReady:['路牌已挂好：{name}。','The sign is up: {name}.','駅名を掲げました：{name}。'],namedDescription:['你为地图之外的地方挂上了路牌。列车从此有了一个新的目的地。','You gave a place beyond the map a sign. The train now has a new destination.','地図の向こうの場所に、あなたが駅名を掲げました。列車に新しい行き先ができました。'],namedStorySuffix:[' 路牌上，现在写着「{name}」。',' The sign now reads “{name}”.',' 駅名標には今、「{name}」と書かれています。'],namedEn:['A PLACE YOU NAMED','A PLACE YOU NAMED','あなたが名づけた場所'],
-    windowSeat:['01  /  WINDOW SEAT','01  /  WINDOW SEAT','01  /  窓側の席'],windowMoving:['风景正在路上。','The scenery is on its way.','景色も、旅の途中。'],windowPaused:['列车暂停，远方等你。','The train is paused. Elsewhere can wait.','列車は一休み。遠くの景色も待っています。'],windowIdle:['靠窗的位置，留给你。','A window seat, saved for you.','窓側の席は、あなたのために。'],mapSmall:['NOT TO SCALE. NOT QUITE REAL.','NOT TO SCALE. NOT QUITE REAL.','縮尺は気まぐれ。現実とは少し違う。'],north:['N','N','北'],
+    windowEnRoute:['旅途中','On the way','旅の途中'],windowSeat:['01  /  WINDOW SEAT','01  /  WINDOW SEAT','01  /  窓側の席'],windowMoving:['风景正在路上。','The scenery is on its way.','景色も、旅の途中。'],windowPaused:['列车暂停，远方等你。','The train is paused. Elsewhere can wait.','列車は一休み。遠くの景色も待っています。'],windowIdle:['靠窗的位置，留给你。','A window seat, saved for you.','窓側の席は、あなたのために。'],mapSmall:['NOT TO SCALE. NOT QUITE REAL.','NOT TO SCALE. NOT QUITE REAL.','縮尺は気まぐれ。現実とは少し違う。'],north:['N','N','北'],
     postcardTitle:['{name} · 旅途明信片','{name} · Travel postcard','{name} · 旅の絵はがき'],postcardSerial:['A SMALL JOURNEY / NO. {number}','A SMALL JOURNEY / NO. {number}','小さな旅 / NO. {number}'],enclosed:['随信附上','Enclosed','同封のおみやげ'],travelerNote:['旅人的手记','A traveler’s note','旅人の手帖'],blankNote:['留白，也是一种记得','A blank space can hold a memory','余白も、思い出のかたち'],noteDefault:['这一格，留给以后的自己。','This space is for my future self.','この余白は、いつかの自分へ。'],postcardFooter:['不可能车站 · 不必急着抵达 ↗','The Impossible Station · Take your time ↗','ありえない駅 · 到着は、あせらずに ↗'],downloadName:['不可能车站-明信片-{number}.svg','impossible-station-postcard-{number}.svg','ありえない駅-絵はがき-{number}.svg']
   });
   const languages=['zh-CN','en','ja'];
@@ -67,7 +67,7 @@
       {name:'名前のない駅',en:'まだ名づけられていない場所',description:'四つの線路の先に、扉が現れました。その向こうに何があるのかは、鉄道局も知りません。',story:'ホームには、まっさらな駅名標だけ。ようやく気づきました。地図は世界の境界ではないのです。誰かがそこまで歩いて、しばらくペンを置いただけ。',souvenir:'あなたが名づけるための場所'}
     ]
   };
-  const state = {selected:0,visited:new Set(),unlocked:false,trip:null,speed:1,auto:false,sound:false,time:0,visualTime:0,sceneryTime:0,toastUntil:0,autoWait:0,trainNumber:1,bookWasRunning:false,queuedRoute:null,view:'map',secretName:'',motionOverride:false,silentCatchUp:false,journal:new Map(),journalIndex:null,bookView:'tickets'};
+  const state = {selected:0,visited:new Set(),unlocked:false,trip:null,speed:1,auto:false,sound:false,time:0,visualTime:0,toastUntil:0,autoWait:0,trainNumber:1,bookWasRunning:false,queuedRoute:null,view:'map',secretName:'',motionOverride:false,silentCatchUp:false,journal:new Map(),journalIndex:null,bookView:'tickets'};
   const stationButtons = [...document.querySelectorAll('[data-station]')];
   const stampButtons = [...document.querySelectorAll('[data-stamp]')];
   let width=1000,height=700,lastFrame=null,lastRender=-Infinity,audio=null,master=null,audioBusy=false,renderDirty=true;
@@ -233,15 +233,49 @@
     text(tr('north'),932,102,8,'#839d84','monospace','center');line(932,110,932,136,'#829b7755');line(920,124,944,124,'#829b7755');poly([[932,110],[929,119],[935,119]],'#91aa80');
     text(tr('mapSmall'),52,602,7,'#718e744d','monospace');
   }
-  function drawWindow(t){
-    const index=state.trip?.index??state.selected;
-    const d=destinations[index];
-    const moving=state.trip&&!state.trip.paused&&state.trip.phase!=='dwell';
-    const travel=reducedMotion?0:state.sceneryTime;
+  // A location comes from this train's progress, never from the next selected route.
+  // The same position on the return leg retraces the same scenery, including parking.
+  function windowScene(){
+    const trip=state.trip;
+    const progress=!trip?0:trip.phase==='outbound'?trip.elapsed/12:trip.phase==='dwell'?1:1-trip.elapsed/6;
+    const position=Math.max(0,Math.min(1,progress));
+    const fade=(start,end)=>ease(Math.max(0,Math.min(1,(position-start)/(end-start))));
+    return {index:trip?.index??null,home:1-fade(0,.35),destination:fade(.6,1),travel:reducedMotion?0:12*ease(position)};
+  }
+  function windowLocation(scene=windowScene()){
+    return scene.home>=.5?tr('here'):scene.destination>=.5?destinations[scene.index].name:tr('windowEnRoute');
+  }
+  function drawWindowRoute(travel){
+    rect(70,96,860,423,'#274348');
+    for(let i=0;i<30;i++)ellipse(-115+((i*113+200-travel*2)%1250+1250)%1250,112+(i*71)%165,i%3===0?1.3:.7,i%3===0?1.3:.7,'#cbd9ad66');
+    for(let layer=0;layer<3;layer++){
+      const y=320+layer*68,offset=((travel*(5+layer*9))%320+320)%320;
+      for(let i=-1;i<5;i++){
+        const x=i*320-offset;
+        ctx.beginPath();ctx.moveTo(x,y+100);ctx.quadraticCurveTo(x+110,y-110,x+230,y+25);ctx.quadraticCurveTo(x+285,y-12,x+360,y+100);ctx.closePath();ctx.fillStyle=['#4f7063','#3c6056','#2a4d47'][layer];ctx.fill();
+      }
+    }
+    const offset=((travel*39)%340+340)%340;
+    for(let i=0;i<4;i++){const x=140+i*340-offset;line(x,360,x,504,'#172f35',5);line(x-21,375,x+21,375,'#81937a',3);line(x-21,375,x+319,375,'#9aad842f')}
+  }
+  function drawWindowDepot(travel){
+    rect(70,96,860,423,'#315451');
+    for(let i=0;i<23;i++)ellipse(104+(i*131)%800,119+(i*67)%145,i%4===0?1.4:.8,i%4===0?1.4:.8,'#c6d3a966');
+    for(let i=-1;i<5;i++){const x=i*290-travel*5;poly([[x,419],[x+145,267],[x+320,419]],'#466759')}
+    rect(70,417,860,102,'#77836a');rect(70,477,860,42,'#b0ad83');line(70,486,930,486,'#d8cc9e',3);
+    const x=240-travel*35;
+    rect(x,285,330,146,'#b5b99a',3);poly([[x-29,291],[x+165,226],[x+356,291]],'#7e957e');line(x-29,291,x+356,291,'#d1d4ad',5);
+    rect(x+39,325,48,49,'#efd69d',2);line(x+63,325,x+63,374,'#7e8970',3);line(x+39,349,x+87,349,'#7e8970',3);
+    rect(x+225,325,65,49,'#efd69d',2);line(x+257,325,x+257,374,'#7e8970',3);
+    rect(x+126,332,65,99,'#41645b',3);rect(x+137,343,43,52,'#d5cf9c',2);ellipse(x+180,408,2,2,'#ebd7a0');
+    rect(x+83,289,164,27,'#e4dfbd',3);text(tr('here'),x+165,308,13,'#355348','sans-serif','center');
+    const clock=697-travel*35;
+    line(clock,444,clock,278,'#a9b694',5);ellipse(clock,279,27,27,'#d9d8b0');ellipse(clock,279,22,22,'#31534a');line(clock,279,clock,264,'#e8ddb2',2);line(clock,279,clock+11,284,'#e8ddb2',2);
+    rect(clock-63,427,126,10,'#c7b38a',3);line(clock-46,436,clock-46,463,'#38584c',4);line(clock+46,436,clock+46,463,'#38584c',4);
+    line(x-91,461,x-91,367,'#acb795',4);rect(x-114,355,46,32,'#e3dfbc',3);text('00',x-91,377,16,'#355348','monospace','center');
+  }
+  function drawWindowDestination(index,t,travel){
     const drift=travel;
-    rect(0,0,1000,700,'#183438');
-    // The view is a separate, multi-layer illustration, clipped to a carriage window.
-    ctx.save();ctx.beginPath();ctx.roundRect(70,96,860,423,68);ctx.clip();
     const skies=['#71968b','#536b54','#192d3b','#9a927e','#304d47'];
     rect(70,96,860,423,skies[index]);
     for(let i=0;i<30;i++){const x=85+((i*113-drift*2)%850+850)%850;const y=112+(i*71)%210;ellipse(x,y,i%3===0?1.3:.7,i%3===0?1.3:.7,index===2?'#dbe1b7':'#d9dfb433')}
@@ -262,6 +296,17 @@
     }else{
       for(let i=0;i<6;i++){const x=120+((i*173-drift*17)%850+850)%850;const y=370+(i%2)*45;const h=95+(i%3)*21;ctx.save();ctx.strokeStyle=i%2?'#9bb981':'#d0dca5';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(x-28,y);ctx.lineTo(x-28,y-h+24);ctx.quadraticCurveTo(x,y-h-10,x+28,y-h+24);ctx.lineTo(x+28,y);ctx.stroke();ctx.restore();diamond(x,y+9,44,14,'#547151');spark(x,y-h*.5,5,'#dce4ad')}
     }
+  }
+  function drawWindow(t){
+    const scene=windowScene(),drift=scene.travel;
+    const moving=state.trip&&!state.trip.paused&&state.trip.phase!=='dwell';
+    rect(0,0,1000,700,'#183438');
+    // Keep the carriage still; only the scenery within its window changes.
+    ctx.save();ctx.beginPath();ctx.roundRect(70,96,860,423,68);ctx.clip();
+    drawWindowRoute(drift);
+    if(scene.home>0){ctx.save();ctx.globalAlpha=scene.home;drawWindowDepot(drift);ctx.restore()}
+    if(scene.destination>0){ctx.save();ctx.globalAlpha=scene.destination;drawWindowDestination(scene.index,t,drift);ctx.restore()}
+    ctx.globalAlpha=1;
     // A foreground rail and quiet reflections make motion legible without shaking the UI.
     const railOffset=((drift*61)%85+85)%85;line(60,498,950,498,'#152f36',5);for(let i=0;i<13;i++){const x=65+i*85-railOffset;line(x,494,x-8,520,'#1c3a3b',6)}
     poly([[115,96],[163,96],[330,519],[282,519]],'#f0f2d80a');poly([[190,96],[209,96],[376,519],[357,519]],'#f0f2d808');
@@ -271,7 +316,7 @@
     rect(61,522,878,12,'#b5b698',5);rect(71,535,858,7,'#081e2744',3);
     rect(185,566,630,83,'#8b785b',18);line(205,578,795,578,'#b0a078',2);for(let i=0;i<6;i++)line(255+i*98,580,255+i*98,646,'#665e4c',2);
     rect(415,67,170,18,'#bcc6a4',3);text(tr('windowSeat'),500,79,8,'#355242','monospace','center');
-    rect(350,548,300,33,'#e3dfbd',3);text(d.name,500,570,16,'#334f42','sans-serif','center');
+    rect(350,548,300,33,'#e3dfbd',3);text(windowLocation(scene),500,570,16,'#334f42','sans-serif','center');
     text(moving?tr('windowMoving'):state.trip?.paused?tr('windowPaused'):tr('windowIdle'),500,612,12,'#e3dcc0','sans-serif','center');
   }
   function render(t){
@@ -318,7 +363,7 @@
     const percent=Math.max(0,Math.min(100,Math.round(elapsed/20*100)));
     if($('journey-fill').style.width!==`${percent}%`)$('journey-fill').style.width=`${percent}%`;
     if($('journey-progress').getAttribute('aria-valuenow')!==String(percent))$('journey-progress').setAttribute('aria-valuenow',String(percent));
-    setText('view-caption',state.view==='window'?tr('windowHeading',{name:destinations[trip?.index??state.selected].name}):tr('mapHeading'));
+    setText('view-caption',state.view==='window'?tr('windowHeading',{name:windowLocation()}):tr('mapHeading'));
     const phase=trip?(trip.paused?tr('phasePaused'):trip.phase==='outbound'?tr('phaseOut'):trip.phase==='dwell'?tr('phaseDwell'):tr('phaseReturn')):tr('phaseReady');
     setText('journey-phase',phase);setText('journey-remaining',trip?tr('remaining',{seconds:Math.max(0,Math.ceil((20-elapsed)/state.speed))}):tr('roundTrip',{seconds:Math.ceil(20/state.speed)}));
     let label=tr('arrival'),arrival=tr('eta',{seconds:Math.ceil(12/state.speed)});
@@ -331,7 +376,7 @@
     $('auto').setAttribute('aria-pressed',String(state.auto));$('speed').textContent=`${state.speed}×`;$('speed').setAttribute('aria-label',tr('speedAria',{speed:state.speed}));updateJourney();
   }
   function selectStation(index,announceChange=true){if(index===4&&!state.unlocked)return;state.selected=index;if(announceChange)state.queuedRoute=index;updateTicket();playTone(330+index*65,.07,.04);if(announceChange&&state.trip)announce('routeQueued',3.7,{index})}
-  function dispatch(){if(state.trip){state.trip.paused=!state.trip.paused;updateControls();return}state.trip={index:state.selected,phase:'outbound',elapsed:0,paused:false};state.queuedRoute=null;state.autoWait=0;state.sceneryTime=0;chime([392,523.25],.13);updateControls()}
+  function dispatch(){if(state.trip){state.trip.paused=!state.trip.paused;updateControls();return}state.trip={index:state.selected,phase:'outbound',elapsed:0,paused:false};state.queuedRoute=null;state.autoWait=0;chime([392,523.25],.13);updateControls()}
   function collect(index){const first=!state.visited.has(index);state.visited.add(index);const d=destinations[index];
     const entry=state.journal.get(index);
     if(entry)entry.visits++;else state.journal.set(index,{firstTrain:state.trainNumber,visits:1,note:''});
@@ -352,7 +397,6 @@
     try{while(remaining>1e-9){
       if(state.trip){const trip=state.trip;if(trip.paused)break;const limit=trip.phase==='outbound'?12:trip.phase==='dwell'?2:6;
         const step=Math.min(remaining,Math.max(0,limit-trip.elapsed)/state.speed);trip.elapsed+=step*state.speed;remaining-=step;
-        if(trip.phase!=='dwell')state.sceneryTime+=step*state.speed*(trip.phase==='return'?-1:1);
         if(trip.elapsed>=limit-1e-9){trip.elapsed=0;if(trip.phase==='outbound'){trip.phase='dwell';collect(trip.index)}else if(trip.phase==='dwell'){trip.phase='return'}else{state.trip=null;state.trainNumber++;state.autoWait=0}updateControls()}
       }else if(state.auto&&!$('ticket-book').open){const step=Math.min(remaining,Math.max(0,1.4-state.autoWait));state.autoWait+=step;remaining-=step;
         if(state.autoWait>=1.4-1e-9){const count=state.unlocked?5:4;let next=state.queuedRoute??Array.from({length:count},(_,i)=>i).find(i=>!state.visited.has(i));if(next===undefined)next=(state.selected+1)%count;selectStation(next,false);dispatch()}

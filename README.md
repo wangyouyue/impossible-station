@@ -37,7 +37,7 @@ Visit `http://127.0.0.1:8765`, then stop the server with **Ctrl+C** when finishe
 - Choose the Origami Sea, the Inverted Orchard, the Moon Repair Shop or the Unsent City. Depart, pause and resume whenever you like.
 - Change tracks to choose the next destination. A choice made during a journey applies to the next train; it takes priority over automatic roaming.
 - Try a surprise destination or let automatic roaming explore unvisited stations. Switch between **1×, 2× and 4×** speed; a complete return journey takes 20 simulated seconds.
-- Switch to the window seat for a different moving landscape at each stop. The window follows the current train, even when another destination is queued.
+- Switch to the window seat to begin at **Here and now**. The platform gradually gives way to countryside and then the destination; the return journey retraces the scenery back home. Choosing or queueing a station never replaces the current view. Pausing freezes the transition, and reduced motion keeps the gradual fades without scrolling.
 - Open your ticket collection to read the stories and souvenirs. After visiting the fifth station, you can name it there.
 - Keep a journal for each visited station, with up to 160 Unicode code points per entry. First arrivals and visit counts are recorded for the current session.
 - Save a **1200 × 800 SVG postcard** containing the station artwork, story, souvenir, journal entry and visit record. An entry can be left blank; repeated whitespace is collapsed in the exported text.

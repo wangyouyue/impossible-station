@@ -85,7 +85,7 @@ pass('Closing the ticket book preserves a journey that was already manually paus
 click('view-window');assert.equal(el('map-labels').hidden,true);assert.equal(el('view-window').getAttribute('aria-pressed'),'true');
 for(let i=0;i<5;i++){stations[i].fire('click');advance(.2)}
 key('v');assert.equal(el('map-labels').hidden,false);assert.equal(el('view-map').getAttribute('aria-pressed'),'true');
-pass('All five window scenes render with finite coordinates; switching views restores the map controls.');
+pass('The idle window remains renderable while selecting routes; switching views restores the map controls.');
 
 click('open-book');assert.equal(el('secret-naming').hidden,false);
 el('station-name').value=' ';el('secret-naming').fire('submit',{preventDefault(){}});assert.equal(el('station-name').getAttribute('aria-invalid'),'true');
