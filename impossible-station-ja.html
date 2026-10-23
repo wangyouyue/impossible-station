@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="ja" data-default-language="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f32">
+  <meta data-i18n-content="metaDescription" name="description" content="扳动道岔，登上小小的列车，去四个不可能的地方。一个离线互动作品。">
+  <title data-i18n="appTitle">不可能车站 · The Impossible Station</title>
+  <style>
+:root{color-scheme:light;--paper:#f0efe7;--ink:#17383b;--muted:#687570;--line:#d2d6ca;--lime:#d8f493;--orange:#e8a971;--serif:"Songti SC","STSong","Noto Serif CJK SC",serif;--sans:"Avenir Next","PingFang SC","Microsoft YaHei",sans-serif;--mono:"SFMono-Regular",Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button{border:0}button:focus-visible,a:focus-visible{outline:3px solid #df8655;outline-offset:5px}button:disabled{cursor:default}button,button svg{transition:background .2s,color .2s,transform .2s,border-color .2s}button:active{transform:translateY(1px)}[hidden]{display:none!important}.shell{max-width:1600px;margin:auto;padding:0 44px}.masthead{height:94px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.wordmark{text-decoration:none;color:inherit;display:flex;gap:13px;align-items:center;font-size:14px;letter-spacing:2px;font-weight:650}.brand-icon{width:39px;height:39px;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-size:30px;line-height:1;border-radius:50%;font-weight:400;letter-spacing:0}.brand-sub{display:block;font:8px var(--mono);letter-spacing:1.3px;margin-top:5px}.header-right{display:flex;align-items:center;gap:28px}.operating{font-size:11px;letter-spacing:1px;display:flex;align-items:center;gap:8px}.operating i{width:6px;height:6px;background:#6d8662;border-radius:50%}.folio-button{background:transparent;border:1px solid #b5c0b3;padding:10px 14px;display:flex;gap:18px;align-items:center;font-size:12px}.folio-button:hover{background:#e2e7d9}.folio-button #ticket-count{font:12px var(--mono);padding:2px 5px;background:#dce3d3}.intro{display:flex;align-items:center;justify-content:space-between;padding:34px 0 30px}.eyebrow{font:10px var(--mono);letter-spacing:1.7px;margin:0}.intro .eyebrow{color:#758076;font-size:9px;letter-spacing:2px}h1{font-family:var(--serif);font-size:56px;font-weight:500;letter-spacing:5px;line-height:1.2;margin:11px 0 0;display:flex;align-items:center;gap:20px}.title-star{font-family:var(--sans);font-size:55px;font-weight:300;color:#b76e46}.intro-copy{font-family:var(--serif);font-size:16px;line-height:1.9;letter-spacing:1px;margin:15px 5px 0 20px}.experience{display:grid;grid-template-columns:minmax(0,1fr) 318px;gap:22px;align-items:stretch}.world{position:relative;overflow:hidden;isolation:isolate;min-height:600px;background:#102f32;border-radius:3px}.world canvas{display:block;position:absolute;width:100%;height:100%;inset:0}.world-heading{position:absolute;left:25px;right:25px;top:23px;display:flex;align-items:center;gap:8px;color:#a2b7ab;font-size:10px;letter-spacing:1px;pointer-events:none}.tiny-square{height:5px;width:5px;background:var(--lime)}.edition{font:8px var(--mono);letter-spacing:2px;margin-left:auto;color:#829b90}.map-labels{position:absolute;inset:0;pointer-events:none}.station-label{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);white-space:nowrap;pointer-events:auto;font-size:12px;letter-spacing:1px;padding:7px 10px;background:#123337e6;border:1px solid #52736b;color:#d6e1d3;border-radius:3px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 10px #09242640}.station-label:hover{background:#254a4b;border-color:var(--lime)}.station-label:active{transform:translate(-50%,-48%)}.station-label.selected{color:var(--lime);border-color:#a1be73;background:#28473c}.station-label .station-number{font:9px var(--mono);color:#88a697;letter-spacing:0}.station-label.selected .station-number{color:#b2ce89}.station-dot{height:4px;width:4px;border:1px solid currentColor;border-radius:50%;opacity:.5}.station-label.visited .station-dot{background:currentColor;opacity:1}.depot-label{position:absolute;left:36%;top:86.5%;transform:translate(-50%,-50%);font-size:10px;color:#b8c5b4;pointer-events:none;letter-spacing:1px;white-space:nowrap}.depot-label>span{font:9px var(--mono);color:#758f80;margin-right:6px}.depot-label small{display:block;text-align:center;font:7px var(--mono);margin-top:5px;letter-spacing:1.3px;color:#718f82}.scene-bottom{position:absolute;bottom:0;left:0;right:0;min-height:54px;border-top:1px solid #33514e;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 22px;background:#102f32ee}.train-status{display:flex;align-items:center;gap:8px;color:#aec0b0;font-size:11px;line-height:1.6}.status-light{height:5px;width:5px;flex-shrink:0;border-radius:50%;background:#9bb4a0}.status-light.moving{background:var(--lime);box-shadow:0 0 8px #d8f49388}.scene-tools{display:flex;gap:9px;align-items:center}.scene-tools button{border:1px solid #436259;background:transparent;color:#bdcfb9;border-radius:50%;height:29px;width:29px;display:grid;place-items:center;font:10px var(--mono)}.scene-tools button:hover{background:#2d4c45}.scene-tools svg{height:15px;width:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.scene-tools [aria-pressed=true]{background:#d8f493;color:#1a3a35}.dispatch-panel{background:#faf9f3;border:1px solid #d8dbce;position:relative;display:flex;flex-direction:column;padding:25px 26px 19px;border-radius:3px;box-shadow:0 3px 4px #28362b03}.ticket-top{display:flex;align-items:center;justify-content:space-between;gap:5px}.ticket-top .eyebrow{font-size:9px;letter-spacing:1.4px;color:#738175}.ticket-type{font-size:10px;border:1px solid #b8c3ad;padding:3px 6px;color:#687c63}.destination-heading{display:flex;justify-content:space-between;align-items:center;margin-top:24px}.route-number{font:51px var(--mono);font-weight:300;line-height:1;letter-spacing:-5px}.route-direction{font:45px var(--sans);font-weight:300;color:#89977d;line-height:1}.dispatch-panel h2{font:400 30px var(--serif);margin:13px 0 7px;letter-spacing:3px}.destination-en{font:8px var(--mono);letter-spacing:2px;color:#7d8b77;margin:0}.destination-description{font-size:12px;line-height:1.9;color:#758071;min-height:46px;margin:19px 0 8px;letter-spacing:.5px}.ticket-rule{position:relative;margin:13px -26px 20px;height:1px;border-top:1px dashed #ccd1c2}.ticket-rule:before,.ticket-rule:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--paper);top:-7px;border:1px solid #d8dbce}.ticket-rule:before{left:-7px;border-left-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}.ticket-rule:after{right:-7px;border-right-color:transparent;border-bottom-color:transparent;transform:rotate(-45deg)}.ticket-rule i{position:absolute;right:21px;top:-9px;background:#faf9f3;padding:0 5px;font-size:11px;color:#97a28b;font-style:normal}.ticket-details{margin:0 0 23px;font-size:11px;display:grid;gap:10px}.ticket-details>div{display:flex;justify-content:space-between}.ticket-details dt{color:#7e8b79}.ticket-details dd{margin:0}.depart-button{width:100%;padding:16px 17px;display:flex;align-items:center;justify-content:space-between;background:var(--lime);font-size:13px;font-weight:550;border:1px solid #c7df8c;border-radius:2px;box-shadow:0 2px 0 #b5ca8b}.depart-button:hover{background:#c9e782}.depart-button>span:last-child{font-size:21px;line-height:1}.secondary-actions{display:flex;justify-content:space-between;margin:15px 0 22px;gap:8px}.secondary-actions button{background:transparent;padding:3px 0;font-size:10px;color:#6d7f65;display:flex;align-items:center;gap:5px}.secondary-actions button:hover{color:var(--ink)}.secondary-actions button[aria-pressed=true]{color:#264f35}.secondary-actions button:first-child span[aria-hidden]{font-size:17px;line-height:1}.auto-dot{width:5px;height:5px;border:1px solid #91a086;border-radius:50%}[aria-pressed=true] .auto-dot{background:#668348}.collection{border-top:1px solid #e0e3d7;padding-top:18px;margin-top:auto}.collection-header{display:flex;justify-content:space-between;font-size:10px;color:#75846d}.collection-header>span:last-child{font:10px var(--mono)}.stamp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:13px}.stamp{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 2px;background:transparent;border:1px dashed #c7cfbd;border-radius:3px;color:#a6b29b}.stamp span{font-size:25px;line-height:1}.stamp small{font-size:8px;white-space:nowrap}.stamp:hover{border-color:#658458;color:#748b66}.stamp.earned{color:#52734b;border:1px solid #8caa76;background:#e9f0dc;transform:rotate(-3deg)}.stamp.earned:nth-child(even){transform:rotate(3deg)}.collection>p{font-size:9px;color:#8a9480;line-height:1.7;margin:11px 0 0}.ticket-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;border-top:1px solid #e0e3d7;margin-top:18px;padding-top:14px}.barcode{width:63px;height:17px;opacity:.5;background:repeating-linear-gradient(90deg,#26463a 0 1px,transparent 1px 3px,#26463a 3px 5px,transparent 5px 6px,#26463a 6px 7px,transparent 7px 10px,#26463a 10px 13px,transparent 13px 15px)}.ticket-bottom>span{font:6px var(--mono);letter-spacing:1px;color:#829078;white-space:nowrap}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0 25px;color:#7b8876}.footer p{font:12px var(--serif);letter-spacing:1px;display:flex;align-items:center;gap:8px;margin:0}.footer-star{color:#a56f4e;font:18px var(--sans)}.keyboard-hints{display:flex;gap:15px;font-size:9px;color:#8b9682}.keyboard-hints>span{display:flex;gap:4px;align-items:center}.keyboard-hints kbd{font:8px var(--mono);padding:2px 4px;border:1px solid #cbd3c1;border-radius:3px}.issue{font-size:8px;letter-spacing:.6px}.arrival-toast{position:absolute;left:50%;bottom:73px;transform:translate(-50%,10px);background:#f1f3df;color:#244536;max-width:86%;width:max-content;padding:13px 19px;border:1px solid #bcd698;box-shadow:0 8px 30px #051b2444;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;font-size:11px;line-height:1.8;text-align:center;z-index:3}.arrival-toast.visible{opacity:1;transform:translate(-50%,0)}.arrival-toast strong{color:#264b32;font-weight:650}.arrival-toast small{font-size:10px;color:#687c5d}dialog{border:1px solid #c4cdb5;border-radius:5px;background:var(--paper);color:var(--ink);padding:30px;max-width:650px;width:calc(100% - 34px);max-height:85vh;box-shadow:0 25px 100px #02171966}dialog::backdrop{background:#081f23b3;backdrop-filter:blur(6px)}.book-header{display:flex;justify-content:space-between;align-items:center}.book-header .eyebrow{font-size:8px;color:#7c8870}.book-header h2{font:28px var(--serif);margin:10px 0 0;letter-spacing:2px}.book-header button{width:35px;height:35px;background:#e2e6d8;border-radius:50%;font-size:24px;font-weight:300}.book-intro,.book-footnote{color:#7a886f;font-size:11px;line-height:1.8}.book-intro{margin:17px 0 24px}.book-footnote{margin-bottom:0;font-size:9px}.book-empty{padding:32px;border:1px dashed #b7c5a5;text-align:center;font:17px/2 var(--serif);color:#728063}.book-ticket{display:grid;grid-template-columns:58px 1fr;gap:18px;padding:20px 17px;background:#fafaf3;border:1px solid #d6ddc9;margin-top:13px;position:relative;overflow:hidden}.book-ticket .big-stamp{align-self:center;display:grid;place-items:center;width:54px;height:64px;border:2px solid #7c9b68;color:#5c8150;font-size:35px;transform:rotate(-8deg)}.book-ticket h3{font:19px var(--serif);letter-spacing:1px;margin:0 0 6px}.book-ticket p{font-size:11px;line-height:1.9;color:#6c7c62;margin:0}.book-ticket .serial{display:block;font:8px var(--mono);margin-top:10px;letter-spacing:1px;color:#95a086}.book-ticket.secret-ticket{background:#e4ecd8}.secret{animation:appear 1.3s ease both}@keyframes appear{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}@media(min-width:1600px){.world{min-height:660px}.dispatch-panel{padding-top:31px}.ticket-details{margin-bottom:30px}.destination-description{margin-top:25px;margin-bottom:15px}}@media(max-width:1180px){.shell{padding:0 25px}.experience{grid-template-columns:minmax(0,1fr) 290px;gap:16px}.dispatch-panel{padding:22px}.ticket-rule{margin-left:-22px;margin-right:-22px}.world{min-height:600px}.station-label{font-size:10px;padding:6px;gap:5px}.intro-copy{font-size:14px}.ticket-type{font-size:9px}.ticket-top .eyebrow{font-size:8px}.keyboard-hints{gap:9px}.issue{display:none}.ticket-bottom>span{font-size:5.5px}.world-heading{left:17px;right:17px;font-size:9px}.scene-bottom{padding:10px 15px}}@media(max-width:1100px){.masthead{height:78px}.intro{padding:27px 0}h1{font-size:45px}.title-star{font-size:40px}.intro-copy{font-size:13px}.experience{grid-template-columns:1fr}.world{height:auto;min-height:0;aspect-ratio:10/7}.dispatch-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 35px;padding:25px}.ticket-top{grid-column:1}.destination-heading{grid-column:1;margin-top:20px}.dispatch-panel h2,.destination-en,.destination-description{grid-column:1}.destination-description{margin-bottom:15px;min-height:0}.ticket-rule{display:none}.ticket-details{grid-column:2;grid-row:1/4;margin-top:5px;align-content:start;gap:15px}.depart-button{grid-column:2;grid-row:4/6;align-self:center}.secondary-actions{grid-column:2;grid-row:6;align-self:start;margin:8px 0 0}.collection{grid-column:1/3;margin-top:5px}.stamp-grid{grid-template-columns:repeat(4,1fr)}.stamp{padding:12px}.ticket-bottom{grid-column:1/3}.collection>p{font-size:10px}.station-label{font-size:12px;padding:7px 10px}.operating{font-size:9px}.header-right{gap:16px}.footer{padding-top:20px}.world-heading{top:20px;font-size:10px}.scene-bottom{min-height:50px}.depot-label{top:85%}}@media(max-width:540px){.shell{padding:0 17px}.masthead{height:75px}.brand-icon{width:33px;height:33px;font-size:26px}.wordmark{gap:9px;font-size:12px;letter-spacing:1px}.brand-sub{font-size:6px;letter-spacing:.8px}.operating{display:none}.folio-button{font-size:10px;gap:8px;padding:8px 9px}.folio-button #ticket-count{font-size:10px}.intro{display:block;padding:24px 0}.intro .eyebrow{font-size:7px;letter-spacing:1.3px}h1{font-size:37px;letter-spacing:3px;gap:12px;margin-top:12px}.title-star{font-size:36px}.intro-copy{margin:12px 0 0;font:12px/1.8 var(--sans);letter-spacing:.5px}.intro-copy br{display:none}.world{aspect-ratio:0.94;min-height:0}.world canvas{top:25px;height:calc(100% - 60px)}.map-labels{top:25px;bottom:35px}.world-heading{left:14px;right:14px;top:15px;font-size:8px;letter-spacing:.4px}.edition{font-size:6px;letter-spacing:1px}.station-label{font-size:9px;letter-spacing:0;padding:5px 6px;gap:4px}.station-number{font-size:7px!important}.station-dot{display:none}.depot-label{top:81%;font-size:9px}.depot-label small{font-size:6px}.scene-bottom{min-height:48px;padding:8px 11px;gap:8px}.train-status{font-size:9px;gap:6px}.scene-tools{gap:5px}.scene-tools button{height:26px;width:26px}.dispatch-panel{padding:22px;gap:0 21px}.destination-heading{margin-top:19px}.route-number{font-size:41px}.route-direction{font-size:35px}.dispatch-panel h2{font-size:25px;letter-spacing:1px;margin-top:10px}.destination-en{font-size:6px;letter-spacing:1px}.destination-description{font-size:11px;line-height:1.8}.ticket-top .eyebrow{font-size:7px;letter-spacing:.7px}.ticket-type{display:none}.ticket-details{font-size:10px;gap:13px}.depart-button{font-size:11px;padding:14px 10px}.secondary-actions{flex-direction:column;gap:9px;margin-top:12px}.secondary-actions button{font-size:10px}.collection{margin-top:7px}.stamp{padding:10px 4px}.stamp small{font-size:9px}.collection-header{font-size:11px}.footer{align-items:flex-start}.footer p{font-size:11px}.keyboard-hints{display:none}.arrival-toast{font-size:10px;padding:10px 14px;bottom:65px}dialog{padding:22px}.book-ticket{gap:15px;padding:15px 11px}.book-header h2{font-size:24px}.book-ticket h3{font-size:17px}.book-ticket p{font-size:10px}}
+
+/* Journey controls and the carriage-window edition. */
+.world-heading .view-toggle{pointer-events:auto;display:flex;margin-left:auto;padding:3px;border:1px solid #55705e;border-radius:6px;background:#15383b;gap:2px}
+.view-toggle button{background:transparent;border-radius:3px;color:#b5c7b3;font-size:10px;padding:6px 12px;min-height:28px;white-space:nowrap}
+.view-toggle button[aria-pressed=true]{background:#d6e7b0;color:#2c4c3f}
+.view-toggle button:hover{color:#eaf5ce;background:#3c5d4c}
+.view-toggle button[aria-pressed=true]:hover{color:#2c4c3f;background:#e1f2bb}
+.dispatch-panel h2{overflow-wrap:anywhere;line-height:1.3}
+.station-label.secret{left:17%;max-width:155px;white-space:normal;line-height:1.5;text-align:left}
+.station-label.secret #secret-name{overflow-wrap:anywhere;max-width:112px}
+.journey-meter{margin:-5px 0 18px}
+.journey-summary{display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#7f8d75;line-height:1.6;margin-bottom:8px}
+.journey-summary>span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.journey-track{height:3px;background:#e3e7d9;overflow:hidden;border-radius:3px}
+.journey-track>span{display:block;height:100%;width:0;background:#8da665;transition:width .2s linear}
+.secondary-actions button{min-height:27px;white-space:nowrap}
+.scene-tools button{min-width:31px;min-height:31px}
+.scene-tools button:disabled{opacity:.5}
+#secret-naming{margin-top:22px;padding:20px;background:#e4ebd8;border:1px solid #c6d2b6;border-radius:3px}
+#secret-naming>label{display:block;font:14px var(--serif);letter-spacing:.5px;margin-bottom:12px}
+.naming-fields{display:flex;gap:8px}
+.naming-fields input{min-width:0;flex:1;width:100%;padding:12px 11px;font:12px var(--sans);color:var(--ink);border:1px solid #b5c5a6;border-radius:2px;background:#f7f8ed;outline-offset:3px}
+.naming-fields input:focus-visible{outline:2px solid #719156}
+.naming-fields input[aria-invalid=true]{border-color:#a06543}
+.naming-fields button{background:#c8df9d;border:1px solid #b6cc8c;white-space:nowrap;padding:11px 14px;border-radius:2px;font-size:11px}
+.naming-fields button:hover{background:#bcd28e}
+#naming-feedback{font-size:10px;color:#6f805d;line-height:1.8;margin:9px 0 0;overflow-wrap:anywhere}
+@media(min-width:1101px){
+  .dispatch-panel{padding-top:22px;padding-bottom:17px}
+  .destination-heading{margin-top:18px}
+  .route-number{font-size:44px}
+  .dispatch-panel h2{font-size:28px;margin-top:10px;margin-bottom:5px}
+  .destination-description{margin-top:14px;margin-bottom:5px;line-height:1.8;min-height:44px}
+  .ticket-rule{margin-top:9px;margin-bottom:16px}
+  .ticket-details{margin-bottom:19px;gap:8px}
+  .secondary-actions{margin-top:10px;margin-bottom:15px}
+  .collection{padding-top:14px}
+  .ticket-bottom{margin-top:14px;padding-top:12px}
+}
+@media(max-width:1100px){
+  .journey-meter{grid-column:2;grid-row:4;margin:0 0 10px;align-self:end}
+  .depart-button{grid-row:5/7;align-self:start}
+  .secondary-actions{grid-column:2;grid-row:7;flex-direction:row;margin:4px 0 15px;gap:9px}
+  .collection{grid-row:8}
+  .ticket-bottom{grid-row:9}
+}
+@media(max-width:540px){
+  .world-heading .view-toggle{padding:2px;gap:1px}
+  .view-toggle button{font-size:9px;padding:5px 8px;min-height:27px}
+  .world-heading{align-items:center;gap:6px}
+  .scene-tools button{min-width:29px;min-height:29px}
+  .secondary-actions{gap:4px;flex-wrap:wrap}
+  .secondary-actions button{font-size:9px;min-height:25px}
+  .secondary-actions button:first-child span[aria-hidden]{font-size:15px}
+  .journey-summary{font-size:8px;gap:5px}
+  .station-label.secret{max-width:100px;left:17%}
+  .station-label.secret #secret-name{max-width:75px}
+  #secret-naming{padding:14px}
+  .naming-fields{flex-direction:column}
+  .naming-fields input,.naming-fields button{min-height:42px}
+}
+
+.world-heading #view-caption{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.world-heading .view-toggle{flex-shrink:0}
+
+/* One shared, undistorted coordinate space for art and station labels. */
+.scene-viewport{position:absolute;inset:66px 0 59px;display:grid;place-items:center}
+.scene-surface{position:relative;flex:none}
+.scene-surface canvas{inset:0;width:100%;height:100%}
+.scene-surface .map-labels{inset:0}
+.scene-surface .depot-label{top:86.5%}
+.destination-description,.ticket-details dt,.journey-summary,.destination-en,.secondary-actions button,.collection-header,.collection>p,.stamp,.book-intro,.book-footnote{color:#5e705b}
+.destination-description{font-size:13px}
+.ticket-details,.collection-header,.secondary-actions button{font-size:12px}
+.journey-summary,.collection>p,.stamp small{font-size:11px}
+.stamp{color:#5e705b}
+button:focus-visible,a:focus-visible{outline-color:#9b5737}
+.book-ticket{grid-template-columns:58px minmax(0,1fr)}
+.book-ticket>div{min-width:0}
+.book-ticket h3,.book-ticket p{overflow-wrap:anywhere}
+html[data-reduced-motion=true] *,html[data-reduced-motion=true] *::before,html[data-reduced-motion=true] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(max-width:540px){
+  .scene-viewport{inset:58px 0 58px}
+  .scene-surface .station-label{font-size:10px;min-height:29px}
+  .journey-summary{font-size:10px;flex-wrap:wrap;row-gap:1px}
+  .ticket-details{font-size:11px;gap:12px}
+  .ticket-details>div{gap:8px}
+  .ticket-details dd{text-align:right}
+  .secondary-actions button{font-size:11px}
+  .destination-description{font-size:12px}
+}
+
+@media(prefers-reduced-motion:reduce){html:not([data-reduced-motion]) *,html:not([data-reduced-motion]) *::before,html:not([data-reduced-motion]) *::after{animation:none!important;transition:none!important}}
+@media(max-width:540px){.scene-surface .station-label{font-size:11px;min-height:31px}.train-status{font-size:11px;line-height:1.5}.arrival-toast{font-size:11px}}
+
+/* A small stationery desk, inside the existing ticket book. */
+.book-views{display:flex;gap:8px;padding-bottom:16px;border-bottom:1px solid #c9d2be}
+.book-views button{min-height:40px;padding:9px 17px;background:transparent;border:1px solid #b4c3a9;border-radius:3px;font-size:12px}
+.book-views button[aria-pressed=true]{background:#17383b;border-color:#17383b;color:#edf1de}
+.book-views button:hover{background:#dce6cd;color:#17383b}
+#journal-panel{padding-top:22px}
+.journal-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:12px}
+.journal-heading label{flex-shrink:0}
+.journal-heading select{min-width:0;max-width:72%;padding:10px 30px 10px 10px;border:1px solid #afbea5;border-radius:3px;background:#faf9f3;color:var(--ink);font:12px var(--sans);min-height:42px}
+.journal-meta,.journal-export-help{font-size:11px;line-height:1.8;color:#5e705b}
+.journal-meta{margin:12px 0 17px}
+.postcard-preview{padding:24px;background:#faf9f3;border:1px solid #c8d1bc;box-shadow:4px 5px 0 #dce1d1}
+.postcard-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;font:9px var(--mono);letter-spacing:1.4px;color:#5e705b}
+.postcard-stamp{display:grid;place-items:center;width:43px;height:49px;border:1px dashed #6e8860;font-size:27px;transform:rotate(7deg);color:#52734b;flex-shrink:0}
+.postcard-preview h3{font:27px/1.5 var(--serif);letter-spacing:1px;margin:12px 0 8px;overflow-wrap:anywhere}
+.postcard-preview p{font-size:12px;line-height:1.95;overflow-wrap:anywhere;color:#5e705b}
+.postcard-preview .postcard-souvenir{font-size:11px;margin:0 0 18px;color:#526845}
+.postcard-preview .postcard-note{border-top:1px dashed #c4ceba;padding-top:16px;color:var(--ink);white-space:pre-wrap}
+.postcard-footer{border-top:1px solid #d8decd;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:14px;margin-top:20px;color:#5e705b;font-size:10px}
+.journal-note-label{display:block;margin:26px 0 10px;font-size:13px}
+.journal-note-label span:last-child{font-size:11px;color:#5e705b;margin-left:8px}
+#journal-note{display:block;width:100%;min-height:108px;max-height:320px;resize:vertical;padding:12px;font:13px/1.9 var(--sans);color:var(--ink);border:1px solid #afbea5;border-radius:3px;background:#faf9f3}
+#journal-note:focus-visible,.journal-heading select:focus-visible{outline:2px solid #719156;outline-offset:3px}
+.journal-note-help{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:10px;line-height:1.7;color:#5e705b}
+#journal-count{white-space:nowrap;font-variant-numeric:tabular-nums}
+.postcard-export{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;padding:13px 16px;min-height:46px;border:1px solid #b6cc8c;border-radius:3px;background:#d8edac;font-size:13px}
+.postcard-export:hover{background:#c9df98}
+.postcard-export span[aria-hidden]{font-size:20px}
+.journal-export-help{margin:8px 0 0}
+@media(max-width:540px){
+  .journal-heading{align-items:stretch;flex-direction:column;gap:8px}
+  .journal-heading select{width:100%;max-width:100%;font-size:16px}
+  #journal-note{font-size:16px}
+  .postcard-preview{padding:18px}
+  .postcard-preview h3{font-size:24px}
+  .book-views button{flex:1;padding:9px 10px}
+}
+
+/* Page themes share semantic colours; the railway keeps its night palette. */
+:root,:root[data-theme="light"]{
+  color-scheme:light;
+  --paper:#f0efe7;--ink:#17383b;--muted:#5e705b;--line:#c3cdb7;
+  --surface:#faf9f3;--surface-raised:#fafaf3;--surface-soft:#e4ebd8;--surface-hover:#dce6cd;--input-surface:#f7f8ed;
+  --control-border:#7a8d6c;--accent:#b76e46;--stamp-ink:#52734b;--meter:#7a965a;--focus:#9b5737;--invalid:#a94f2f;
+  --action-bg:#d8f493;--action-hover:#c9e782;--action-ink:#17383b;--action-border:#a5bd71;
+  --selected-bg:#17383b;--selected-ink:#edf1de;--postcard-shadow:#dce1d1;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#101e21;--ink:#e8eee0;--muted:#b7c5ae;--line:#4b655d;
+  --surface:#192d30;--surface-raised:#20373a;--surface-soft:#294139;--surface-hover:#365047;--input-surface:#142629;
+  --control-border:#829b8a;--accent:#e2ab79;--stamp-ink:#d3e7ad;--meter:#bfd694;--focus:#edbc82;--invalid:#f0b187;
+  --selected-bg:#d8edac;--selected-ink:#17383b;--postcard-shadow:#0b1618;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme]){
+    color-scheme:dark;
+    --paper:#101e21;--ink:#e8eee0;--muted:#b7c5ae;--line:#4b655d;
+    --surface:#192d30;--surface-raised:#20373a;--surface-soft:#294139;--surface-hover:#365047;--input-surface:#142629;
+    --control-border:#829b8a;--accent:#e2ab79;--stamp-ink:#d3e7ad;--meter:#bfd694;--focus:#edbc82;--invalid:#f0b187;
+    --selected-bg:#d8edac;--selected-ink:#17383b;--postcard-shadow:#0b1618;
+  }
+}
+body{background:var(--paper);color:var(--ink)}
+.masthead,.collection,.ticket-bottom,.book-views{border-color:var(--line)}
+.intro .eyebrow,.ticket-top .eyebrow,.ticket-type,.route-direction,.destination-description,.destination-en,.ticket-details dt,.journey-summary,.secondary-actions button,.collection-header,.collection>p,.ticket-bottom>span,.footer,.keyboard-hints,.book-header .eyebrow,.book-intro,.book-footnote,.book-empty,.book-ticket p,.book-ticket .serial,#naming-feedback,.journal-meta,.journal-export-help,.postcard-heading,.postcard-preview p,.postcard-footer,.journal-note-label span:last-child,.journal-note-help{color:var(--muted)}
+.title-star,.footer-star{color:var(--accent)}
+.folio-button,.ticket-type,.keyboard-hints kbd{border-color:var(--control-border)}
+.folio-button:hover{background:var(--surface-hover)}
+.folio-button #ticket-count{background:var(--surface-soft);color:var(--ink)}
+.operating i{background:var(--stamp-ink)}
+.dispatch-panel{background:var(--surface);border-color:var(--line)}
+.ticket-rule{border-color:var(--line)}
+.ticket-rule:before,.ticket-rule:after{background:var(--paper);border-color:var(--line)}
+.ticket-rule:before{border-left-color:transparent;border-bottom-color:transparent}
+.ticket-rule:after{border-right-color:transparent;border-bottom-color:transparent}
+.ticket-rule i{background:var(--surface);color:var(--muted)}
+.journey-track{background:var(--surface-soft)}
+.journey-track>span{background:var(--meter)}
+.depart-button,.naming-fields button,.postcard-export{background:var(--action-bg);color:var(--action-ink);border-color:var(--action-border)}
+.depart-button:hover,.naming-fields button:hover,.postcard-export:hover{background:var(--action-hover)}
+.secondary-actions button:hover,.secondary-actions button[aria-pressed=true]{color:var(--ink)}
+.auto-dot{border-color:var(--control-border)}
+[aria-pressed=true] .auto-dot{background:var(--stamp-ink)}
+.stamp{border-color:var(--control-border);color:var(--muted)}
+.stamp:hover,.stamp.earned{border-color:var(--control-border);color:var(--stamp-ink)}
+.stamp.earned{background:var(--surface-soft)}
+.barcode{background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 3px,var(--ink) 3px 5px,transparent 5px 6px,var(--ink) 6px 7px,transparent 7px 10px,var(--ink) 10px 13px,transparent 13px 15px)}
+dialog{background:var(--paper);color:var(--ink);border-color:var(--control-border)}
+.book-header button{background:var(--surface-soft);color:var(--ink)}
+.book-empty{border-color:var(--control-border)}
+.book-ticket{background:var(--surface-raised);border-color:var(--line)}
+.book-ticket.secret-ticket,#secret-naming{background:var(--surface-soft);border-color:var(--line)}
+.book-ticket .big-stamp,.postcard-stamp{color:var(--stamp-ink);border-color:var(--control-border)}
+.book-views button{border-color:var(--control-border);color:var(--ink)}
+.book-views button[aria-pressed=true]{background:var(--selected-bg);border-color:var(--selected-bg);color:var(--selected-ink)}
+.book-views button:hover{background:var(--surface-hover);color:var(--ink)}
+.naming-fields input,.journal-heading select,#journal-note,.setting-field select{background:var(--input-surface);color:var(--ink);border-color:var(--control-border)}
+.naming-fields input::placeholder,#journal-note::placeholder{color:var(--muted);opacity:1}
+.naming-fields input[aria-invalid=true]{border-color:var(--invalid)}
+.postcard-preview{background:var(--surface-raised);border-color:var(--line);box-shadow:4px 5px 0 var(--postcard-shadow)}
+.postcard-preview .postcard-souvenir{color:var(--stamp-ink)}
+.postcard-preview .postcard-note{border-color:var(--line);color:var(--ink)}
+.postcard-footer{border-color:var(--line)}
+button:focus-visible,a:focus-visible,.naming-fields input:focus-visible,#journal-note:focus-visible,.journal-heading select:focus-visible,.setting-field select:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.world :focus-visible{outline-color:#e8c58e}
+
+/* Settings and wrapping remain usable when labels become longer in translation. */
+.page-settings{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:12px 24px;padding:18px 0 0}
+.setting-field{display:flex;align-items:center;gap:9px;min-width:0;color:var(--muted);font-size:11px}
+.setting-field label,.setting-field>span{white-space:nowrap}
+.setting-field select{font:12px var(--sans);min-height:40px;max-width:100%;min-width:0;padding:9px 28px 9px 11px;border:1px solid var(--control-border);border-radius:3px}
+.intro>div,.intro-copy,.dispatch-panel,.book-header>div{min-width:0}
+.intro h1{flex-wrap:wrap}
+.book-header{gap:14px}
+.book-header button,.scene-tools,.status-light{flex-shrink:0}
+.book-header h2,.intro-copy,.destination-en,.book-ticket .serial{overflow-wrap:anywhere}
+.book-header .eyebrow{line-height:1.6}
+.ticket-top{flex-wrap:wrap;row-gap:8px}
+.depart-button,.postcard-export{gap:12px;line-height:1.55;text-align:left}
+.depart-button>span:last-child,.postcard-export>span:last-child{flex-shrink:0}
+.secondary-actions{flex-wrap:wrap;justify-content:flex-start;gap:6px 14px}
+.secondary-actions button{white-space:normal;text-align:left;line-height:1.5}
+.collection-header{gap:12px;line-height:1.6}
+.collection-header>span:last-child{flex-shrink:0}
+.stamp{min-width:0}
+.stamp small{white-space:normal;overflow-wrap:anywhere;line-height:1.45;text-align:center}
+.ticket-bottom>span{white-space:normal;text-align:right;line-height:1.6}
+.barcode{flex-shrink:0}
+.ticket-details>div{gap:12px;line-height:1.55}
+.ticket-details dd{text-align:right;overflow-wrap:anywhere}
+.journey-summary{flex-wrap:wrap;row-gap:3px}
+.book-views button{line-height:1.5;min-width:0;overflow-wrap:anywhere}
+.journal-heading label{flex-shrink:1}
+.journal-note-help{flex-wrap:wrap;row-gap:3px}
+#journal-count{margin-left:auto}
+.naming-fields button{white-space:normal;line-height:1.5}
+.postcard-heading{line-height:1.7}
+.postcard-heading>span:first-child{min-width:0;overflow-wrap:anywhere}
+.station-label{max-width:31%;white-space:normal;text-align:left;line-height:1.4}
+.station-label .station-number{flex-shrink:0}
+.station-label>span:not(.station-number):not(.station-dot){min-width:0;overflow-wrap:anywhere}
+html:lang(en) h1{font-size:clamp(30px,3.7vw,52px);letter-spacing:.01em;line-height:1.12}
+html:lang(en) .intro{gap:24px}
+html:lang(en) .intro-copy{max-width:32%;font-family:var(--sans);font-size:14px;letter-spacing:0}
+html:lang(en) .dispatch-panel h2{font-size:25px;letter-spacing:.2px}
+html:lang(en) .station-label{letter-spacing:0}
+html:lang(en) .station-label.secret #secret-name{max-width:none}
+html:lang(ja) h1{letter-spacing:2px}
+html:lang(ja){--sans:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;--serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+html:lang(en){--serif:Georgia,"Times New Roman",serif}
+@media(max-width:760px){
+  .page-settings{justify-content:flex-start;gap:12px 18px}
+  html:lang(en) .intro{align-items:flex-start;flex-direction:column;gap:12px}
+  html:lang(en) .intro-copy{max-width:none;margin:0}
+  .footer{flex-wrap:wrap;row-gap:14px}
+  .keyboard-hints{flex-wrap:wrap;row-gap:8px}
+}
+@media(max-width:540px){
+  .page-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:16px}
+  .setting-field{display:flex;align-items:stretch;flex-direction:column;gap:6px;font-size:11px}
+  .setting-field label,.setting-field>span{white-space:normal}
+  .setting-field select{width:100%;font-size:16px;padding:9px 22px 9px 9px;min-height:44px}
+  .intro h1{gap:10px}
+  html:lang(en) h1{font-size:34px}
+  html:lang(ja) h1{font-size:32px}
+  .book-header h2{font-size:23px;letter-spacing:.5px;line-height:1.35}
+  html:lang(en) .scene-surface .station-label{max-width:30%;font-size:10px;gap:4px;padding:5px;min-height:32px}
+  html:lang(en) .scene-surface .station-label[data-station="1"]{top:26%}
+  html:lang(en) .scene-surface .station-label.secret{max-width:29%}
+  html:lang(en) .scene-surface .depot-label{top:94%;font-size:8px;letter-spacing:0}
+  html:lang(en) .scene-surface .depot-label small{font-size:6px;letter-spacing:.3px}
+  html:lang(en) .dispatch-panel,html:lang(ja) .dispatch-panel{display:flex;gap:0;padding:22px}
+  html:lang(en) .ticket-details,html:lang(ja) .ticket-details{margin:19px 0;gap:10px;font-size:12px}
+  html:lang(en) .journey-meter,html:lang(ja) .journey-meter{margin:0 0 17px;align-self:auto}
+  html:lang(en) .depart-button,html:lang(ja) .depart-button{font-size:13px;align-self:auto}
+  html:lang(en) .secondary-actions,html:lang(ja) .secondary-actions{align-self:auto;margin:13px 0 19px;gap:8px 16px}
+  html:lang(en) .collection,html:lang(ja) .collection{margin-top:0}
+  html:lang(en) .stamp-grid{gap:6px}
+  html:lang(en) .stamp small{font-size:10px}
+  html:lang(en) .folio-button{gap:7px;max-width:132px;font-size:11px;text-align:left;line-height:1.35}
+  html:lang(en) .wordmark{max-width:54%;font-size:11px;letter-spacing:.3px}
+  html:lang(en) .brand-sub{font-size:6px;letter-spacing:0;line-height:1.4}
+  html:lang(en) .world-heading #view-caption{display:none}
+  html:lang(en) .view-toggle button{font-size:10px;padding:5px 10px}
+}
+
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a class="wordmark" href="#" data-i18n-aria="homeAria" aria-label="不可能车站首页"><span class="brand-icon" aria-hidden="true">↔</span><span><span data-i18n="department">异想交通局</span><span class="brand-sub" data-i18n="departmentSub">DEPARTMENT OF ELSEWHERE</span></span></a>
+      <div class="header-right"><span class="operating"><i></i><span data-i18n="operating">非现实线路 · 正常运行</span></span><button class="folio-button" id="open-book" aria-haspopup="dialog"><span data-i18n="ticketBook">车票夹</span> <span id="ticket-count">00</span><span aria-hidden="true">↗</span></button></div>
+    </header>
+    <div class="page-settings" role="group" data-i18n-aria="preferencesAria" aria-label="语言与外观设置">
+      <label class="setting-field" for="language"><span data-i18n="languageLabel">语言</span><select id="language" data-i18n-aria="languageLabel" aria-label="语言"><option value="zh-CN">中文</option><option value="en">English</option><option value="ja">日本語</option></select></label>
+      <label class="setting-field" for="theme"><span data-i18n="themeLabel">外观</span><select id="theme" data-i18n-aria="themeLabel" aria-label="外观"><option value="auto" data-i18n="themeAuto">跟随系统</option><option value="light" data-i18n="themeLight">浅色</option><option value="dark" data-i18n="themeDark">深色</option></select></label>
+    </div>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div><p class="eyebrow" data-i18n="introEyebrow">A SMALL JOURNEY OUT OF THE ORDINARY</p><h1 id="title"><span data-i18n="title">不可能车站</span><span class="title-star" aria-hidden="true">✳</span></h1></div>
+        <p class="intro-copy"><span data-i18n="introOne">不问你从哪里来。</span><br><span data-i18n="introTwo">今天，去一个地图上没有的地方。</span></p>
+      </section>
+      <div class="experience">
+        <section class="world" data-i18n-aria="worldAria" aria-label="可交互车站地图">
+          <div class="scene-viewport" id="scene-viewport"><div class="scene-surface" id="scene-surface">
+          <canvas id="scene" aria-label="悬浮在夜色中的铁路，连接折纸海、倒置果园、月亮修理铺和未寄出的城。使用地图上的站名按钮选择目的地。"></canvas>
+          <div class="map-labels" id="map-labels">
+            <button class="station-label selected" data-station="0" style="--x:20.5%;--y:48.5%" aria-pressed="true"><span class="station-number">01</span><span id="map-name-0">折纸海</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="1" style="--x:43%;--y:31.5%" aria-pressed="false"><span class="station-number">02</span><span id="map-name-1">倒置果园</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="2" style="--x:78.5%;--y:42%" aria-pressed="false"><span class="station-number">03</span><span id="map-name-2">月亮修理铺</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="3" style="--x:79%;--y:80%" aria-pressed="false"><span class="station-number">04</span><span id="map-name-3">未寄出的城</span><span class="station-dot"></span></button>
+            <button class="station-label secret" data-station="4" style="--x:14%;--y:80.5%" aria-pressed="false" hidden><span class="station-number">05</span><span id="secret-name">无名之站</span><span class="station-dot"></span></button>
+          </div>
+          <div class="depot-label" id="depot-label"><span>00</span> <span class="depot-name" data-i18n="here">此时此地</span> <small data-i18n="hereEn">YOU ARE HERE</small></div>
+          </div></div>
+          <div class="world-heading"><span class="tiny-square"></span><span id="view-caption">无边界铁路 / 线路示意</span><div class="view-toggle" role="group" data-i18n-aria="viewGroup" aria-label="切换观看视角"><button id="view-map" aria-pressed="true" data-i18n="viewMap">线路图</button><button id="view-window" aria-pressed="false" data-i18n="viewWindow">车窗</button></div></div>
+          <div class="arrival-toast" id="arrival-toast" role="status" aria-live="polite"></div>
+          <div class="scene-bottom"><div class="train-status" role="status"><span class="status-light" id="status-light"></span><span id="train-status">小列车已进站，等你决定方向。</span></div><div class="scene-tools"><button id="speed" aria-label="切换列车速度，当前 1 倍速" data-i18n-title="speedTitle" title="列车速度">1×</button><button id="motion" aria-pressed="false" aria-label="减少装饰动效" title="减少装饰动效">≈</button><button id="sound" aria-pressed="false" aria-label="开启声音" title="开启声音"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path id="sound-waves" d="m16 9 6 6m0-6-6 6"/></svg></button></div></div>
+        </section>
+        <aside class="dispatch-panel" data-i18n-aria="dispatchAria" aria-label="列车调度与车票">
+          <div class="ticket-top"><span class="eyebrow" data-i18n="nextStop">YOUR NEXT STOP</span><span class="ticket-type" data-i18n="ticketType">想象力专线</span></div>
+          <div class="destination-heading"><span class="route-number" id="route-number">01</span><span class="route-direction" aria-hidden="true">↗</span></div>
+          <h2 id="destination-name">折纸海</h2><p class="destination-en" id="destination-en">THE ORIGAMI SEA</p>
+          <p class="destination-description" id="destination-description">这里的海有折痕。每当有人展开一封信，就会多出一小片海岸。</p>
+          <div class="ticket-rule"><span></span><i>✂</i></div>
+          <dl class="ticket-details"><div><dt data-i18n="from">出发地</dt><dd data-i18n="here">此时此地</dd></div><div><dt id="arrival-label">抵达时间</dt><dd id="arrival-time">大约 12 秒后</dd></div><div><dt data-i18n="luggage">随身行李</dt><dd data-i18n="curiosity">一点点好奇心</dd></div></dl>
+          <div class="journey-meter"><div class="journey-summary"><span id="journey-phase">准备出发</span><span id="journey-remaining">往返约 20 秒</span></div><div id="journey-progress" class="journey-track" role="progressbar" data-i18n-aria="progressAria" aria-label="当前往返旅程进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="journey-fill"></span></div></div>
+          <button class="depart-button" id="depart"><span id="depart-text">发车，去看看</span><span id="depart-icon" aria-hidden="true">↗</span></button>
+          <div class="secondary-actions"><button id="switch-route"><span aria-hidden="true">⇄</span><span data-i18n="route">换轨</span></button><button id="surprise" data-i18n-title="blindTitle" title="优先抽取未抵达的车站；运行中只改变下一班"><span aria-hidden="true">⚄</span><span data-i18n="blind">盲选</span></button><button id="auto" aria-pressed="false"><span class="auto-dot"></span><span data-i18n="auto">自动漫游</span></button></div>
+          <div class="collection"><div class="collection-header"><span data-i18n="collectionTitle">把远方带回来</span><span id="collection-counter">0 / 4</span></div><div class="stamp-grid" id="stamp-grid"><button class="stamp" data-stamp="0" aria-label="折纸海车票，尚未获得"><span>≋</span><small id="stamp-name-0">折纸海</small></button><button class="stamp" data-stamp="1" aria-label="倒置果园车票，尚未获得"><span>♧</span><small id="stamp-name-1">倒置果园</small></button><button class="stamp" data-stamp="2" aria-label="月亮修理铺车票，尚未获得"><span>☾</span><small id="stamp-name-2">修理铺</small></button><button class="stamp" data-stamp="3" aria-label="未寄出的城车票，尚未获得"><span>▱</span><small id="stamp-name-3">未寄之城</small></button></div><p id="collection-hint">集齐四枚车票，会有一条新轨道出现。</p></div>
+          <div class="ticket-bottom"><div class="barcode" aria-hidden="true"></div><span data-i18n="validTicket">VALID FOR ONE LITTLE ESCAPE</span></div>
+        </aside>
+      </div>
+      <footer class="footer"><p><span class="footer-star">✳</span><span data-i18n="motto">每一条绕路，都算数。</span></p><div class="keyboard-hints"><span><kbd>1</kbd>–<kbd>4</kbd> <span data-i18n="keyChoose">选站</span></span><span><kbd>Space</kbd> <span data-i18n="keyDepart">发车 / 暂停</span></span><span><kbd>R</kbd> <span data-i18n="keyRoute">换轨</span></span><span><kbd>V</kbd> <span data-i18n="keyWindow">车窗</span></span></div><span class="issue" data-i18n="issue">一件可以玩的微型作品 / NO. 001</span></footer>
+    </main>
+  </div>
+  <dialog id="ticket-book" aria-labelledby="book-title">
+    <div class="book-header"><div><p class="eyebrow" data-i18n="bookEyebrow">LITTLE PROOFS OF ELSEWHERE</p><h2 id="book-title" data-i18n="bookTitle">你的远方存根</h2></div><button id="close-book" data-i18n-aria="closeBook" aria-label="关闭车票夹">×</button></div>
+    <p class="book-intro" data-i18n="bookIntro">没有照片也没关系。你记得那里，就算到过。</p>
+    <div class="book-views" role="group" data-i18n-aria="bookGroup" aria-label="车票夹内容"><button id="show-tickets" aria-pressed="true" aria-controls="souvenirs-panel" data-i18n="tickets">车票存根</button><button id="show-journal" aria-pressed="false" aria-controls="journal-panel"><span data-i18n="journal">旅途手记</span> <span aria-hidden="true">↗</span></button></div>
+    <section id="souvenirs-panel" data-i18n-aria="tickets" aria-label="车票存根"><div id="book-content"></div><form id="secret-naming" hidden><label for="station-name" data-i18n="namingLabel">给地图之外的地方，挂上你的路牌。</label><div class="naming-fields"><input id="station-name" name="station-name" type="text" maxlength="24" autocomplete="off" data-i18n-placeholder="namingPlaceholder" placeholder="为第五站取个名字" aria-describedby="naming-feedback"><button type="submit" data-i18n="nameButton">挂上路牌 ↗</button></div><p id="naming-feedback" role="status">最多 12 个字符，只保存在本次旅程中。</p></form></section>
+    <section id="journal-panel" data-i18n-aria="journal" aria-label="旅途手记" hidden>
+      <p id="journal-empty" class="book-empty" data-i18n="journalEmpty">先去一个远方吧。抵达后，这里会记下你的旅途。</p>
+      <div id="journal-editor" hidden>
+        <div class="journal-heading"><label for="journal-station" data-i18n="chooseJournal">翻到哪一站？</label><select id="journal-station"></select></div>
+        <p id="journal-meta" class="journal-meta"></p>
+        <article class="postcard-preview" data-i18n-aria="previewAria" aria-label="明信片内容预览">
+          <div class="postcard-heading"><span data-i18n="postOffice">POSTCARD / 旅途邮局</span><span id="postcard-icon" class="postcard-stamp" aria-hidden="true"></span></div>
+          <h3 id="postcard-name"></h3><p id="postcard-souvenir" class="postcard-souvenir"></p>
+          <p id="postcard-story"></p><p id="postcard-note" class="postcard-note" hidden></p>
+          <div class="postcard-footer"><span data-i18n="toFuture">寄给：以后的自己</span><span data-i18n="dontRush">不必急着抵达 ↗</span></div>
+        </article>
+        <label class="journal-note-label" for="journal-note"><span data-i18n="noteLabel">留一句自己的感想</span> <span data-i18n="optional">可留空</span></label>
+        <textarea id="journal-note" rows="3" data-i18n-placeholder="notePlaceholder" placeholder="今天，我想记住……" aria-describedby="journal-count journal-save-status"></textarea>
+        <div class="journal-note-help"><span id="journal-save-status" role="status" data-i18n="noteSession">仅保存在本次页面中。</span><span id="journal-count">0 / 160</span></div>
+        <button id="export-postcard" class="postcard-export"><span data-i18n="exportLabel">收藏这张明信片</span> <span aria-hidden="true">↓</span></button>
+        <p id="postcard-export-status" class="journal-export-help" role="status" data-i18n="exportHint">导出 SVG 图片，保留站名、纪念物与手记，可用浏览器打开。</p>
+      </div>
+    </section>
+    <p class="book-footnote" data-i18n="bookFootnote">本次旅程只保存在这一页的记忆里。刷新会清空进度与手记，喜欢的片刻可以先导出。</p>
+  </dialog>
+  <script>
+// Display preference is session-only, just like the journey and journal.
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const control = document.getElementById('theme');
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  let systemDark = system.matches;
+  let preference = 'auto';
+
+  function applyTheme() {
+    const theme = preference === 'auto' ? (systemDark ? 'dark' : 'light') : preference;
+    root.dataset.theme = theme;
+    root.dataset.themePreference = preference;
+    root.style.colorScheme = theme;
+    control.value = preference;
+    const browserColour = document.querySelector('meta[name="theme-color"]');
+    browserColour?.setAttribute('content', theme === 'dark' ? '#101e21' : '#f0efe7');
+  }
+
+  control.addEventListener('change', () => {
+    preference = ['auto', 'light', 'dark'].includes(control.value) ? control.value : 'auto';
+    applyTheme();
+  });
+  const onSystemChange = event => {
+    systemDark = event.matches;
+    if (preference === 'auto') applyTheme();
+  };
+  if (system.addEventListener) system.addEventListener('change', onSystemChange);
+  else system.addListener?.(onSystemChange);
+  applyTheme();
+})();
+
+</script>
+  <script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  // Explicit message keys; changing language never replaces simulation state.
+  const messages = {
+    appTitle:['不可能车站 · The Impossible Station','The Impossible Station','ありえない駅'],
+    metaDescription:['扳动道岔，登上小小的列车，去四个不可能的地方。一个离线互动作品。','Take a tiny train to impossible places. An offline interactive artwork.','小さな列車で、ありえない場所へ。オフラインで遊べる作品。'],
+    homeAria:['不可能车站首页','The Impossible Station home','ありえない駅のホーム'],
+    department:['异想交通局','Elsewhere Transit','空想交通局'],departmentSub:['DEPARTMENT OF ELSEWHERE','DEPARTMENT OF ELSEWHERE','どこか遠くの交通局'],
+    operating:['非现实线路 · 正常运行','Imaginary lines · Running','空想路線 · 運行中'],ticketBook:['车票夹','Ticket book','きっぷ帳'],
+    languageLabel:['语言','Language','言語'],themeLabel:['外观','Appearance','表示'],preferencesAria:['语言与外观设置','Language and appearance settings','言語と表示の設定'],themeAuto:['跟随系统','System','システム'],themeLight:['浅色','Light','ライト'],themeDark:['深色','Dark','ダーク'],
+    introEyebrow:['A SMALL JOURNEY OUT OF THE ORDINARY','A SMALL JOURNEY OUT OF THE ORDINARY','日常から、ほんの少し遠くへ'],title:['不可能车站','The Impossible Station','ありえない駅'],
+    introOne:['不问你从哪里来。','No need to say where you came from.','どこから来たかは、聞きません。'],introTwo:['今天，去一个地图上没有的地方。','Today, go somewhere no map can find.','今日は、地図にない場所へ。'],
+    worldAria:['可交互车站地图','Interactive railway map','操作できる路線図'],mapAria:['悬浮铁路地图。使用站名按钮或数字键选择目的地。','Floating railway map. Choose a station with its button or a number key.','浮かぶ鉄道の路線図。駅名ボタンか数字キーで行き先を選べます。'],
+    windowAria:['车窗视角：窗外风景随当前列车的目的地变化。可用右侧换轨或键盘数字选择下一站。','Window view follows the current train. Use Change track or number keys to choose the next trip.','車窓は今の列車の行き先に合わせて変わります。線路変更ボタンか数字キーで次の行き先を選べます。'],
+    viewGroup:['切换观看视角','Choose a view','表示を切り替え'],viewMap:['线路图','Map','路線図'],viewWindow:['车窗','Window','車窓'],mapHeading:['无边界铁路 / 线路示意','Borderless Railway / Route map','境界のない鉄道 / 路線図'],windowHeading:['窗外 / {name}','Outside / {name}','窓の外 / {name}'],here:['此时此地','Here and now','いま、ここ'],hereEn:['YOU ARE HERE','YOU ARE HERE','現在地'],
+    speedTitle:['列车速度','Train speed','列車の速度'],speedAria:['切换列车速度，当前 {speed} 倍速','Change train speed; currently {speed}×','列車の速度を変更。現在 {speed} 倍速'],motionOn:['减少装饰动效','Reduce decorative motion','装飾の動きを減らす'],motionOff:['恢复装饰动效','Restore decorative motion','装飾の動きを戻す'],soundOn:['开启声音','Turn sound on','音をオン'],soundOff:['关闭声音','Turn sound off','音をオフ'],
+    dispatchAria:['列车调度与车票','Train controls and ticket','列車の操作ときっぷ'],nextStop:['YOUR NEXT STOP','YOUR NEXT STOP','次の行き先'],ticketType:['想象力专线','Imagination Line','想像力専用線'],from:['出发地','From','出発地'],arrival:['抵达时间','Arrival','到着まで'],luggage:['随身行李','Bring along','持ちもの'],curiosity:['一点点好奇心','A little curiosity','少しの好奇心'],progressAria:['当前往返旅程进度','Current round-trip progress','現在の往復の進み具合'],
+    route:['换轨','Change track','線路変更'],blind:['盲选','Surprise me','おまかせ'],auto:['自动漫游','Auto roam','自動で巡る'],blindTitle:['优先抽取未抵达的车站；运行中只改变下一班','Prefer unvisited stations; while traveling, change only the next train','未訪問の駅を優先。走行中は次の列車の行き先だけを変更'],
+    collectionTitle:['把远方带回来','Bring elsewhere home','遠くの景色を持ち帰ろう'],collectionHint:['集齐四枚车票，会有一条新轨道出现。','Collect four tickets to reveal a new track.','4枚のきっぷを集めると、新しい線路が現れます。'],validTicket:['VALID FOR ONE LITTLE ESCAPE','VALID FOR ONE LITTLE ESCAPE','小さな寄り道、一回分'],motto:['每一条绕路，都算数。','Every detour counts.','どんな寄り道も、旅のうち。'],
+    keyChoose:['选站','Choose','駅を選ぶ'],keyDepart:['发车 / 暂停','Go / Pause','出発 / 一時停止'],keyRoute:['换轨','Track','線路変更'],keyWindow:['车窗','Window','車窓'],issue:['一件可以玩的微型作品 / NO. 001','A tiny playable artwork / NO. 001','遊べる小さな作品 / NO. 001'],
+    bookEyebrow:['LITTLE PROOFS OF ELSEWHERE','LITTLE PROOFS OF ELSEWHERE','遠くへ行った、小さなしるし'],bookTitle:['你的远方存根','Proofs of elsewhere','旅のしるし'],closeBook:['关闭车票夹','Close ticket book','きっぷ帳を閉じる'],bookIntro:['没有照片也没关系。你记得那里，就算到过。','No photograph needed. If you remember it, you were there.','写真がなくても大丈夫。覚えているなら、そこへ行ったしるし。'],bookGroup:['车票夹内容','Ticket book sections','きっぷ帳の内容'],tickets:['车票存根','Ticket stubs','きっぷの半券'],journal:['旅途手记','Travel journal','旅の手帖'],
+    namingLabel:['给地图之外的地方，挂上你的路牌。','Give the place beyond the map a name.','地図の向こうの場所に、名前をつけよう。'],namingPlaceholder:['为第五站取个名字','Name the fifth station','5つ目の駅に名前を'],nameButton:['挂上路牌 ↗','Put up the sign ↗','駅名を掲げる ↗'],namingDefault:['最多 12 个字符，只保存在本次旅程中。','Up to 12 characters, kept for this visit only.','12文字まで。このページを開いている間だけ保存されます。'],
+    journalEmpty:['先去一个远方吧。抵达后，这里会记下你的旅途。','Visit somewhere first. Your journey will be recorded here when you arrive.','まずは、どこか遠くへ。到着すると、ここに旅が記録されます。'],chooseJournal:['翻到哪一站？','Which stop shall we revisit?','どの駅のページを開く？'],previewAria:['明信片内容预览','Postcard content preview','絵はがきの内容プレビュー'],postOffice:['POSTCARD / 旅途邮局','POSTCARD / TRAVEL POST','POSTCARD / 旅の郵便局'],toFuture:['寄给：以后的自己','To: my future self','宛先：いつかの自分へ'],dontRush:['不必急着抵达 ↗','No need to hurry ↗','到着は、あせらずに ↗'],
+    noteLabel:['留一句自己的感想','Leave a thought of your own','ひとこと、書きとめよう'],optional:['可留空','Optional','空欄でも大丈夫'],notePlaceholder:['今天，我想记住……','Today, I want to remember…','今日、覚えておきたいのは……'],exportLabel:['收藏这张明信片','Keep this postcard','この絵はがきを保存'],exportHint:['导出 SVG 图片，保留站名、纪念物与手记，可用浏览器打开。','Download an SVG with the station, souvenir and your note. Open it in a browser.','駅名、おみやげ、手帖をSVG画像に保存します。ブラウザーで開けます。'],bookFootnote:['本次旅程只保存在这一页的记忆里。刷新会清空进度与手记，喜欢的片刻可以先导出。','This journey lives only in this page. Reloading clears progress and notes; export a postcard to keep a moment.','旅の記録はこのページの中だけに残ります。再読み込みで進み具合と手帖は消えるので、好きなひとときは絵はがきに。'],
+  };
+  Object.assign(messages, {
+    phasePaused:['旅程已暂停','Journey paused','旅は一時停止中'],phaseOut:['驶向远方','Heading out','遠くへ向かっています'],phaseDwell:['到站 · 收集车票','Arrived · Collecting ticket','到着 · きっぷにスタンプ'],phaseReturn:['返程 · 回到此时此地','Returning · Here and now','帰り道 · いま、ここへ'],phaseReady:['准备出发','Ready to go','出発の準備'],remaining:['余 {seconds} 秒','{seconds}s remaining','あと {seconds} 秒'],roundTrip:['往返约 {seconds} 秒','Round trip ≈ {seconds}s','往復 約 {seconds} 秒'],eta:['大约 {seconds} 秒后','In about {seconds}s','約 {seconds} 秒後'],etaBrief:['约 {seconds} 秒后','About {seconds}s away','あと約 {seconds} 秒'],etaNext:['发车后约 {seconds} 秒','About {seconds}s after departure','出発から約 {seconds} 秒'],nextTrain:['下一班','Next train','次の列車'],alreadyArrived:['已经抵达','You have arrived','到着しました'],currentStatus:['当前状态','Status','現在の状態'],returning:['正在返回始发站','Returning to the depot','始発駅へ戻っています'],
+    depart:['发车，去看看','Let’s go and see','出発、見に行こう'],resume:['继续旅程','Resume journey','旅を続ける'],pause:['暂停列车','Pause train','列車を一時停止'],statusIdle:['小列车已进站，等你决定方向。','The little train is ready. Choose a direction.','小さな列車が待っています。行き先を決めてね。'],statusPaused:['旅程已暂停 · {name}','Journey paused · {name}','一時停止中 · {name}'],statusReturn:['带着远方，回到此时此地。','Bringing elsewhere back to here and now.','遠くの景色を持って、いま、ここへ。'],statusDwell:['已抵达 {name} · 正在盖章','Arrived at {name} · Stamping your ticket','{name}に到着 · スタンプを押しています'],statusOutbound:['第 {train} 班 · 开往{name}','Train {train} · Bound for {name}','第 {train} 便 · {name}行き'],routeQueued:['下一班已改道：{name}。本班列车继续原旅程。','Next train: {name}. This train keeps its current route.','次の列車は{name}へ。今の列車は予定どおり進みます。'],
+    arrived:['已抵达{name}。你带回了{souvenir}。','You arrived at {name}. You brought back {souvenir}.','{name}に到着。{souvenir}を持ち帰りました。'],revisited:['再次抵达{name}。熟悉的地方，也有新的风景。','Back at {name}. Familiar places hold new views, too.','ふたたび{name}へ。なじみの場所にも、新しい景色があります。'],unlockHint:['地图左下角，一条通往无名之站的轨道出现了。','A track to the Unnamed Station has appeared at the lower left.','地図の左下に、名前のない駅への線路が現れました。'],unlockToast:['四枚车票拼成了一把钥匙。地图左下角，无名之站已出现。','Four tickets made a key. The Unnamed Station has appeared at the lower left.','4枚のきっぷが鍵になりました。地図の左下に、名前のない駅が現れました。'],foundHint:['你找到了第五站。在车票夹里，为它取个名字吧。','You found the fifth station. Name it in your ticket book.','5つ目の駅を見つけました。きっぷ帳で名前をつけてみよう。'],namedHint:['你为第五站挂上了路牌：{name}。','The fifth station has your sign: {name}.','5つ目の駅に、あなたの駅名標ができました：{name}。'],welcomeNamed:['欢迎回到{name}。','Welcome back to {name}.','{name}へ、おかえりなさい。'],foundToast:['你抵达了地图之外。打开车票夹，可以给这里取个名字。','You reached the edge of the map. Open your ticket book to name this place.','地図の向こうに着きました。きっぷ帳を開くと、この場所に名前をつけられます。'],
+    stampEarned:['{name}车票，已获得，点击阅读','{name} ticket, collected. Read the story.','{name}のきっぷ。収集済み。押すと物語を読めます。'],stampLocked:['{name}车票，尚未获得，点击选择此站','{name} ticket, not collected. Choose this station.','{name}のきっぷ。未収集。押すと行き先に選べます。'],soundUnavailable:['这个浏览器暂不支持声音。列车照常运行。','Sound is unavailable in this browser. The train will run as usual.','このブラウザーでは音を使えません。列車は通常どおり走ります。'],soundFailed:['声音没有启动；可以稍后再试。','Sound did not start. You can try again later.','音を開始できませんでした。あとでもう一度お試しください。'],bookEmpty:['第一张车票，正等着你出发。','Your first ticket is waiting for you to set off.','最初のきっぷが、出発を待っています。'],bookSerial:['ELSEWHERE RAILWAY / 00{number} / BEEN THERE','ELSEWHERE RAILWAY / 00{number} / BEEN THERE','どこか遠くの鉄道 / 00{number} / 訪問済み'],
+    journalMeta:['首次抵达：第 {train} 班 · 已到访 {visits} 次','First arrival: train {train} · Visits: {visits}','初めての到着：第 {train} 便 · 訪問 {visits} 回'],journalOption:['{name} · {visits} 次','{name} · visits: {visits}','{name} · {visits} 回'],souvenirPrefix:['随信附上：{souvenir}','Enclosed: {souvenir}','同封のおみやげ：{souvenir}'],noteSession:['仅保存在本次页面中。','Kept in this page only.','このページの中だけに保存されます。'],noteSaved:['已记下，刷新前可导出收藏。','Noted. Export before reloading to keep it.','書きとめました。再読み込みの前に書き出せます。'],noteTruncated:['已保留前 160 个字符。','The first 160 characters have been kept.','最初の160文字を残しました。'],downloadStarted:['已发起明信片下载。文件名以车站编号结尾，可在下载列表中查看。','Postcard download started. Look for the station number at the end of the filename.','絵はがきのダウンロードを開始しました。ファイル名の末尾は駅の番号です。'],downloadFailed:['这个浏览器未能导出。手记仍在本页中，可以选中文字复制。','This browser could not export. Your note is still here; you can select and copy it.','書き出せませんでした。手帖はここに残っています。文字を選択してコピーできます。'],
+    drawn:['抽到了{name}。准备好就出发。','You drew {name}. Set off when you’re ready.','選ばれたのは{name}。準備ができたら出発しよう。'],nameInvalid:['请写下 1–12 个字符的站名。','Please enter a station name of 1–12 characters.','駅名を1〜12文字で入力してください。'],nameReady:['路牌已挂好：{name}。','The sign is up: {name}.','駅名を掲げました：{name}。'],namedDescription:['你为地图之外的地方挂上了路牌。列车从此有了一个新的目的地。','You gave a place beyond the map a sign. The train now has a new destination.','地図の向こうの場所に、あなたが駅名を掲げました。列車に新しい行き先ができました。'],namedStorySuffix:[' 路牌上，现在写着「{name}」。',' The sign now reads “{name}”.',' 駅名標には今、「{name}」と書かれています。'],namedEn:['A PLACE YOU NAMED','A PLACE YOU NAMED','あなたが名づけた場所'],
+    windowSeat:['01  /  WINDOW SEAT','01  /  WINDOW SEAT','01  /  窓側の席'],windowMoving:['风景正在路上。','The scenery is on its way.','景色も、旅の途中。'],windowPaused:['列车暂停，远方等你。','The train is paused. Elsewhere can wait.','列車は一休み。遠くの景色も待っています。'],windowIdle:['靠窗的位置，留给你。','A window seat, saved for you.','窓側の席は、あなたのために。'],mapSmall:['NOT TO SCALE. NOT QUITE REAL.','NOT TO SCALE. NOT QUITE REAL.','縮尺は気まぐれ。現実とは少し違う。'],north:['N','N','北'],
+    postcardTitle:['{name} · 旅途明信片','{name} · Travel postcard','{name} · 旅の絵はがき'],postcardSerial:['A SMALL JOURNEY / NO. {number}','A SMALL JOURNEY / NO. {number}','小さな旅 / NO. {number}'],enclosed:['随信附上','Enclosed','同封のおみやげ'],travelerNote:['旅人的手记','A traveler’s note','旅人の手帖'],blankNote:['留白，也是一种记得','A blank space can hold a memory','余白も、思い出のかたち'],noteDefault:['这一格，留给以后的自己。','This space is for my future self.','この余白は、いつかの自分へ。'],postcardFooter:['不可能车站 · 不必急着抵达 ↗','The Impossible Station · Take your time ↗','ありえない駅 · 到着は、あせらずに ↗'],downloadName:['不可能车站-明信片-{number}.svg','impossible-station-postcard-{number}.svg','ありえない駅-絵はがき-{number}.svg']
+  });
+  const languages=['zh-CN','en','ja'];
+  const preferred=document.documentElement.dataset.defaultLanguage;
+  const detected=typeof navigator==='undefined'?null:(navigator.languages?.[0]||navigator.language||'en');
+  let language=languages.includes(preferred)?preferred:detected===null?'zh-CN':/^zh\b/i.test(detected)?'zh-CN':/^ja\b/i.test(detected)?'ja':'en';
+  function tr(key,values={}){const entry=messages[key];if(!entry)throw new Error(`Missing translation: ${key}`);return entry[languages.indexOf(language)].replace(/\{(\w+)\}/g,(_,name)=>String(values[name]??''))}
+  const canvas = $('scene');
+  const ctx = canvas.getContext('2d');
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  let reducedMotion = motionPreference.matches;
+  const destinations = [
+    {name:'折纸海',en:'THE ORIGAMI SEA',icon:'≋',x:205,y:275,description:'这里的海有折痕。每当有人展开一封信，就会多出一小片海岸。',story:'你带回了一只纸船。售票员说，它曾经是一封没有写完的信。放进口袋时，你听见了很轻的一声潮汐。',souvenir:'一只装着潮声的纸船',color:'#9ebfad',notes:[261.63,329.63,392,523.25]},
+    {name:'倒置果园',en:'THE UPSIDE-DOWN ORCHARD',icon:'♧',x:430,y:155,description:'树根朝向星星，果实向上坠落。园丁的工作，是及时打开口袋。',story:'园丁送你一颗向上坠落的苹果。你用一根线拴住它。从此，你的行李总是比看起来轻一点。',souvenir:'一颗不肯落地的苹果',color:'#b5c582',notes:[293.66,369.99,440,587.33]},
+    {name:'月亮修理铺',en:'THE MOON REPAIR SHOP',icon:'☾',x:785,y:230,description:'缺角、褪色、偶尔不亮，都可以修。店主说：不必总是圆满。',story:'店主正在给一弯旧月亮上油。他没有收钱，只把一颗备用星星放进你的掌心，说：留着，走夜路用。',souvenir:'一颗备用的星星',color:'#e7c690',notes:[220,277.18,329.63,440]},
+    {name:'未寄出的城',en:'THE CITY OF UNSENT LETTERS',icon:'▱',x:790,y:490,description:'房屋由信封砌成。所有没说出口的话，在这里都有一扇亮着的窗。',story:'邮差递来一张空白明信片。背面只有一行字：「收件人可以晚一点再决定。」你把它郑重地收好了。',souvenir:'一张不着急寄出的明信片',color:'#d8a895',notes:[246.94,311.13,369.99,493.88]},
+    {name:'无名之站',en:'SOMEWHERE NOT YET NAMED',icon:'✳',x:140,y:485,description:'四条路的尽头，多出了一扇门。门后是什么，铁路局也不知道。',story:'站台上只有一块空白路牌。你终于明白，地图并不是世界的边界。它只是别人走到这里时，暂时停下了笔。',souvenir:'一个留给你命名的地方',color:'#d8edac',notes:[261.63,392,523.25,659.25]}
+  ];
+  const stationText={
+    'zh-CN':destinations.map(d=>({...d})),
+    en:[
+      {name:'Origami Sea',en:'THE ORIGAMI SEA',description:'This sea has creases. Whenever someone unfolds a letter, a little more coastline appears.',story:'You brought back a paper boat. The ticket clerk said it was once an unfinished letter. As you slipped it into your pocket, you heard the faintest sound of the tide.',souvenir:'a paper boat holding the sound of the tide'},
+      {name:'Inverted Orchard',en:'THE UPSIDE-DOWN ORCHARD',description:'Roots reach for the stars; fruit falls upward. The gardener’s job is to open their pockets in time.',story:'The gardener gave you an apple that falls upward. You tied it to a string. Since then, your luggage has always been a little lighter than it looks.',souvenir:'an apple that refuses to fall'},
+      {name:'Moon Repair Shop',en:'THE MOON REPAIR SHOP',description:'Chipped, faded, or failing to glow? All repairable. “You needn’t always be full,” says the owner.',story:'The owner was oiling an old crescent moon. They charged nothing, only placed a spare star in your palm. “Keep it,” they said, “for walking home at night.”',souvenir:'a spare star for the way home'},
+      {name:'Unsent City',en:'THE CITY OF UNSENT LETTERS',description:'The houses are built from envelopes. Every word left unsaid has a lighted window here.',story:'The post carrier handed you a blank postcard. On the back was one line: “You can choose the recipient later.” You put it somewhere safe.',souvenir:'a postcard in no hurry to be sent'},
+      {name:'Unnamed Station',en:'SOMEWHERE NOT YET NAMED',description:'Beyond the four tracks, a door has appeared. Even the railway has no idea what lies behind it.',story:'Only a blank sign stood on the platform. At last you understood: a map is not the edge of the world. It is simply where someone else put down their pen for a while.',souvenir:'a place waiting for your name'}
+    ],
+    ja:[
+      {name:'折り紙の海',en:'折り目の向こうへ',description:'この海には折り目があります。誰かが手紙を開くたび、海岸が少しずつ増えていきます。',story:'紙の船を一艘、持ち帰りました。駅員さんによると、もとは書きかけの手紙だったそう。ポケットにしまうと、かすかな潮騒が聞こえました。',souvenir:'潮騒をしまった紙の船'},
+      {name:'さかさま果樹園',en:'実りは空へ落ちていく',description:'根は星へ向かい、果実は上へ落ちます。庭師の仕事は、ポケットを開けるタイミングを逃さないこと。',story:'庭師が、上へ落ちるりんごをくれました。あなたはそれを糸で結びました。それ以来、荷物は見た目よりも少し軽くなりました。',souvenir:'地面に落ちたくないりんご'},
+      {name:'月の修理屋',en:'満ちていない日も、そのままで',description:'欠けても、色あせても、ときどき光らなくても直せます。店主は言います。「いつも満月でなくていいんだよ」',story:'店主は古い三日月に油をさしていました。代金は取らず、予備の星をあなたの手のひらへ。「取っておいて。夜道を歩くときに使うといい」と。',souvenir:'夜道のための予備の星'},
+      {name:'出せなかった手紙の街',en:'言えなかった言葉にも、灯りを',description:'家々は封筒でできています。言えなかった言葉のひとつひとつに、灯りのともる窓があります。',story:'郵便屋さんが、真っ白な絵はがきをくれました。裏には一行だけ。「宛先は、あとで決めても大丈夫」あなたは大切にしまいました。',souvenir:'投函を急がない絵はがき'},
+      {name:'名前のない駅',en:'まだ名づけられていない場所',description:'四つの線路の先に、扉が現れました。その向こうに何があるのかは、鉄道局も知りません。',story:'ホームには、まっさらな駅名標だけ。ようやく気づきました。地図は世界の境界ではないのです。誰かがそこまで歩いて、しばらくペンを置いただけ。',souvenir:'あなたが名づけるための場所'}
+    ]
+  };
+  const state = {selected:0,visited:new Set(),unlocked:false,trip:null,speed:1,auto:false,sound:false,time:0,visualTime:0,sceneryTime:0,toastUntil:0,autoWait:0,trainNumber:1,bookWasRunning:false,queuedRoute:null,view:'map',secretName:'',motionOverride:false,silentCatchUp:false,journal:new Map(),journalIndex:null,bookView:'tickets'};
+  const stationButtons = [...document.querySelectorAll('[data-station]')];
+  const stampButtons = [...document.querySelectorAll('[data-stamp]')];
+  let width=1000,height=700,lastFrame=null,lastRender=-Infinity,audio=null,master=null,audioBusy=false,renderDirty=true;
+  const routeCache=[];
+  let seed=202617;
+  const random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296};
+  const stars=Array.from({length:76},()=>({x:random()*1000,y:60+random()*555,r:.35+random()*.85,phase:random()*7}));
+  const leaves=Array.from({length:18},()=>({x:random(),y:random(),r:3+random()*4}));
+  const ease=t=>t*t*(3-2*t);
+  const mix=(a,b,t)=>a+(b-a)*t;
+  const cubic=(a,b,c,d,t)=>{const s=1-t;return {x:s*s*s*a.x+3*s*s*t*b.x+3*s*t*t*c.x+t*t*t*d.x,y:s*s*s*a.y+3*s*s*t*b.y+3*s*t*t*c.y+t*t*t*d.y}};
+  const P=(x,y)=>({x,y});
+  const origin=P(360,535),junction=P(490,370);
+  const depotDistance=39;
+  const stem=[origin,P(255,443),P(476,473),junction];
+  const branches=[
+    [junction,P(427,271),P(333,363),P(205,275)],
+    [junction,P(576,270),P(356,293),P(430,155)],
+    [junction,P(597,303),P(659,143),P(785,230)],
+    [junction,P(662,342),P(643,558),P(790,490)],
+    [junction,P(319,328),P(92,366),P(140,485)]
+  ];
+  function samplePath(control){
+    const points=[];let length=0,previous;
+    for(let i=0;i<=150;i++){const point=cubic(...control,i/150);if(previous)length+=Math.hypot(point.x-previous.x,point.y-previous.y);points.push({...point,d:length});previous=point}
+    return {points,length};
+  }
+  const stemPath=samplePath(stem);
+  function routePath(index,t){
+    const key=reducedMotion?0:Math.floor(t*15)+1;
+    if(routeCache[index]?.key===key)return routeCache[index].path;
+    const controls=branches[index].map(p=>({...p}));
+    if(!reducedMotion){const sway=Math.sin(t*.25+index)*9;controls[1].x+=sway;controls[2].y+=Math.cos(t*.21+index)*7}
+    const path=samplePath(controls);routeCache[index]={key,path};return path;
+  }
+  function pointAt(path,distance){
+    const p=path.points;distance=Math.max(0,Math.min(path.length,distance));let lo=0,hi=p.length-1;
+    while(lo+1<hi){const mid=(lo+hi)>>1;if(p[mid].d<distance)lo=mid;else hi=mid}
+    const span=p[hi].d-p[lo].d;const a=span?(distance-p[lo].d)/span:0;
+    return {x:mix(p[lo].x,p[hi].x,a),y:mix(p[lo].y,p[hi].y,a),angle:Math.atan2(p[hi].y-p[lo].y,p[hi].x-p[lo].x)};
+  }
+  function joinedPoint(path,d){return d<=stemPath.length?pointAt(stemPath,d):pointAt(path,d-stemPath.length)}
+  function poly(points,fill,stroke,lineWidth=1){ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lineWidth;ctx.stroke()}}
+  function line(x1,y1,x2,y2,color,width=1){ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()}
+  function ellipse(x,y,rx,ry,color){ctx.beginPath();ctx.ellipse(x,y,rx,ry,0,0,Math.PI*2);ctx.fillStyle=color;ctx.fill()}
+  function rect(x,y,w,h,color,r=0){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+  function text(str,x,y,size,color,font='sans-serif',align='left'){ctx.font=`${size}px ${font}`;ctx.fillStyle=color;ctx.textAlign=align;ctx.fillText(str,x,y)}
+  function diamond(x,y,w,d,color,stroke){poly([[x-w,y],[x,y-d],[x+w,y],[x,y+d]],color,stroke)}
+  function spark(x,y,r,color){ctx.save();ctx.translate(x,y);poly([[0,-r],[r*.25,-r*.25],[r,0],[r*.25,r*.25],[0,r],[-r*.25,r*.25],[-r,0],[-r*.25,-r*.25]],color);ctx.restore()}
+  function platform(x,y,w=92,color='#294c47'){
+    ellipse(x,y+34,w*.94,18,'#081f253f');
+    poly([[x-w,y],[x,y+39],[x+w,y],[x+w,y+12],[x,y+54],[x-w,y+12]],'#163b3b','#35574d');
+    poly([[x,y+39],[x+w,y],[x+w,y+12],[x,y+54]],'#143234');
+    diamond(x,y,w,40,color,'#5e7860');
+    line(x-w+8,y,x,y+35,'#7d8c6544');
+    line(x,y+40,x,y+50,'#78906b55');
+  }
+  function block(x,y,w,h,d,color='#c4cab0'){
+    poly([[x,y],[x+w,y-12],[x+w,y-12-h],[x,y-h]],color);
+    poly([[x+w,y-12],[x+w+d,y-12+d*.5],[x+w+d,y-12+d*.5-h],[x+w,y-12-h]],'#678572');
+    poly([[x,y-h],[x+w,y-12-h],[x+w+d,y-12+d*.5-h],[x+d,y+d*.5-h]],'#d0d7b9');
+  }
+  function drawSea(t){
+    const x=205,y=262;platform(x,y+12,104,'#426a62');
+    poly([[x-92,y+2],[x-58,y-35],[x-16,y-5],[x+20,y-49],[x+66,y-10],[x+95,y+10],[x+4,y+45]],'#719e91');
+    poly([[x-92,y+2],[x-58,y-35],[x-43,y+20]],'#a3bba1');
+    poly([[x-58,y-35],[x-16,y-5],[x-43,y+20]],'#527b74');
+    poly([[x-43,y+20],[x+20,y-49],[x+8,y+31]],'#8eb7a3');
+    poly([[x+20,y-49],[x+66,y-10],[x+8,y+31]],'#37675f');
+    poly([[x+8,y+31],[x+66,y-10],[x+95,y+10],[x+4,y+45]],'#77a795');
+    const bob=reducedMotion?0:Math.sin(t*.9)*3;
+    ctx.save();ctx.translate(x-20,y-17+bob);
+    ellipse(0,20,32,8,'#2d595e66');
+    poly([[-31,1],[9,16],[33,-3],[5,31],[-14,26]],'#e7dec1');
+    poly([[-31,1],[5,-9],[9,16]],'#f7efd5');
+    poly([[9,16],[5,-9],[33,-3]],'#a8b49f');
+    poly([[-3,9],[1,-37],[24,2]],'#e9e6c9');
+    poly([[-3,9],[1,-37],[-19,-3]],'#b6c4ac');
+    line(1,-37,1,10,'#f6f3de');ctx.restore();
+    for(let i=0;i<4;i++){const q=t*.2+i*1.5;line(x-77+i*37,y+48+Math.sin(q)*3,x-60+i*37,y+42+Math.sin(q)*3,'#87aa8d66',1)}
+  }
+  function drawOrchard(t){
+    const x=430,y=138;platform(x,y+18,90,'#52674a');
+    ellipse(x-6,y-51,69,16,'#091f2633');
+    poly([[x-65,y-61],[x+1,y-86],[x+68,y-57],[x+3,y-30]],'#adb794','#c3cba6');
+    poly([[x-65,y-61],[x+3,y-30],[x+68,y-57],[x+68,y-45],[x+3,y-17],[x-65,y-49]],'#6d825d');
+    line(x+3,y-22,x+3,y+2,'#a99f6a',7);line(x+3,y-2,x-30,y+17,'#a99f6a',5);line(x+3,y+1,x+31,y+21,'#a99f6a',5);
+    ellipse(x-31,y+23,26,14,'#839658');ellipse(x+29,y+24,28,16,'#9ca661');ellipse(x,y+37,27,17,'#b7bf78');
+    line(x+1,y-78,x-2,y-97,'#c4c7a2',2);line(x+1,y-78,x-15,y-94,'#c4c7a2',1.2);line(x+1,y-79,x+13,y-91,'#c4c7a2',1.2);
+    for(let i=0;i<5;i++){const phase=(t*.13+i*.21)%1;const yy=y+31-(reducedMotion?i*8:phase*70);const xx=x-33+i*17;ellipse(xx,yy,3.8,4.3,'#dcaa6c');line(xx,yy-5,xx+2,yy-8,'#b6c88a')}
+    for(const leaf of leaves.slice(0,9)){ellipse(x-47+leaf.x*95,y-63+leaf.y*17,leaf.r,leaf.r*.45,'#d3d4ad55')}
+  }
+  function drawMoon(t){
+    const x=785,y=219;platform(x,y+13,99,'#4b5144');
+    block(x-52,y+2,52,54,27,'#c5be9c');
+    poly([[x-60,y-52],[x-18,y-84],[x+41,y-53],[x+7,y-35]],'#e0c9a1');
+    poly([[x-60,y-52],[x-18,y-84],[x-16,y-70],[x-47,y-45]],'#af9477');
+    rect(x-43,y-35,13,20,'#f2d690',1);line(x-36,y-35,x-36,y-15,'#8b8261');line(x-43,y-25,x-30,y-25,'#8b8261');
+    rect(x-15,y-29,12,31,'#57715d',1);ellipse(x-6,y-12,1.1,1.1,'#e6d4a0');
+    line(x+43,y-5,x+43,y-118,'#b39e75',3);line(x+43,y-118,x+15,y-118,'#b39e75',3);line(x+18,y-118,x+18,y-101,'#b39e75');
+    const swing=reducedMotion?0:Math.sin(t*.55)*3;
+    ctx.save();ctx.translate(x+13+swing,y-88);ctx.shadowColor='#edcb8266';ctx.shadowBlur=25;
+    ctx.beginPath();ctx.arc(0,0,25,.38*Math.PI,1.74*Math.PI);ctx.bezierCurveTo(-13,-13,-16,9,7.8,23.8);ctx.fillStyle='#eed293';ctx.fill();ctx.restore();
+    line(x+53,y+10,x+53,y-33,'#a08c67',3);line(x+53,y-33,x+75,y-25,'#a08c67',3);ellipse(x+75,y-24,6,3,'#e6c388');
+    for(let i=0;i<3;i++){const xx=x-9+i*26;line(xx,y+24,xx+9,y+19,'#d2c597',2)}
+    spark(x-66,y-72,5,'#c8caa1');spark(x+64,y-85,3,'#c8caa1');
+  }
+  function envelope(x,y,w,h,color){rect(x,y,w,h,color,1);line(x,y,x+w*.5,y+h*.55,'#8d8772');line(x+w,y,x+w*.5,y+h*.55,'#8d8772');line(x,y+h,x+w*.35,y+h*.4,'#8d8772');line(x+w,y+h,x+w*.65,y+h*.4,'#8d8772')}
+  function drawCity(t){
+    const x=790,y=473;platform(x,y+17,105,'#5a5147');
+    block(x-43,y+5,32,83,23,'#c1aa8b');
+    poly([[x-43,y-78],[x-11,y-90],[x-4,y-77],[x-27,y-65]],'#ebd8bb');
+    block(x+13,y-9,30,51,24,'#d9c0a4');
+    block(x-72,y+20,38,45,28,'#bba68b');
+    envelope(x-66,y-18,27,20,'#e8d1b2');envelope(x-38,y-63,23,17,'#e4cbaa');envelope(x+19,y-52,20,15,'#f0d9b8');
+    rect(x-34,y-32,8,12,'#eedb97',1);rect(x-34,y-13,8,12,'#eedb97',1);rect(x+22,y-20,9,13,'#e8d89d',1);
+    line(x+64,y+25,x+64,y-23,'#b2a484',3);rect(x+53,y-31,23,14,'#b86e55',2);rect(x+57,y-25,15,2,'#6e5b47');
+    if(!reducedMotion){const f=(t*.07)%1;ctx.save();ctx.translate(x-48+f*115,y-90-Math.sin(f*Math.PI)*23);ctx.rotate(Math.sin(t)*.1);envelope(-7,-4,14,9,'#e4d6b5');ctx.restore()}
+  }
+  function drawSecret(t){
+    if(!state.unlocked)return;
+    const x=140,y=477;platform(x,y+10,70,'#345342');
+    ctx.save();ctx.strokeStyle='#c1d78c';ctx.lineWidth=6;ctx.shadowColor='#c8e49b';ctx.shadowBlur=12;
+    ctx.beginPath();ctx.moveTo(x-23,y+9);ctx.lineTo(x-23,y-49);ctx.quadraticCurveTo(x,y-78,x+23,y-49);ctx.lineTo(x+23,y+9);ctx.stroke();ctx.restore();
+    for(let i=0;i<9;i++){const a=t*.22+i*2.39;const r=12+(i%3)*9;spark(x+Math.cos(a)*r,y-27+Math.sin(a)*r,1+(i%3)*.6,'#d8edac')}
+    diamond(x,y+15,26,10,'#6a865a');
+  }
+  function drawDepot(t){
+    const x=360,y=525;platform(x,y+16,112,'#486057');
+    block(x-49,y-4,72,33,27,'#bbc3a8');
+    poly([[x-62,y-39],[x+4,y-67],[x+54,y-42],[x-8,y-15]],'#c8cfb1');
+    for(let i=0;i<5;i++){const xx=x-57+i*13;poly([[xx,y-40-i*5.2],[xx+7,y-43-i*5.2],[xx+54,y-16-i*5.2],[xx+47,y-13-i*5.2]],'#5c8071')}
+    rect(x-40,y-22,12,14,'#d9d29e');rect(x-18,y-30,13,25,'#477069');
+    line(x+58,y+7,x+58,y-49,'#a5b493',3);ellipse(x+58,y-49,10,10,'#dedec1');ellipse(x+58,y-49,8,8,'#263f3c');
+    line(x+58,y-49,x+58+Math.sin(t*.04)*5,y-49-Math.cos(t*.04)*5,'#cbd5ae',1.5);line(x+58,y-49,x+62,y-47,'#cbd5ae',1.5);
+    line(x-77,y+10,x-77,y-28,'#9cae8a',2);rect(x-86,y-33,19,12,'#d4dfa8',1);text('00',x-76,y-24,8,'#315246','monospace','center');
+    for(let i=0;i<3;i++){line(x-22+i*19,y+29,x-9+i*19,y+23,'#d7d2a4',2)}
+  }
+  function drawRail(path,active,t,dim=false){
+    const ps=path.points;
+    ctx.beginPath();ps.forEach((p,i)=>i?ctx.lineTo(p.x,p.y+5):ctx.moveTo(p.x,p.y+5));ctx.strokeStyle='#071f2580';ctx.lineWidth=20;ctx.stroke();
+    for(let d=8;d<path.length;d+=11){const p=pointAt(path,d),nx=-Math.sin(p.angle),ny=Math.cos(p.angle);line(p.x+nx*7,p.y+ny*7,p.x-nx*7,p.y-ny*7,active?'#aa936b':'#537166',2.4)}
+    for(const side of [-1,1]){ctx.beginPath();ps.forEach((p,i)=>{const next=ps[Math.min(i+1,ps.length-1)],prev=ps[Math.max(0,i-1)],angle=Math.atan2(next.y-prev.y,next.x-prev.x);const x=p.x-Math.sin(angle)*4.3*side,y=p.y+Math.cos(angle)*4.3*side;i?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.lineWidth=active?1.65:1.25;ctx.strokeStyle=active?(dim?'#a5bc8b':'#e5b985'):'#7b9380';ctx.stroke()}
+    if(active&&!reducedMotion){const p=pointAt(path,(t*19)%path.length);ellipse(p.x,p.y,1.7,1.7,'#f4d9a4')}
+  }
+  function drawTrain(path,distance,t,reverse=false){
+    // The three carriages share an arc-length parameter, so they stay on curves.
+    for(let car=2;car>=0;car--){const p=joinedPoint(path,Math.max(0,distance-car*18));ctx.save();ctx.translate(p.x,p.y-3);ctx.rotate(p.angle);ctx.shadowColor='#041d2455';ctx.shadowBlur=4;ctx.shadowOffsetY=5;
+      rect(-9,-6,17,12,car===0?'#e7ba7b':'#c7cbb0',3);ctx.shadowBlur=0;ctx.shadowOffsetY=0;
+      rect(-7,-4,13,5,car===0?'#f5d79d':'#e0e0c3',1);rect(-5,1,4,3,'#446968',.8);rect(2,1,4,3,'#446968',.8);
+      rect(-5,-7,4,2,'#203b37',.5);rect(3,-7,4,2,'#203b37',.5);
+      if(car===0){ellipse(8,-1,1.7,1.7,'#f7e8ae');rect(4,-3,3,3,'#5e6552',.8)}ctx.restore();
+    }
+    const front=joinedPoint(path,distance);
+    if(!reducedMotion){for(let i=0;i<5;i++){const q=(t*1.3+i*.21)%1;ctx.globalAlpha=(1-q)*.25;ellipse(front.x-8-q*12,front.y-12-q*23,2+q*5,2+q*4,'#e2ddbb')}ctx.globalAlpha=1}
+  }
+  function drawBackground(t){
+    rect(0,0,1000,700,'#102f32');
+    ctx.save();ctx.strokeStyle='#53786b18';ctx.lineWidth=1;
+    for(let x=-500;x<1400;x+=68){line(x,60,x+710,650,'#6384710c');line(x,650,x+710,60,'#6384710c')}
+    ctx.setLineDash([2,9]);ctx.strokeStyle='#8aab7c20';ctx.beginPath();ctx.ellipse(505,359,403,222,-.07,0,Math.PI*2);ctx.stroke();ctx.restore();
+    for(const s of stars){ctx.globalAlpha=reducedMotion?.35:.2+(Math.sin(t*.35+s.phase)+1)*.18;ellipse(s.x,s.y,s.r,s.r,'#b9cba4')}ctx.globalAlpha=1;
+    text(tr('north'),932,102,8,'#839d84','monospace','center');line(932,110,932,136,'#829b7755');line(920,124,944,124,'#829b7755');poly([[932,110],[929,119],[935,119]],'#91aa80');
+    text(tr('mapSmall'),52,602,7,'#718e744d','monospace');
+  }
+  function drawWindow(t){
+    const index=state.trip?.index??state.selected;
+    const d=destinations[index];
+    const moving=state.trip&&!state.trip.paused&&state.trip.phase!=='dwell';
+    const travel=reducedMotion?0:state.sceneryTime;
+    const drift=travel;
+    rect(0,0,1000,700,'#183438');
+    // The view is a separate, multi-layer illustration, clipped to a carriage window.
+    ctx.save();ctx.beginPath();ctx.roundRect(70,96,860,423,68);ctx.clip();
+    const skies=['#71968b','#536b54','#192d3b','#9a927e','#304d47'];
+    rect(70,96,860,423,skies[index]);
+    for(let i=0;i<30;i++){const x=85+((i*113-drift*2)%850+850)%850;const y=112+(i*71)%210;ellipse(x,y,i%3===0?1.3:.7,i%3===0?1.3:.7,index===2?'#dbe1b7':'#d9dfb433')}
+    if(index===0){
+      for(let layer=0;layer<3;layer++){const y=265+layer*72;const offset=((drift*(8+layer*8))%260+260)%260;for(let i=-1;i<5;i++){const x=i*260-offset;poly([[x,y+95],[x+95,y-42],[x+260,y+95]],['#97b5a1','#527b70','#305d5b'][layer]);poly([[x+95,y-42],[x+139,y+95],[x+260,y+95]],['#bac9af','#739887','#46766b'][layer]);line(x+95,y-42,x+139,y+95,'#dfdfb644')}}
+      const bx=700-((drift*16)%560+560)%560,by=365+Math.sin(t*.8)*3;poly([[bx-37,by],[bx+4,by+17],[bx+40,by-3],[bx+12,by+36],[bx-14,by+30]],'#e6dfb7');poly([[bx+2,by+12],[bx+3,by-62],[bx+35,by-7]],'#f0e8c3');poly([[bx+2,by+12],[bx+3,by-62],[bx-23,by-4]],'#b9c8a7');
+    }else if(index===1){
+      rect(70,96,860,68,'#304e40');
+      for(let layer=0;layer<2;layer++){const offset=((drift*(10+layer*17))%230+230)%230;for(let i=-1;i<5;i++){const x=90+i*230-offset,y=245+layer*108;line(x,120,x,y,'#aeaa7a',9+layer*5);line(x,y-34,x-40,y+9,'#aeaa7a',7);line(x,y-35,x+48,y+4,'#aeaa7a',7);ellipse(x-32,y+19,49,33,layer?'#b4b97a':'#748963');ellipse(x+38,y+15,49,32,layer?'#a5ac69':'#8b9c70');ellipse(x+3,y+39,47,31,layer?'#c1c68a':'#98ac78')}}
+      for(let i=0;i<9;i++){const x=130+((i*123-drift*14)%770+770)%770;const y=450-((travel*13+i*43)%270+270)%270;ellipse(x,y,6,7,'#e0b880');line(x,y-7,x+2,y-12,'#d7dcab',1.5)}
+    }else if(index===2){
+      ctx.save();ctx.translate(675,220);ctx.shadowColor='#edcb8244';ctx.shadowBlur=40;ctx.beginPath();ctx.arc(0,0,64,.38*Math.PI,1.74*Math.PI);ctx.bezierCurveTo(-33,-33,-41,23,20,61);ctx.fillStyle='#e7cd91';ctx.fill();ctx.restore();
+      for(let layer=0;layer<2;layer++){const offset=((drift*(5+layer*14))%170+170)%170;for(let i=-1;i<7;i++){const x=i*170-offset,y=424+layer*50,h=48+(i+4)%3*31;rect(x,y-h,111,h+50,layer?'#294743':'#355a52');poly([[x-8,y-h],[x+55,y-h-30],[x+119,y-h]],layer?'#4f6756':'#657c61');for(let k=0;k<3;k++)rect(x+18+k*29,y-h+19,10,17,'#e0cb8d')}}
+      spark(364,184,6,'#d9d7a4');spark(216,240,4,'#d9d7a4');spark(806,148,5,'#d9d7a4');
+    }else if(index===3){
+      for(let layer=0;layer<3;layer++){const offset=((drift*(7+layer*12))%181+181)%181;for(let i=-1;i<7;i++){const x=i*181-offset,y=346+layer*72,h=58+((i+9)%3)*28;rect(x,y-h,129,h+70,['#b3ad91','#d3b99b','#ae8e73'][layer]);poly([[x,y-h],[x+64,y-h-33],[x+129,y-h]],['#c6bfa2','#e7ceb0','#c8b18c'][layer]);envelope(x+25,y-h+17,67,41,'#e5cfad');rect(x+57,y-4,13,21,'#efd59a')}}
+      const ex=150+((travel*33)%650);ctx.save();ctx.translate(ex,210+Math.sin(t*.6)*16);ctx.rotate(-.12);envelope(-21,-12,42,26,'#f2dfbc');ctx.restore();
+    }else{
+      for(let i=0;i<6;i++){const x=120+((i*173-drift*17)%850+850)%850;const y=370+(i%2)*45;const h=95+(i%3)*21;ctx.save();ctx.strokeStyle=i%2?'#9bb981':'#d0dca5';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(x-28,y);ctx.lineTo(x-28,y-h+24);ctx.quadraticCurveTo(x,y-h-10,x+28,y-h+24);ctx.lineTo(x+28,y);ctx.stroke();ctx.restore();diamond(x,y+9,44,14,'#547151');spark(x,y-h*.5,5,'#dce4ad')}
+    }
+    // A foreground rail and quiet reflections make motion legible without shaking the UI.
+    const railOffset=((drift*61)%85+85)%85;line(60,498,950,498,'#152f36',5);for(let i=0;i<13;i++){const x=65+i*85-railOffset;line(x,494,x-8,520,'#1c3a3b',6)}
+    poly([[115,96],[163,96],[330,519],[282,519]],'#f0f2d80a');poly([[190,96],[209,96],[376,519],[357,519]],'#f0f2d808');
+    ctx.restore();
+    ctx.lineWidth=16;ctx.strokeStyle='#798673';ctx.beginPath();ctx.roundRect(70,96,860,423,68);ctx.stroke();
+    ctx.lineWidth=2;ctx.strokeStyle='#bbc1a2';ctx.beginPath();ctx.roundRect(80,106,840,403,59);ctx.stroke();
+    rect(61,522,878,12,'#b5b698',5);rect(71,535,858,7,'#081e2744',3);
+    rect(185,566,630,83,'#8b785b',18);line(205,578,795,578,'#b0a078',2);for(let i=0;i<6;i++)line(255+i*98,580,255+i*98,646,'#665e4c',2);
+    rect(415,67,170,18,'#bcc6a4',3);text(tr('windowSeat'),500,79,8,'#355242','monospace','center');
+    rect(350,548,300,33,'#e3dfbd',3);text(d.name,500,570,16,'#334f42','sans-serif','center');
+    text(moving?tr('windowMoving'):state.trip?.paused?tr('windowPaused'):tr('windowIdle'),500,612,12,'#e3dcc0','sans-serif','center');
+  }
+  function render(t){
+    renderDirty=false;
+    const scale=Math.min(canvas.width/1000,canvas.height/700);
+    ctx.setTransform(scale,0,0,scale,(canvas.width-1000*scale)/2,(canvas.height-700*scale)/2);
+    if(state.view==='window'){drawWindow(t);return}
+    drawBackground(t);
+    const paths=destinations.map((_,i)=>routePath(i,t));
+    drawRail(stemPath,true,t);
+    const activeRoute=state.trip?.index??state.selected;
+    paths.forEach((p,i)=>{if(i<4||state.unlocked)drawRail(p,i===state.selected||activeRoute===i,t,i!==activeRoute)});
+    ctx.save();ctx.shadowColor='#d8f49355';ctx.shadowBlur=16;ellipse(490,370,17,11,'#264f43');ctx.shadowBlur=0;ctx.strokeStyle='#abc77e';ctx.lineWidth=1.3;ctx.beginPath();ctx.ellipse(490,370,17,11,0,0,Math.PI*2);ctx.stroke();ctx.restore();
+    const switchAngle=Math.atan2(branches[activeRoute][1].y-370,branches[activeRoute][1].x-490);line(490,370,490+Math.cos(switchAngle)*14,370+Math.sin(switchAngle)*9,'#d1e4a0',3);ellipse(490,370,2,2,'#e4edb4');
+    drawOrchard(t);drawMoon(t);drawSea(t);drawSecret(t);drawCity(t);drawDepot(t);
+    // A small platform at each destination places the arriving train in front of the scene.
+    for(let i=0;i<(state.unlocked?5:4);i++){const d=destinations[i];line(d.x-12,d.y+5,d.x+9,d.y-3,'#ddcfaa',2)}
+    if(state.trip){const trip=state.trip;const path=paths[trip.index],length=stemPath.length+path.length;let distance=0;
+      if(trip.phase==='outbound')distance=mix(depotDistance,length,ease(Math.min(1,trip.elapsed/12)));
+      else if(trip.phase==='dwell')distance=length;
+      else distance=mix(length,depotDistance,ease(Math.min(1,trip.elapsed/6)));
+      drawTrain(path,distance,t,trip.phase==='return');
+    }else drawTrain(paths[state.selected],depotDistance,t);
+    // Four decorative route marks sit quietly in the margin.
+    for(let i=0;i<4;i++){ellipse(54+i*12,77,2.2,2.2,state.visited.has(i)?'#cee49a':'#4d6c5c')}
+  }
+  function resize(){const box=$('scene-viewport').getBoundingClientRect();const fit=Math.min(box.width/1000,box.height/700);if(!(fit>0))return;width=1000*fit;height=700*fit;$('scene-surface').style.width=`${width}px`;$('scene-surface').style.height=`${height}px`;const dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);render(reducedMotion?0:state.visualTime)}
+  new ResizeObserver(resize).observe($('scene-viewport'));
+  let lastAnnouncement=null;
+  function renderAnnouncement(){
+    if(!lastAnnouncement)return;
+    const {key,values}=lastAnnouncement,d=Number.isInteger(values.index)?destinations[values.index]:null;
+    $('arrival-toast').replaceChildren();const node=document.createElement('span');
+    node.textContent=tr(key,{...values,...(d?{name:d.name,souvenir:d.souvenir}:{})});$('arrival-toast').append(node);
+  }
+  function announce(key,duration=5,values={}){lastAnnouncement={key,values};renderAnnouncement();$('arrival-toast').classList.add('visible');state.toastUntil=state.time+duration}
+  function updateTicket(){renderDirty=true;const d=destinations[state.selected];$('route-number').textContent=String(state.selected+1).padStart(2,'0');$('destination-name').textContent=d.name;$('destination-en').textContent=d.en;$('destination-description').textContent=d.description;
+    stationButtons.forEach(b=>{const i=Number(b.dataset.station);b.classList.toggle('selected',i===state.selected);b.classList.toggle('visited',state.visited.has(i));b.setAttribute('aria-pressed',String(i===state.selected))});
+    updateJourney();
+  }
+  function setText(id,value){if($(id).textContent!==value)$(id).textContent=value}
+  function updateJourney(){
+    const trip=state.trip;const elapsed=trip?(trip.phase==='return'?14:trip.phase==='dwell'?12:0)+trip.elapsed:0;
+    const percent=Math.max(0,Math.min(100,Math.round(elapsed/20*100)));
+    if($('journey-fill').style.width!==`${percent}%`)$('journey-fill').style.width=`${percent}%`;
+    if($('journey-progress').getAttribute('aria-valuenow')!==String(percent))$('journey-progress').setAttribute('aria-valuenow',String(percent));
+    setText('view-caption',state.view==='window'?tr('windowHeading',{name:destinations[trip?.index??state.selected].name}):tr('mapHeading'));
+    const phase=trip?(trip.paused?tr('phasePaused'):trip.phase==='outbound'?tr('phaseOut'):trip.phase==='dwell'?tr('phaseDwell'):tr('phaseReturn')):tr('phaseReady');
+    setText('journey-phase',phase);setText('journey-remaining',trip?tr('remaining',{seconds:Math.max(0,Math.ceil((20-elapsed)/state.speed))}):tr('roundTrip',{seconds:Math.ceil(20/state.speed)}));
+    let label=tr('arrival'),arrival=tr('eta',{seconds:Math.ceil(12/state.speed)});
+    if(trip){if(trip.index!==state.selected){label=tr('nextTrain');arrival=tr('etaNext',{seconds:Math.ceil(12/state.speed)})}else if(trip.paused){arrival=tr('phasePaused')}else if(trip.phase==='outbound'){arrival=tr('etaBrief',{seconds:Math.max(0,Math.ceil((12-trip.elapsed)/state.speed))})}else if(trip.phase==='dwell'){arrival=tr('alreadyArrived')}else{label=tr('currentStatus');arrival=tr('returning')}}
+    setText('arrival-label',label);setText('arrival-time',arrival);
+  }
+  function updateControls(){renderDirty=true;const trip=state.trip;let label=tr('depart'),icon='↗',status=tr('statusIdle');
+    if(trip){label=trip.paused?tr('resume'):tr('pause');icon=trip.paused?'▷':'Ⅱ';const d=destinations[trip.index];status=trip.paused?tr('statusPaused',{name:d.name}):trip.phase==='return'?tr('statusReturn'):trip.phase==='dwell'?tr('statusDwell',{name:d.name}):tr('statusOutbound',{train:String(state.trainNumber).padStart(2,'0'),name:d.name})}
+    $('depart-text').textContent=label;$('depart-icon').textContent=icon;$('train-status').textContent=status;$('status-light').classList.toggle('moving',!!trip&&!trip.paused);
+    $('auto').setAttribute('aria-pressed',String(state.auto));$('speed').textContent=`${state.speed}×`;$('speed').setAttribute('aria-label',tr('speedAria',{speed:state.speed}));updateJourney();
+  }
+  function selectStation(index,announceChange=true){if(index===4&&!state.unlocked)return;state.selected=index;if(announceChange)state.queuedRoute=index;updateTicket();playTone(330+index*65,.07,.04);if(announceChange&&state.trip)announce('routeQueued',3.7,{index})}
+  function dispatch(){if(state.trip){state.trip.paused=!state.trip.paused;updateControls();return}state.trip={index:state.selected,phase:'outbound',elapsed:0,paused:false};state.queuedRoute=null;state.autoWait=0;state.sceneryTime=0;chime([392,523.25],.13);updateControls()}
+  function collect(index){const first=!state.visited.has(index);state.visited.add(index);const d=destinations[index];
+    const entry=state.journal.get(index);
+    if(entry)entry.visits++;else state.journal.set(index,{firstTrain:state.trainNumber,visits:1,note:''});
+    if(first){chime(d.notes,.18);announce('arrived',7,{index})}else{chime(d.notes.slice(0,2),.2);announce('revisited',5,{index})}
+    if([...state.visited].filter(i=>i<4).length===4&&!state.unlocked){state.unlocked=true;document.querySelector('[data-station="4"]').hidden=false;$('collection-hint').textContent=tr('unlockHint');announce('unlockToast',10)}
+    if(index===4){$('collection-hint').textContent=state.secretName?tr('namedHint',{name:state.secretName}):tr('foundHint');announce(state.secretName?'welcomeNamed':'foundToast',10,{index:4})}
+    $('ticket-count').textContent=String(state.visited.size).padStart(2,'0');$('collection-counter').textContent=state.unlocked?`${state.visited.size} / 5`:`${state.visited.size} / 4`;
+    stampButtons.forEach(b=>{const i=Number(b.dataset.stamp);b.classList.toggle('earned',state.visited.has(i));b.setAttribute('aria-label',tr(state.visited.has(i)?'stampEarned':'stampLocked',{name:destinations[i].name}))});
+    updateTicket();
+  }
+  function tick(delta){
+    state.time+=delta;
+    if(!state.trip?.paused&&!$('ticket-book').open)state.visualTime+=delta;
+    if(state.toastUntil&&state.time>=state.toastUntil){$('arrival-toast').classList.remove('visible');state.toastUntil=0}
+    // A single budget in real seconds spans travel, dwell, dispatch waits and later trains.
+    // Old chimes are suppressed when catching up a stalled frame instead of stacking sounds.
+    let remaining=delta;state.silentCatchUp=delta>.5;
+    try{while(remaining>1e-9){
+      if(state.trip){const trip=state.trip;if(trip.paused)break;const limit=trip.phase==='outbound'?12:trip.phase==='dwell'?2:6;
+        const step=Math.min(remaining,Math.max(0,limit-trip.elapsed)/state.speed);trip.elapsed+=step*state.speed;remaining-=step;
+        if(trip.phase!=='dwell')state.sceneryTime+=step*state.speed*(trip.phase==='return'?-1:1);
+        if(trip.elapsed>=limit-1e-9){trip.elapsed=0;if(trip.phase==='outbound'){trip.phase='dwell';collect(trip.index)}else if(trip.phase==='dwell'){trip.phase='return'}else{state.trip=null;state.trainNumber++;state.autoWait=0}updateControls()}
+      }else if(state.auto&&!$('ticket-book').open){const step=Math.min(remaining,Math.max(0,1.4-state.autoWait));state.autoWait+=step;remaining-=step;
+        if(state.autoWait>=1.4-1e-9){const count=state.unlocked?5:4;let next=state.queuedRoute??Array.from({length:count},(_,i)=>i).find(i=>!state.visited.has(i));if(next===undefined)next=(state.selected+1)%count;selectStation(next,false);dispatch()}
+      }else break;
+    }}finally{state.silentCatchUp=false}
+    updateJourney();
+  }
+  function frame(ms){const delta=lastFrame===null?0:Math.max(0,(ms-lastFrame)/1000);lastFrame=ms;if(!document.hidden){tick(delta);const animated=(!reducedMotion&&!state.trip?.paused&&!$('ticket-book').open)||(state.trip&&!state.trip.paused);const interval=1000/30;if((animated||renderDirty)&&ms-lastRender>=interval-1e-6){render(reducedMotion?0:state.visualTime);lastRender=Number.isFinite(lastRender)?ms-((ms-lastRender+1e-6)%interval):ms}}requestAnimationFrame(frame)}
+  document.addEventListener('visibilitychange',()=>{lastFrame=null;if(document.hidden&&audio?.state==='running')audio.suspend().catch(()=>{});else if(!document.hidden&&state.sound&&audio?.state==='suspended')audio.resume().catch(()=>{})});
+  function ensureAudio(){if(audio)return true;const AudioClass=window.AudioContext||window.webkitAudioContext;if(!AudioClass){announce('soundUnavailable');return false}audio=new AudioClass();master=audio.createGain();master.gain.value=.38;master.connect(audio.destination);return true}
+  function playTone(freq,duration=.25,volume=.1,delay=0){if(state.silentCatchUp||!state.sound||!audio||audio.state!=='running')return;const start=audio.currentTime+delay;const osc=audio.createOscillator(),gain=audio.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(0,start);gain.gain.linearRampToValueAtTime(volume,start+.014);gain.gain.exponentialRampToValueAtTime(.0001,start+duration);osc.connect(gain);gain.connect(master);osc.start(start);osc.stop(start+duration+.03);osc.onended=()=>{osc.disconnect();gain.disconnect()}}
+  function chime(notes,gap=.16){notes.forEach((n,i)=>{playTone(n,.85,.12,i*gap);playTone(n*2,.36,.016,i*gap)})}
+  async function toggleSound(){
+    if(audioBusy)return;audioBusy=true;$('sound').disabled=true;
+    try{if(!state.sound){if(!ensureAudio())return;await audio.resume();state.sound=true;if(document.hidden)await audio.suspend();else chime([261.63,392,523.25],.1)}else{state.sound=false;if(audio)await audio.suspend()}}
+    catch{state.sound=false;announce('soundFailed')}
+    finally{audioBusy=false;$('sound').disabled=false;$('sound').setAttribute('aria-pressed',String(state.sound));$('sound').setAttribute('aria-label',state.sound?tr('soundOff'):tr('soundOn'));$('sound').title=state.sound?tr('soundOff'):tr('soundOn');$('sound-waves').setAttribute('d',state.sound?'M15 8c3 2 3 6 0 8M18 5c5 4 5 10 0 14':'m16 9 6 6m0-6-6 6')}
+  }
+  function openBook(focusIndex){
+    const content=$('book-content');content.replaceChildren();
+    if(!state.visited.size){const empty=document.createElement('div');empty.className='book-empty';empty.textContent=tr('bookEmpty');content.append(empty)}
+    for(const index of [...state.visited].sort((a,b)=>a-b)){const d=destinations[index];const article=document.createElement('article');article.className=`book-ticket${index===4?' secret-ticket':''}`;article.id=`book-ticket-${index}`;const icon=document.createElement('div');icon.className='big-stamp';icon.textContent=d.icon;icon.setAttribute('aria-hidden','true');const body=document.createElement('div');const title=document.createElement('h3');title.textContent=d.name;const paragraph=document.createElement('p');paragraph.textContent=d.story;const serial=document.createElement('span');serial.className='serial';serial.textContent=tr('bookSerial',{number:index+1});body.append(title,paragraph,serial);article.append(icon,body);content.append(article)}
+    $('secret-naming').hidden=!state.visited.has(4);
+    if(Number.isInteger(focusIndex)){state.bookView='tickets';state.journalIndex=focusIndex}
+    updateJournal();setBookView(state.bookView);
+    if(!$('ticket-book').open){state.bookWasRunning=!!state.trip&&!state.trip.paused;if(state.bookWasRunning){state.trip.paused=true;updateControls()}$('ticket-book').showModal()}
+    if(Number.isInteger(focusIndex))setTimeout(()=>document.getElementById(`book-ticket-${focusIndex}`)?.scrollIntoView({block:'nearest',behavior:reducedMotion?'instant':'smooth'}),50);
+  }
+  function setBookView(view){
+    state.bookView=view;const journal=view==='journal';
+    $('souvenirs-panel').hidden=journal;$('journal-panel').hidden=!journal;
+    $('show-tickets').setAttribute('aria-pressed',String(!journal));$('show-journal').setAttribute('aria-pressed',String(journal));
+  }
+  function journalMeta(entry){return tr('journalMeta',{train:String(entry.firstTrain).padStart(2,'0'),visits:entry.visits})}
+  function updateJournal(){
+    const available=state.journal.size>0;$('journal-empty').hidden=available;$('journal-editor').hidden=!available;
+    $('journal-station').replaceChildren();
+    if(!available)return;
+    if(!state.journal.has(state.journalIndex))state.journalIndex=state.journal.keys().next().value;
+    for(const [index,entry] of state.journal){const option=document.createElement('option');option.value=String(index);option.textContent=tr('journalOption',{name:destinations[index].name,visits:entry.visits});$('journal-station').append(option)}
+    $('journal-station').value=String(state.journalIndex);
+    const entry=state.journal.get(state.journalIndex),d=destinations[state.journalIndex];
+    $('journal-meta').textContent=journalMeta(entry);$('journal-note').value=entry.note;
+    $('postcard-icon').textContent=d.icon;$('postcard-name').textContent=d.name;
+    $('postcard-souvenir').textContent=tr('souvenirPrefix',{souvenir:d.souvenir});$('postcard-story').textContent=d.story;
+    updateNotePreview(entry.note);$('journal-save-status').textContent=tr('noteSession');
+    $('postcard-export-status').textContent=tr('exportHint');
+  }
+  function cleanText(value){return Array.from(value.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u202a-\u202e\u2066-\u2069\ufffe\uffff]/g,'')).map(c=>{const code=c.codePointAt(0);return code>=0xd800&&code<=0xdfff?'\ufffd':c}).join('')}
+  function updateNotePreview(note){$('journal-count').textContent=`${Array.from(note).length} / 160`;$('postcard-note').textContent=note;$('postcard-note').hidden=!note.trim()}
+  function saveJournalNote(event){
+    if(event?.isComposing)return;
+    const entry=state.journal.get(state.journalIndex);if(!entry)return;
+    const input=$('journal-note'),characters=Array.from(cleanText(input.value));entry.note=characters.slice(0,160).join('');
+    if(input.value!==entry.note)input.value=entry.note;
+    updateNotePreview(entry.note);$('journal-save-status').textContent=characters.length>160?tr('noteTruncated'):tr('noteSaved');
+    $('postcard-export-status').textContent=tr('exportHint');
+  }
+  function postcardSVG(index){
+    const d=destinations[index],entry=state.journal.get(index);
+    const xml=value=>cleanText(String(value)).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+    // Fit complete text into fixed regions. Latin words wrap at spaces; CJK
+    // and long unbroken notes can wrap between code points. Nothing is clipped.
+    const fontFamily=language==='ja'?'Hiragino Sans,Yu Gothic,Meiryo,sans-serif':'PingFang SC,Microsoft YaHei,sans-serif';
+    const measure=(value,size)=>{
+      ctx.save();ctx.font=`${size}px ${fontFamily}`;const measured=ctx.measureText?.(value)?.width;ctx.restore();
+      if(Number.isFinite(measured)&&measured>0)return measured;
+      return Array.from(value).reduce((sum,c)=>sum+size*(/^[\x20-\x7e]$/.test(c)?(/[MW@#%]/.test(c)?.95:.65):1.1),0);
+    };
+    const wrap=(value,size,maxWidth)=>{
+      const rows=[];let row='';
+      for(const char of Array.from(cleanText(value).trim().replace(/\s+/g,' '))){
+        if(row&&measure(row+char,size)>maxWidth){const space=row.lastIndexOf(' ');if(space>0){rows.push(row.slice(0,space+1));row=row.slice(space+1)+char}else{rows.push(row);row=char}}
+        else row+=char;
+      }
+      if(row)rows.push(row);return rows;
+    };
+    const lines=(value,x,y,size,maxWidth,maxBottom,color='#17383b')=>{
+      let rows=wrap(value,size,maxWidth);
+      while(size>8&&(y+Math.max(0,rows.length-1)*(size+8)>maxBottom||rows.some(row=>measure(row,size)>maxWidth))){size--;rows=wrap(value,size,maxWidth)}
+      return `<text font-size="${size}" fill="${color}">${rows.map((row,i)=>`<tspan x="${x}" y="${y+i*(size+8)}">${xml(row)}</tspan>`).join('')}</text>`;
+    };
+    const motifs=[
+      '<path d="M-145 70-85 15-25 70 35 8 105 60 145 70" fill="none" stroke="#789c89" stroke-width="3"/><path d="M-125 3 15 55 135-6 48 98-54 75Z" fill="#e7dec1"/><path d="M-15 31-6-130 98 6Z" fill="#f7efd5"/><path d="M-15 31-6-130-88-13Z" fill="#a7bba0"/>',
+      '<path d="M-135-110 0-154 135-110 0-66Z" fill="#bdc59d"/><path d="M0-82V25M0-8-68 46M0-8 68 46" fill="none" stroke="#baa97e" stroke-width="12"/><g fill="#9eaf72"><ellipse cx="-66" cy="54" rx="60" ry="38"/><ellipse cx="66" cy="54" rx="60" ry="38"/><ellipse cy="79" rx="64" ry="40"/></g><g fill="#e5b47a"><circle cx="-80" cy="-45" r="10"/><circle cx="72" cy="-14" r="10"/><circle cx="32" cy="-112" r="10"/></g>',
+      '<path d="M85-160V-108" stroke="#c0b58e" stroke-width="3"/><path d="M92-113A100 100 0 1 0 96 75C-16 63-18-51 92-113Z" fill="#ead195"/><path d="M-104-110V-82M-118-96H-90M118 105V129M106 117H130" stroke="#d8edac" stroke-width="3"/>',
+      '<g fill="#c2ac8c" stroke="#8c8268" stroke-width="2"><path d="M-130 106V-18L-75-55-20-18V106Z"/><path d="M-28 106V-100L28-138 85-100V106Z"/><path d="M73 106V11L123-24 163 11V106Z"/></g><g fill="#f0dbb7" stroke="#8c8268" stroke-width="2"><path d="M-116-4H-34V49H-116Z M-116-4-75 28-34-4"/><path d="M-13-82H70V-29H-13Z M-13-82 28-50 70-82"/></g>',
+      '<path d="M-72 114V-68Q0-170 72-68V114" fill="none" stroke="#d8edac" stroke-width="9"/><path d="M-115 132 0 98 115 132 0 170Z" fill="#7a946a"/><path d="M0-35 9-9 35 0 9 9 0 35-9 9-35 0-9-9Z" fill="#e9efbd"/>'
+    ];
+    const serial=String(index+1).padStart(2,'0');
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" lang="${language}" xml:lang="${language}" role="img" aria-labelledby="card-title card-description">
+<title id="card-title">${xml(tr('postcardTitle',{name:d.name}))}</title><desc id="card-description">${xml(`${journalMeta(entry)}. ${d.souvenir}. ${d.story} ${entry.note}`)}</desc>
+<rect width="1200" height="800" fill="#f0efe7"/><rect x="32" y="32" width="400" height="736" rx="3" fill="#17383b"/>
+<g font-family="${fontFamily}"><text x="64" y="82" font-size="14" letter-spacing="2" fill="#d8edac">${xml(tr('departmentSub'))}</text>
+<text x="64" y="181" font-size="84" fill="#d8edac">${serial}</text><text x="348" y="180" font-size="52" fill="#9ebfad">↗</text>
+<circle cx="232" cy="391" r="157" fill="none" stroke="#55766a" stroke-dasharray="3 9"/><g transform="translate(232 382)">${motifs[index]}</g>
+<path d="M64 582H400" stroke="#55766a"/>${lines(tr('motto'),64,624,23,336,675,'#e7dec1')}<text x="64" y="718" font-size="13" letter-spacing="2" fill="#c5d4bf">${xml(tr('postcardSerial',{number:serial}))}</text>
+<text x="480" y="82" font-size="17" letter-spacing="2" fill="#5e705b">${xml(tr('postOffice'))}</text><rect x="1060" y="57" width="77" height="85" fill="none" stroke="#5e705b" stroke-dasharray="4 3"/><text x="1098" y="113" text-anchor="middle" font-size="38" fill="#5e705b">${xml(d.icon)}</text>
+<g data-region="title">${lines(d.name,480,171,40,657,190)}</g><path d="M480 206H1137" stroke="#c3ccb8"/>
+<text x="480" y="245" font-size="15" fill="#5e705b">${xml(tr('enclosed'))}</text><g data-region="souvenir">${lines(d.souvenir,480,283,24,657,309)}</g>
+<g data-region="story">${lines(d.story,480,340,19,657,420,'#5e705b')}</g>
+<path d="M480 439H1137" stroke="#c3ccb8" stroke-dasharray="3 6"/><text x="480" y="471" font-size="14" fill="#5e705b">${xml(tr(entry.note.trim()?'travelerNote':'blankNote'))}</text>
+<g data-region="note">${lines(entry.note.trim()||tr('noteDefault'),480,509,21,657,670)}</g>
+${lines(journalMeta(entry),480,700,15,657,707,'#5e705b')}<path d="M480 722H1137" stroke="#c3ccb8"/><text x="480" y="752" font-size="16" fill="#17383b">${xml(tr('toFuture'))}</text><text x="1137" y="752" text-anchor="end" font-size="14" fill="#5e705b">${xml(tr('postcardFooter'))}</text></g></svg>`;
+  }
+
+  function exportPostcard(){
+    if(!state.journal.has(state.journalIndex))return;
+    saveJournalNote();let url,link;
+    try{
+      const index=state.journalIndex;url=URL.createObjectURL(new Blob([postcardSVG(index)],{type:'image/svg+xml;charset=utf-8'}));
+      link=document.createElement('a');link.href=url;link.download=tr('downloadName',{number:String(index+1).padStart(2,'0')});link.hidden=true;document.body.append(link);link.click();
+      $('postcard-export-status').textContent=tr('downloadStarted');
+    }catch{$('postcard-export-status').textContent=tr('downloadFailed')}
+    finally{link?.remove();if(url)setTimeout(()=>URL.revokeObjectURL(url),60000)}
+  }
+  function setView(view){
+    state.view=view;const windowView=view==='window';$('view-map').setAttribute('aria-pressed',String(!windowView));$('view-window').setAttribute('aria-pressed',String(windowView));$('map-labels').hidden=windowView;$('depot-label').hidden=windowView;
+    updateJourney();
+    canvas.setAttribute('aria-label',windowView?tr('windowAria'):tr('mapAria'));render(reducedMotion?0:state.visualTime);
+  }
+  function surprise(){const count=state.unlocked?5:4;let pool=Array.from({length:count},(_,i)=>i).filter(i=>!state.visited.has(i)&&i!==state.trip?.index);if(!pool.length)pool=Array.from({length:count},(_,i)=>i).filter(i=>i!==state.selected);const index=pool[Math.floor(Math.random()*pool.length)];selectStation(index);if(!state.trip)announce('drawn',4,{index})}
+  function updateMotion(){document.documentElement.dataset.reducedMotion=String(reducedMotion);const label=reducedMotion?tr('motionOff'):tr('motionOn');$('motion').setAttribute('aria-pressed',String(reducedMotion));$('motion').setAttribute('aria-label',label);$('motion').title=label;render(reducedMotion?0:state.visualTime)}
+  function nameSecret(event){
+    event.preventDefault();if(!state.visited.has(4))return;
+    const name=$('station-name').value.replace(/[\u0000-\u001f\u007f\u202a-\u202e\u2066-\u2069]/g,'').trim().replace(/\s+/g,' ');
+    if(!name||Array.from(name).length>12){$('naming-feedback').textContent=tr('nameInvalid');$('station-name').setAttribute('aria-invalid','true');return}
+    state.secretName=name;destinations[4].name=name;destinations[4].en=tr('namedEn');destinations[4].description=tr('namedDescription');destinations[4].story=stationText[language][4].story+tr('namedStorySuffix',{name});
+    $('secret-name').textContent=name;$('station-name').value=name;$('station-name').setAttribute('aria-invalid','false');$('naming-feedback').textContent=tr('nameReady',{name});$('collection-hint').textContent=tr('namedHint',{name});
+    updateTicket();updateControls();openBook();chime([329.63,392,523.25],.16);render(reducedMotion?0:state.visualTime);
+  }
+  $('ticket-book').addEventListener('close',()=>{if(state.bookWasRunning&&state.trip){state.trip.paused=false;updateControls()}state.bookWasRunning=false});
+  $('open-book').addEventListener('click',()=>openBook());$('close-book').addEventListener('click',()=>$('ticket-book').close());
+  $('show-tickets').addEventListener('click',()=>setBookView('tickets'));$('show-journal').addEventListener('click',()=>setBookView('journal'));
+  $('journal-station').addEventListener('change',()=>{const index=Number($('journal-station').value);if(state.journal.has(index)){state.journalIndex=index;updateJournal()}});
+  $('journal-note').addEventListener('input',saveJournalNote);$('journal-note').addEventListener('compositionend',()=>saveJournalNote());
+  $('export-postcard').addEventListener('click',exportPostcard);
+  $('ticket-book').addEventListener('click',event=>{if(event.target===$('ticket-book')){const r=$('ticket-book').getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)$('ticket-book').close()}});
+  stationButtons.forEach(b=>b.addEventListener('click',()=>selectStation(Number(b.dataset.station))));
+  stampButtons.forEach(b=>b.addEventListener('click',()=>{const index=Number(b.dataset.stamp);state.visited.has(index)?openBook(index):selectStation(index)}));
+  $('depart').addEventListener('click',dispatch);$('switch-route').addEventListener('click',()=>selectStation((state.selected+1)%(state.unlocked?5:4)));
+  $('view-map').addEventListener('click',()=>setView('map'));$('view-window').addEventListener('click',()=>setView('window'));$('surprise').addEventListener('click',surprise);$('secret-naming').addEventListener('submit',nameSecret);
+  $('motion').addEventListener('click',()=>{state.motionOverride=true;reducedMotion=!reducedMotion;updateMotion()});motionPreference.addEventListener?.('change',event=>{if(!state.motionOverride){reducedMotion=event.matches;updateMotion()}});
+  $('speed').addEventListener('click',()=>{state.speed=state.speed===4?1:state.speed*2;updateControls();updateTicket()});
+  $('auto').addEventListener('click',()=>{state.auto=!state.auto;state.autoWait=0;updateControls();if(state.auto&&!state.trip)dispatch();else if(state.auto&&state.trip?.paused){state.trip.paused=false;updateControls()}});
+  $('sound').addEventListener('click',toggleSound);
+  document.addEventListener('keydown',event=>{if(event.repeat||event.isComposing||event.altKey||event.ctrlKey||event.metaKey||$('ticket-book').open||event.target.isContentEditable||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName))return;
+    if(event.code==='Space'){if(event.target.closest('button,a'))return;event.preventDefault();dispatch()}
+    else if(event.key.toLowerCase()==='r'){event.preventDefault();selectStation((state.selected+1)%(state.unlocked?5:4))}
+    else if(event.key.toLowerCase()==='m')toggleSound();
+    else if(event.key.toLowerCase()==='v'){event.preventDefault();setView(state.view==='map'?'window':'map')}
+    else if(/^[1-5]$/.test(event.key)){event.preventDefault();selectStation(Number(event.key)-1)}
+  });
+  function applyLanguage(next){
+    if(!languages.includes(next))return;
+    // Commit the visible draft before rebuilding translated book content.
+    if(state.journal.has(state.journalIndex)&&$('ticket-book').open)saveJournalNote();
+    language=next;document.documentElement.lang=language;document.documentElement.setAttribute('lang',language);document.title=tr('appTitle');$('language').value=language;
+    for(const [data,attribute] of [['i18n',null],['i18n-aria','aria-label'],['i18n-title','title'],['i18n-placeholder','placeholder'],['i18n-content','content']]){
+      for(const element of document.querySelectorAll(`[data-${data}]`)){const value=tr(element.getAttribute(`data-${data}`));if(attribute)element.setAttribute(attribute,value);else element.textContent=value}
+    }
+    destinations.forEach((d,index)=>Object.assign(d,stationText[language][index]));
+    if(state.secretName){const d=destinations[4];d.name=state.secretName;d.en=tr('namedEn');d.description=tr('namedDescription');d.story=stationText[language][4].story+tr('namedStorySuffix',{name:state.secretName})}
+    const stampNames={'zh-CN':['折纸海','倒置果园','修理铺','未寄之城'],en:['Origami Sea','Orchard','Moon Shop','Unsent City'],ja:['折り紙の海','果樹園','月の修理屋','手紙の街']};
+    destinations.forEach((d,index)=>{const label=$(index===4?'secret-name':`map-name-${index}`);if(label)label.textContent=d.name;const stamp=$(`stamp-name-${index}`);if(stamp)stamp.textContent=stampNames[language][index]});
+    stampButtons.forEach(b=>{const index=Number(b.dataset.stamp);b.setAttribute('aria-label',tr(state.visited.has(index)?'stampEarned':'stampLocked',{name:destinations[index].name}))});
+    $('collection-hint').textContent=tr(state.secretName?'namedHint':state.visited.has(4)?'foundHint':state.unlocked?'unlockHint':'collectionHint',{name:state.secretName});
+    $('naming-feedback').textContent=$('station-name').getAttribute('aria-invalid')==='true'?tr('nameInvalid'):state.secretName?tr('nameReady',{name:state.secretName}):tr('namingDefault');
+    $('sound').setAttribute('aria-label',tr(state.sound?'soundOff':'soundOn'));$('sound').title=tr(state.sound?'soundOff':'soundOn');
+    updateTicket();updateControls();updateMotion();setView(state.view);
+    if($('ticket-book').open)openBook();else updateJournal();
+    if(state.toastUntil>state.time)renderAnnouncement();
+  }
+  window.StationI18n={get language(){return language},t:tr,setLanguage:applyLanguage};
+  $('language').addEventListener('change',()=>applyLanguage($('language').value));
+  applyLanguage(language);resize();requestAnimationFrame(frame);
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.DS_Store
+test-artifacts/
+release/
+*.zip
+node_modules/

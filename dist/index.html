@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102f32">
+  <meta data-i18n-content="metaDescription" name="description" content="扳动道岔，登上小小的列车，去四个不可能的地方。一个离线互动作品。">
+  <title data-i18n="appTitle">不可能车站 · The Impossible Station</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a class="wordmark" href="#" data-i18n-aria="homeAria" aria-label="不可能车站首页"><span class="brand-icon" aria-hidden="true">↔</span><span><span data-i18n="department">异想交通局</span><span class="brand-sub" data-i18n="departmentSub">DEPARTMENT OF ELSEWHERE</span></span></a>
+      <div class="header-right"><span class="operating"><i></i><span data-i18n="operating">非现实线路 · 正常运行</span></span><button class="folio-button" id="open-book" aria-haspopup="dialog"><span data-i18n="ticketBook">车票夹</span> <span id="ticket-count">00</span><span aria-hidden="true">↗</span></button></div>
+    </header>
+    <div class="page-settings" role="group" data-i18n-aria="preferencesAria" aria-label="语言与外观设置">
+      <label class="setting-field" for="language"><span data-i18n="languageLabel">语言</span><select id="language" data-i18n-aria="languageLabel" aria-label="语言"><option value="zh-CN">中文</option><option value="en">English</option><option value="ja">日本語</option></select></label>
+      <label class="setting-field" for="theme"><span data-i18n="themeLabel">外观</span><select id="theme" data-i18n-aria="themeLabel" aria-label="外观"><option value="auto" data-i18n="themeAuto">跟随系统</option><option value="light" data-i18n="themeLight">浅色</option><option value="dark" data-i18n="themeDark">深色</option></select></label>
+    </div>
+    <main>
+      <section class="intro" aria-labelledby="title">
+        <div><p class="eyebrow" data-i18n="introEyebrow">A SMALL JOURNEY OUT OF THE ORDINARY</p><h1 id="title"><span data-i18n="title">不可能车站</span><span class="title-star" aria-hidden="true">✳</span></h1></div>
+        <p class="intro-copy"><span data-i18n="introOne">不问你从哪里来。</span><br><span data-i18n="introTwo">今天，去一个地图上没有的地方。</span></p>
+      </section>
+      <div class="experience">
+        <section class="world" data-i18n-aria="worldAria" aria-label="可交互车站地图">
+          <div class="scene-viewport" id="scene-viewport"><div class="scene-surface" id="scene-surface">
+          <canvas id="scene" aria-label="悬浮在夜色中的铁路，连接折纸海、倒置果园、月亮修理铺和未寄出的城。使用地图上的站名按钮选择目的地。"></canvas>
+          <div class="map-labels" id="map-labels">
+            <button class="station-label selected" data-station="0" style="--x:20.5%;--y:48.5%" aria-pressed="true"><span class="station-number">01</span><span id="map-name-0">折纸海</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="1" style="--x:43%;--y:31.5%" aria-pressed="false"><span class="station-number">02</span><span id="map-name-1">倒置果园</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="2" style="--x:78.5%;--y:42%" aria-pressed="false"><span class="station-number">03</span><span id="map-name-2">月亮修理铺</span><span class="station-dot"></span></button>
+            <button class="station-label" data-station="3" style="--x:79%;--y:80%" aria-pressed="false"><span class="station-number">04</span><span id="map-name-3">未寄出的城</span><span class="station-dot"></span></button>
+            <button class="station-label secret" data-station="4" style="--x:14%;--y:80.5%" aria-pressed="false" hidden><span class="station-number">05</span><span id="secret-name">无名之站</span><span class="station-dot"></span></button>
+          </div>
+          <div class="depot-label" id="depot-label"><span>00</span> <span class="depot-name" data-i18n="here">此时此地</span> <small data-i18n="hereEn">YOU ARE HERE</small></div>
+          </div></div>
+          <div class="world-heading"><span class="tiny-square"></span><span id="view-caption">无边界铁路 / 线路示意</span><div class="view-toggle" role="group" data-i18n-aria="viewGroup" aria-label="切换观看视角"><button id="view-map" aria-pressed="true" data-i18n="viewMap">线路图</button><button id="view-window" aria-pressed="false" data-i18n="viewWindow">车窗</button></div></div>
+          <div class="arrival-toast" id="arrival-toast" role="status" aria-live="polite"></div>
+          <div class="scene-bottom"><div class="train-status" role="status"><span class="status-light" id="status-light"></span><span id="train-status">小列车已进站，等你决定方向。</span></div><div class="scene-tools"><button id="speed" aria-label="切换列车速度，当前 1 倍速" data-i18n-title="speedTitle" title="列车速度">1×</button><button id="motion" aria-pressed="false" aria-label="减少装饰动效" title="减少装饰动效">≈</button><button id="sound" aria-pressed="false" aria-label="开启声音" title="开启声音"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path id="sound-waves" d="m16 9 6 6m0-6-6 6"/></svg></button></div></div>
+        </section>
+        <aside class="dispatch-panel" data-i18n-aria="dispatchAria" aria-label="列车调度与车票">
+          <div class="ticket-top"><span class="eyebrow" data-i18n="nextStop">YOUR NEXT STOP</span><span class="ticket-type" data-i18n="ticketType">想象力专线</span></div>
+          <div class="destination-heading"><span class="route-number" id="route-number">01</span><span class="route-direction" aria-hidden="true">↗</span></div>
+          <h2 id="destination-name">折纸海</h2><p class="destination-en" id="destination-en">THE ORIGAMI SEA</p>
+          <p class="destination-description" id="destination-description">这里的海有折痕。每当有人展开一封信，就会多出一小片海岸。</p>
+          <div class="ticket-rule"><span></span><i>✂</i></div>
+          <dl class="ticket-details"><div><dt data-i18n="from">出发地</dt><dd data-i18n="here">此时此地</dd></div><div><dt id="arrival-label">抵达时间</dt><dd id="arrival-time">大约 12 秒后</dd></div><div><dt data-i18n="luggage">随身行李</dt><dd data-i18n="curiosity">一点点好奇心</dd></div></dl>
+          <div class="journey-meter"><div class="journey-summary"><span id="journey-phase">准备出发</span><span id="journey-remaining">往返约 20 秒</span></div><div id="journey-progress" class="journey-track" role="progressbar" data-i18n-aria="progressAria" aria-label="当前往返旅程进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="journey-fill"></span></div></div>
+          <button class="depart-button" id="depart"><span id="depart-text">发车，去看看</span><span id="depart-icon" aria-hidden="true">↗</span></button>
+          <div class="secondary-actions"><button id="switch-route"><span aria-hidden="true">⇄</span><span data-i18n="route">换轨</span></button><button id="surprise" data-i18n-title="blindTitle" title="优先抽取未抵达的车站；运行中只改变下一班"><span aria-hidden="true">⚄</span><span data-i18n="blind">盲选</span></button><button id="auto" aria-pressed="false"><span class="auto-dot"></span><span data-i18n="auto">自动漫游</span></button></div>
+          <div class="collection"><div class="collection-header"><span data-i18n="collectionTitle">把远方带回来</span><span id="collection-counter">0 / 4</span></div><div class="stamp-grid" id="stamp-grid"><button class="stamp" data-stamp="0" aria-label="折纸海车票，尚未获得"><span>≋</span><small id="stamp-name-0">折纸海</small></button><button class="stamp" data-stamp="1" aria-label="倒置果园车票，尚未获得"><span>♧</span><small id="stamp-name-1">倒置果园</small></button><button class="stamp" data-stamp="2" aria-label="月亮修理铺车票，尚未获得"><span>☾</span><small id="stamp-name-2">修理铺</small></button><button class="stamp" data-stamp="3" aria-label="未寄出的城车票，尚未获得"><span>▱</span><small id="stamp-name-3">未寄之城</small></button></div><p id="collection-hint">集齐四枚车票，会有一条新轨道出现。</p></div>
+          <div class="ticket-bottom"><div class="barcode" aria-hidden="true"></div><span data-i18n="validTicket">VALID FOR ONE LITTLE ESCAPE</span></div>
+        </aside>
+      </div>
+      <footer class="footer"><p><span class="footer-star">✳</span><span data-i18n="motto">每一条绕路，都算数。</span></p><div class="keyboard-hints"><span><kbd>1</kbd>–<kbd>4</kbd> <span data-i18n="keyChoose">选站</span></span><span><kbd>Space</kbd> <span data-i18n="keyDepart">发车 / 暂停</span></span><span><kbd>R</kbd> <span data-i18n="keyRoute">换轨</span></span><span><kbd>V</kbd> <span data-i18n="keyWindow">车窗</span></span></div><span class="issue" data-i18n="issue">一件可以玩的微型作品 / NO. 001</span></footer>
+    </main>
+  </div>
+  <dialog id="ticket-book" aria-labelledby="book-title">
+    <div class="book-header"><div><p class="eyebrow" data-i18n="bookEyebrow">LITTLE PROOFS OF ELSEWHERE</p><h2 id="book-title" data-i18n="bookTitle">你的远方存根</h2></div><button id="close-book" data-i18n-aria="closeBook" aria-label="关闭车票夹">×</button></div>
+    <p class="book-intro" data-i18n="bookIntro">没有照片也没关系。你记得那里，就算到过。</p>
+    <div class="book-views" role="group" data-i18n-aria="bookGroup" aria-label="车票夹内容"><button id="show-tickets" aria-pressed="true" aria-controls="souvenirs-panel" data-i18n="tickets">车票存根</button><button id="show-journal" aria-pressed="false" aria-controls="journal-panel"><span data-i18n="journal">旅途手记</span> <span aria-hidden="true">↗</span></button></div>
+    <section id="souvenirs-panel" data-i18n-aria="tickets" aria-label="车票存根"><div id="book-content"></div><form id="secret-naming" hidden><label for="station-name" data-i18n="namingLabel">给地图之外的地方，挂上你的路牌。</label><div class="naming-fields"><input id="station-name" name="station-name" type="text" maxlength="24" autocomplete="off" data-i18n-placeholder="namingPlaceholder" placeholder="为第五站取个名字" aria-describedby="naming-feedback"><button type="submit" data-i18n="nameButton">挂上路牌 ↗</button></div><p id="naming-feedback" role="status">最多 12 个字符，只保存在本次旅程中。</p></form></section>
+    <section id="journal-panel" data-i18n-aria="journal" aria-label="旅途手记" hidden>
+      <p id="journal-empty" class="book-empty" data-i18n="journalEmpty">先去一个远方吧。抵达后，这里会记下你的旅途。</p>
+      <div id="journal-editor" hidden>
+        <div class="journal-heading"><label for="journal-station" data-i18n="chooseJournal">翻到哪一站？</label><select id="journal-station"></select></div>
+        <p id="journal-meta" class="journal-meta"></p>
+        <article class="postcard-preview" data-i18n-aria="previewAria" aria-label="明信片内容预览">
+          <div class="postcard-heading"><span data-i18n="postOffice">POSTCARD / 旅途邮局</span><span id="postcard-icon" class="postcard-stamp" aria-hidden="true"></span></div>
+          <h3 id="postcard-name"></h3><p id="postcard-souvenir" class="postcard-souvenir"></p>
+          <p id="postcard-story"></p><p id="postcard-note" class="postcard-note" hidden></p>
+          <div class="postcard-footer"><span data-i18n="toFuture">寄给：以后的自己</span><span data-i18n="dontRush">不必急着抵达 ↗</span></div>
+        </article>
+        <label class="journal-note-label" for="journal-note"><span data-i18n="noteLabel">留一句自己的感想</span> <span data-i18n="optional">可留空</span></label>
+        <textarea id="journal-note" rows="3" data-i18n-placeholder="notePlaceholder" placeholder="今天，我想记住……" aria-describedby="journal-count journal-save-status"></textarea>
+        <div class="journal-note-help"><span id="journal-save-status" role="status" data-i18n="noteSession">仅保存在本次页面中。</span><span id="journal-count">0 / 160</span></div>
+        <button id="export-postcard" class="postcard-export"><span data-i18n="exportLabel">收藏这张明信片</span> <span aria-hidden="true">↓</span></button>
+        <p id="postcard-export-status" class="journal-export-help" role="status" data-i18n="exportHint">导出 SVG 图片，保留站名、纪念物与手记，可用浏览器打开。</p>
+      </div>
+    </section>
+    <p class="book-footnote" data-i18n="bookFootnote">本次旅程只保存在这一页的记忆里。刷新会清空进度与手记，喜欢的片刻可以先导出。</p>
+  </dialog>
+  <script src="theme.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

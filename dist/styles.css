@@ -1,0 +1,282 @@
+:root{color-scheme:light;--paper:#f0efe7;--ink:#17383b;--muted:#687570;--line:#d2d6ca;--lime:#d8f493;--orange:#e8a971;--serif:"Songti SC","STSong","Noto Serif CJK SC",serif;--sans:"Avenir Next","PingFang SC","Microsoft YaHei",sans-serif;--mono:"SFMono-Regular",Consolas,monospace}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;color:inherit;cursor:pointer}button{border:0}button:focus-visible,a:focus-visible{outline:3px solid #df8655;outline-offset:5px}button:disabled{cursor:default}button,button svg{transition:background .2s,color .2s,transform .2s,border-color .2s}button:active{transform:translateY(1px)}[hidden]{display:none!important}.shell{max-width:1600px;margin:auto;padding:0 44px}.masthead{height:94px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.wordmark{text-decoration:none;color:inherit;display:flex;gap:13px;align-items:center;font-size:14px;letter-spacing:2px;font-weight:650}.brand-icon{width:39px;height:39px;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-size:30px;line-height:1;border-radius:50%;font-weight:400;letter-spacing:0}.brand-sub{display:block;font:8px var(--mono);letter-spacing:1.3px;margin-top:5px}.header-right{display:flex;align-items:center;gap:28px}.operating{font-size:11px;letter-spacing:1px;display:flex;align-items:center;gap:8px}.operating i{width:6px;height:6px;background:#6d8662;border-radius:50%}.folio-button{background:transparent;border:1px solid #b5c0b3;padding:10px 14px;display:flex;gap:18px;align-items:center;font-size:12px}.folio-button:hover{background:#e2e7d9}.folio-button #ticket-count{font:12px var(--mono);padding:2px 5px;background:#dce3d3}.intro{display:flex;align-items:center;justify-content:space-between;padding:34px 0 30px}.eyebrow{font:10px var(--mono);letter-spacing:1.7px;margin:0}.intro .eyebrow{color:#758076;font-size:9px;letter-spacing:2px}h1{font-family:var(--serif);font-size:56px;font-weight:500;letter-spacing:5px;line-height:1.2;margin:11px 0 0;display:flex;align-items:center;gap:20px}.title-star{font-family:var(--sans);font-size:55px;font-weight:300;color:#b76e46}.intro-copy{font-family:var(--serif);font-size:16px;line-height:1.9;letter-spacing:1px;margin:15px 5px 0 20px}.experience{display:grid;grid-template-columns:minmax(0,1fr) 318px;gap:22px;align-items:stretch}.world{position:relative;overflow:hidden;isolation:isolate;min-height:600px;background:#102f32;border-radius:3px}.world canvas{display:block;position:absolute;width:100%;height:100%;inset:0}.world-heading{position:absolute;left:25px;right:25px;top:23px;display:flex;align-items:center;gap:8px;color:#a2b7ab;font-size:10px;letter-spacing:1px;pointer-events:none}.tiny-square{height:5px;width:5px;background:var(--lime)}.edition{font:8px var(--mono);letter-spacing:2px;margin-left:auto;color:#829b90}.map-labels{position:absolute;inset:0;pointer-events:none}.station-label{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);white-space:nowrap;pointer-events:auto;font-size:12px;letter-spacing:1px;padding:7px 10px;background:#123337e6;border:1px solid #52736b;color:#d6e1d3;border-radius:3px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 10px #09242640}.station-label:hover{background:#254a4b;border-color:var(--lime)}.station-label:active{transform:translate(-50%,-48%)}.station-label.selected{color:var(--lime);border-color:#a1be73;background:#28473c}.station-label .station-number{font:9px var(--mono);color:#88a697;letter-spacing:0}.station-label.selected .station-number{color:#b2ce89}.station-dot{height:4px;width:4px;border:1px solid currentColor;border-radius:50%;opacity:.5}.station-label.visited .station-dot{background:currentColor;opacity:1}.depot-label{position:absolute;left:36%;top:86.5%;transform:translate(-50%,-50%);font-size:10px;color:#b8c5b4;pointer-events:none;letter-spacing:1px;white-space:nowrap}.depot-label>span{font:9px var(--mono);color:#758f80;margin-right:6px}.depot-label small{display:block;text-align:center;font:7px var(--mono);margin-top:5px;letter-spacing:1.3px;color:#718f82}.scene-bottom{position:absolute;bottom:0;left:0;right:0;min-height:54px;border-top:1px solid #33514e;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 22px;background:#102f32ee}.train-status{display:flex;align-items:center;gap:8px;color:#aec0b0;font-size:11px;line-height:1.6}.status-light{height:5px;width:5px;flex-shrink:0;border-radius:50%;background:#9bb4a0}.status-light.moving{background:var(--lime);box-shadow:0 0 8px #d8f49388}.scene-tools{display:flex;gap:9px;align-items:center}.scene-tools button{border:1px solid #436259;background:transparent;color:#bdcfb9;border-radius:50%;height:29px;width:29px;display:grid;place-items:center;font:10px var(--mono)}.scene-tools button:hover{background:#2d4c45}.scene-tools svg{height:15px;width:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.scene-tools [aria-pressed=true]{background:#d8f493;color:#1a3a35}.dispatch-panel{background:#faf9f3;border:1px solid #d8dbce;position:relative;display:flex;flex-direction:column;padding:25px 26px 19px;border-radius:3px;box-shadow:0 3px 4px #28362b03}.ticket-top{display:flex;align-items:center;justify-content:space-between;gap:5px}.ticket-top .eyebrow{font-size:9px;letter-spacing:1.4px;color:#738175}.ticket-type{font-size:10px;border:1px solid #b8c3ad;padding:3px 6px;color:#687c63}.destination-heading{display:flex;justify-content:space-between;align-items:center;margin-top:24px}.route-number{font:51px var(--mono);font-weight:300;line-height:1;letter-spacing:-5px}.route-direction{font:45px var(--sans);font-weight:300;color:#89977d;line-height:1}.dispatch-panel h2{font:400 30px var(--serif);margin:13px 0 7px;letter-spacing:3px}.destination-en{font:8px var(--mono);letter-spacing:2px;color:#7d8b77;margin:0}.destination-description{font-size:12px;line-height:1.9;color:#758071;min-height:46px;margin:19px 0 8px;letter-spacing:.5px}.ticket-rule{position:relative;margin:13px -26px 20px;height:1px;border-top:1px dashed #ccd1c2}.ticket-rule:before,.ticket-rule:after{content:"";position:absolute;width:12px;height:12px;border-radius:50%;background:var(--paper);top:-7px;border:1px solid #d8dbce}.ticket-rule:before{left:-7px;border-left-color:transparent;border-bottom-color:transparent;transform:rotate(45deg)}.ticket-rule:after{right:-7px;border-right-color:transparent;border-bottom-color:transparent;transform:rotate(-45deg)}.ticket-rule i{position:absolute;right:21px;top:-9px;background:#faf9f3;padding:0 5px;font-size:11px;color:#97a28b;font-style:normal}.ticket-details{margin:0 0 23px;font-size:11px;display:grid;gap:10px}.ticket-details>div{display:flex;justify-content:space-between}.ticket-details dt{color:#7e8b79}.ticket-details dd{margin:0}.depart-button{width:100%;padding:16px 17px;display:flex;align-items:center;justify-content:space-between;background:var(--lime);font-size:13px;font-weight:550;border:1px solid #c7df8c;border-radius:2px;box-shadow:0 2px 0 #b5ca8b}.depart-button:hover{background:#c9e782}.depart-button>span:last-child{font-size:21px;line-height:1}.secondary-actions{display:flex;justify-content:space-between;margin:15px 0 22px;gap:8px}.secondary-actions button{background:transparent;padding:3px 0;font-size:10px;color:#6d7f65;display:flex;align-items:center;gap:5px}.secondary-actions button:hover{color:var(--ink)}.secondary-actions button[aria-pressed=true]{color:#264f35}.secondary-actions button:first-child span[aria-hidden]{font-size:17px;line-height:1}.auto-dot{width:5px;height:5px;border:1px solid #91a086;border-radius:50%}[aria-pressed=true] .auto-dot{background:#668348}.collection{border-top:1px solid #e0e3d7;padding-top:18px;margin-top:auto}.collection-header{display:flex;justify-content:space-between;font-size:10px;color:#75846d}.collection-header>span:last-child{font:10px var(--mono)}.stamp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:13px}.stamp{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 2px;background:transparent;border:1px dashed #c7cfbd;border-radius:3px;color:#a6b29b}.stamp span{font-size:25px;line-height:1}.stamp small{font-size:8px;white-space:nowrap}.stamp:hover{border-color:#658458;color:#748b66}.stamp.earned{color:#52734b;border:1px solid #8caa76;background:#e9f0dc;transform:rotate(-3deg)}.stamp.earned:nth-child(even){transform:rotate(3deg)}.collection>p{font-size:9px;color:#8a9480;line-height:1.7;margin:11px 0 0}.ticket-bottom{display:flex;justify-content:space-between;align-items:flex-end;gap:8px;border-top:1px solid #e0e3d7;margin-top:18px;padding-top:14px}.barcode{width:63px;height:17px;opacity:.5;background:repeating-linear-gradient(90deg,#26463a 0 1px,transparent 1px 3px,#26463a 3px 5px,transparent 5px 6px,#26463a 6px 7px,transparent 7px 10px,#26463a 10px 13px,transparent 13px 15px)}.ticket-bottom>span{font:6px var(--mono);letter-spacing:1px;color:#829078;white-space:nowrap}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 0 25px;color:#7b8876}.footer p{font:12px var(--serif);letter-spacing:1px;display:flex;align-items:center;gap:8px;margin:0}.footer-star{color:#a56f4e;font:18px var(--sans)}.keyboard-hints{display:flex;gap:15px;font-size:9px;color:#8b9682}.keyboard-hints>span{display:flex;gap:4px;align-items:center}.keyboard-hints kbd{font:8px var(--mono);padding:2px 4px;border:1px solid #cbd3c1;border-radius:3px}.issue{font-size:8px;letter-spacing:.6px}.arrival-toast{position:absolute;left:50%;bottom:73px;transform:translate(-50%,10px);background:#f1f3df;color:#244536;max-width:86%;width:max-content;padding:13px 19px;border:1px solid #bcd698;box-shadow:0 8px 30px #051b2444;border-radius:4px;opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;font-size:11px;line-height:1.8;text-align:center;z-index:3}.arrival-toast.visible{opacity:1;transform:translate(-50%,0)}.arrival-toast strong{color:#264b32;font-weight:650}.arrival-toast small{font-size:10px;color:#687c5d}dialog{border:1px solid #c4cdb5;border-radius:5px;background:var(--paper);color:var(--ink);padding:30px;max-width:650px;width:calc(100% - 34px);max-height:85vh;box-shadow:0 25px 100px #02171966}dialog::backdrop{background:#081f23b3;backdrop-filter:blur(6px)}.book-header{display:flex;justify-content:space-between;align-items:center}.book-header .eyebrow{font-size:8px;color:#7c8870}.book-header h2{font:28px var(--serif);margin:10px 0 0;letter-spacing:2px}.book-header button{width:35px;height:35px;background:#e2e6d8;border-radius:50%;font-size:24px;font-weight:300}.book-intro,.book-footnote{color:#7a886f;font-size:11px;line-height:1.8}.book-intro{margin:17px 0 24px}.book-footnote{margin-bottom:0;font-size:9px}.book-empty{padding:32px;border:1px dashed #b7c5a5;text-align:center;font:17px/2 var(--serif);color:#728063}.book-ticket{display:grid;grid-template-columns:58px 1fr;gap:18px;padding:20px 17px;background:#fafaf3;border:1px solid #d6ddc9;margin-top:13px;position:relative;overflow:hidden}.book-ticket .big-stamp{align-self:center;display:grid;place-items:center;width:54px;height:64px;border:2px solid #7c9b68;color:#5c8150;font-size:35px;transform:rotate(-8deg)}.book-ticket h3{font:19px var(--serif);letter-spacing:1px;margin:0 0 6px}.book-ticket p{font-size:11px;line-height:1.9;color:#6c7c62;margin:0}.book-ticket .serial{display:block;font:8px var(--mono);margin-top:10px;letter-spacing:1px;color:#95a086}.book-ticket.secret-ticket{background:#e4ecd8}.secret{animation:appear 1.3s ease both}@keyframes appear{from{opacity:0;filter:blur(8px)}to{opacity:1;filter:blur(0)}}@media(min-width:1600px){.world{min-height:660px}.dispatch-panel{padding-top:31px}.ticket-details{margin-bottom:30px}.destination-description{margin-top:25px;margin-bottom:15px}}@media(max-width:1180px){.shell{padding:0 25px}.experience{grid-template-columns:minmax(0,1fr) 290px;gap:16px}.dispatch-panel{padding:22px}.ticket-rule{margin-left:-22px;margin-right:-22px}.world{min-height:600px}.station-label{font-size:10px;padding:6px;gap:5px}.intro-copy{font-size:14px}.ticket-type{font-size:9px}.ticket-top .eyebrow{font-size:8px}.keyboard-hints{gap:9px}.issue{display:none}.ticket-bottom>span{font-size:5.5px}.world-heading{left:17px;right:17px;font-size:9px}.scene-bottom{padding:10px 15px}}@media(max-width:1100px){.masthead{height:78px}.intro{padding:27px 0}h1{font-size:45px}.title-star{font-size:40px}.intro-copy{font-size:13px}.experience{grid-template-columns:1fr}.world{height:auto;min-height:0;aspect-ratio:10/7}.dispatch-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 35px;padding:25px}.ticket-top{grid-column:1}.destination-heading{grid-column:1;margin-top:20px}.dispatch-panel h2,.destination-en,.destination-description{grid-column:1}.destination-description{margin-bottom:15px;min-height:0}.ticket-rule{display:none}.ticket-details{grid-column:2;grid-row:1/4;margin-top:5px;align-content:start;gap:15px}.depart-button{grid-column:2;grid-row:4/6;align-self:center}.secondary-actions{grid-column:2;grid-row:6;align-self:start;margin:8px 0 0}.collection{grid-column:1/3;margin-top:5px}.stamp-grid{grid-template-columns:repeat(4,1fr)}.stamp{padding:12px}.ticket-bottom{grid-column:1/3}.collection>p{font-size:10px}.station-label{font-size:12px;padding:7px 10px}.operating{font-size:9px}.header-right{gap:16px}.footer{padding-top:20px}.world-heading{top:20px;font-size:10px}.scene-bottom{min-height:50px}.depot-label{top:85%}}@media(max-width:540px){.shell{padding:0 17px}.masthead{height:75px}.brand-icon{width:33px;height:33px;font-size:26px}.wordmark{gap:9px;font-size:12px;letter-spacing:1px}.brand-sub{font-size:6px;letter-spacing:.8px}.operating{display:none}.folio-button{font-size:10px;gap:8px;padding:8px 9px}.folio-button #ticket-count{font-size:10px}.intro{display:block;padding:24px 0}.intro .eyebrow{font-size:7px;letter-spacing:1.3px}h1{font-size:37px;letter-spacing:3px;gap:12px;margin-top:12px}.title-star{font-size:36px}.intro-copy{margin:12px 0 0;font:12px/1.8 var(--sans);letter-spacing:.5px}.intro-copy br{display:none}.world{aspect-ratio:0.94;min-height:0}.world canvas{top:25px;height:calc(100% - 60px)}.map-labels{top:25px;bottom:35px}.world-heading{left:14px;right:14px;top:15px;font-size:8px;letter-spacing:.4px}.edition{font-size:6px;letter-spacing:1px}.station-label{font-size:9px;letter-spacing:0;padding:5px 6px;gap:4px}.station-number{font-size:7px!important}.station-dot{display:none}.depot-label{top:81%;font-size:9px}.depot-label small{font-size:6px}.scene-bottom{min-height:48px;padding:8px 11px;gap:8px}.train-status{font-size:9px;gap:6px}.scene-tools{gap:5px}.scene-tools button{height:26px;width:26px}.dispatch-panel{padding:22px;gap:0 21px}.destination-heading{margin-top:19px}.route-number{font-size:41px}.route-direction{font-size:35px}.dispatch-panel h2{font-size:25px;letter-spacing:1px;margin-top:10px}.destination-en{font-size:6px;letter-spacing:1px}.destination-description{font-size:11px;line-height:1.8}.ticket-top .eyebrow{font-size:7px;letter-spacing:.7px}.ticket-type{display:none}.ticket-details{font-size:10px;gap:13px}.depart-button{font-size:11px;padding:14px 10px}.secondary-actions{flex-direction:column;gap:9px;margin-top:12px}.secondary-actions button{font-size:10px}.collection{margin-top:7px}.stamp{padding:10px 4px}.stamp small{font-size:9px}.collection-header{font-size:11px}.footer{align-items:flex-start}.footer p{font-size:11px}.keyboard-hints{display:none}.arrival-toast{font-size:10px;padding:10px 14px;bottom:65px}dialog{padding:22px}.book-ticket{gap:15px;padding:15px 11px}.book-header h2{font-size:24px}.book-ticket h3{font-size:17px}.book-ticket p{font-size:10px}}
+
+/* Journey controls and the carriage-window edition. */
+.world-heading .view-toggle{pointer-events:auto;display:flex;margin-left:auto;padding:3px;border:1px solid #55705e;border-radius:6px;background:#15383b;gap:2px}
+.view-toggle button{background:transparent;border-radius:3px;color:#b5c7b3;font-size:10px;padding:6px 12px;min-height:28px;white-space:nowrap}
+.view-toggle button[aria-pressed=true]{background:#d6e7b0;color:#2c4c3f}
+.view-toggle button:hover{color:#eaf5ce;background:#3c5d4c}
+.view-toggle button[aria-pressed=true]:hover{color:#2c4c3f;background:#e1f2bb}
+.dispatch-panel h2{overflow-wrap:anywhere;line-height:1.3}
+.station-label.secret{left:17%;max-width:155px;white-space:normal;line-height:1.5;text-align:left}
+.station-label.secret #secret-name{overflow-wrap:anywhere;max-width:112px}
+.journey-meter{margin:-5px 0 18px}
+.journey-summary{display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#7f8d75;line-height:1.6;margin-bottom:8px}
+.journey-summary>span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.journey-track{height:3px;background:#e3e7d9;overflow:hidden;border-radius:3px}
+.journey-track>span{display:block;height:100%;width:0;background:#8da665;transition:width .2s linear}
+.secondary-actions button{min-height:27px;white-space:nowrap}
+.scene-tools button{min-width:31px;min-height:31px}
+.scene-tools button:disabled{opacity:.5}
+#secret-naming{margin-top:22px;padding:20px;background:#e4ebd8;border:1px solid #c6d2b6;border-radius:3px}
+#secret-naming>label{display:block;font:14px var(--serif);letter-spacing:.5px;margin-bottom:12px}
+.naming-fields{display:flex;gap:8px}
+.naming-fields input{min-width:0;flex:1;width:100%;padding:12px 11px;font:12px var(--sans);color:var(--ink);border:1px solid #b5c5a6;border-radius:2px;background:#f7f8ed;outline-offset:3px}
+.naming-fields input:focus-visible{outline:2px solid #719156}
+.naming-fields input[aria-invalid=true]{border-color:#a06543}
+.naming-fields button{background:#c8df9d;border:1px solid #b6cc8c;white-space:nowrap;padding:11px 14px;border-radius:2px;font-size:11px}
+.naming-fields button:hover{background:#bcd28e}
+#naming-feedback{font-size:10px;color:#6f805d;line-height:1.8;margin:9px 0 0;overflow-wrap:anywhere}
+@media(min-width:1101px){
+  .dispatch-panel{padding-top:22px;padding-bottom:17px}
+  .destination-heading{margin-top:18px}
+  .route-number{font-size:44px}
+  .dispatch-panel h2{font-size:28px;margin-top:10px;margin-bottom:5px}
+  .destination-description{margin-top:14px;margin-bottom:5px;line-height:1.8;min-height:44px}
+  .ticket-rule{margin-top:9px;margin-bottom:16px}
+  .ticket-details{margin-bottom:19px;gap:8px}
+  .secondary-actions{margin-top:10px;margin-bottom:15px}
+  .collection{padding-top:14px}
+  .ticket-bottom{margin-top:14px;padding-top:12px}
+}
+@media(max-width:1100px){
+  .journey-meter{grid-column:2;grid-row:4;margin:0 0 10px;align-self:end}
+  .depart-button{grid-row:5/7;align-self:start}
+  .secondary-actions{grid-column:2;grid-row:7;flex-direction:row;margin:4px 0 15px;gap:9px}
+  .collection{grid-row:8}
+  .ticket-bottom{grid-row:9}
+}
+@media(max-width:540px){
+  .world-heading .view-toggle{padding:2px;gap:1px}
+  .view-toggle button{font-size:9px;padding:5px 8px;min-height:27px}
+  .world-heading{align-items:center;gap:6px}
+  .scene-tools button{min-width:29px;min-height:29px}
+  .secondary-actions{gap:4px;flex-wrap:wrap}
+  .secondary-actions button{font-size:9px;min-height:25px}
+  .secondary-actions button:first-child span[aria-hidden]{font-size:15px}
+  .journey-summary{font-size:8px;gap:5px}
+  .station-label.secret{max-width:100px;left:17%}
+  .station-label.secret #secret-name{max-width:75px}
+  #secret-naming{padding:14px}
+  .naming-fields{flex-direction:column}
+  .naming-fields input,.naming-fields button{min-height:42px}
+}
+
+.world-heading #view-caption{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.world-heading .view-toggle{flex-shrink:0}
+
+/* One shared, undistorted coordinate space for art and station labels. */
+.scene-viewport{position:absolute;inset:66px 0 59px;display:grid;place-items:center}
+.scene-surface{position:relative;flex:none}
+.scene-surface canvas{inset:0;width:100%;height:100%}
+.scene-surface .map-labels{inset:0}
+.scene-surface .depot-label{top:86.5%}
+.destination-description,.ticket-details dt,.journey-summary,.destination-en,.secondary-actions button,.collection-header,.collection>p,.stamp,.book-intro,.book-footnote{color:#5e705b}
+.destination-description{font-size:13px}
+.ticket-details,.collection-header,.secondary-actions button{font-size:12px}
+.journey-summary,.collection>p,.stamp small{font-size:11px}
+.stamp{color:#5e705b}
+button:focus-visible,a:focus-visible{outline-color:#9b5737}
+.book-ticket{grid-template-columns:58px minmax(0,1fr)}
+.book-ticket>div{min-width:0}
+.book-ticket h3,.book-ticket p{overflow-wrap:anywhere}
+html[data-reduced-motion=true] *,html[data-reduced-motion=true] *::before,html[data-reduced-motion=true] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(max-width:540px){
+  .scene-viewport{inset:58px 0 58px}
+  .scene-surface .station-label{font-size:10px;min-height:29px}
+  .journey-summary{font-size:10px;flex-wrap:wrap;row-gap:1px}
+  .ticket-details{font-size:11px;gap:12px}
+  .ticket-details>div{gap:8px}
+  .ticket-details dd{text-align:right}
+  .secondary-actions button{font-size:11px}
+  .destination-description{font-size:12px}
+}
+
+@media(prefers-reduced-motion:reduce){html:not([data-reduced-motion]) *,html:not([data-reduced-motion]) *::before,html:not([data-reduced-motion]) *::after{animation:none!important;transition:none!important}}
+@media(max-width:540px){.scene-surface .station-label{font-size:11px;min-height:31px}.train-status{font-size:11px;line-height:1.5}.arrival-toast{font-size:11px}}
+
+/* A small stationery desk, inside the existing ticket book. */
+.book-views{display:flex;gap:8px;padding-bottom:16px;border-bottom:1px solid #c9d2be}
+.book-views button{min-height:40px;padding:9px 17px;background:transparent;border:1px solid #b4c3a9;border-radius:3px;font-size:12px}
+.book-views button[aria-pressed=true]{background:#17383b;border-color:#17383b;color:#edf1de}
+.book-views button:hover{background:#dce6cd;color:#17383b}
+#journal-panel{padding-top:22px}
+.journal-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:12px}
+.journal-heading label{flex-shrink:0}
+.journal-heading select{min-width:0;max-width:72%;padding:10px 30px 10px 10px;border:1px solid #afbea5;border-radius:3px;background:#faf9f3;color:var(--ink);font:12px var(--sans);min-height:42px}
+.journal-meta,.journal-export-help{font-size:11px;line-height:1.8;color:#5e705b}
+.journal-meta{margin:12px 0 17px}
+.postcard-preview{padding:24px;background:#faf9f3;border:1px solid #c8d1bc;box-shadow:4px 5px 0 #dce1d1}
+.postcard-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;font:9px var(--mono);letter-spacing:1.4px;color:#5e705b}
+.postcard-stamp{display:grid;place-items:center;width:43px;height:49px;border:1px dashed #6e8860;font-size:27px;transform:rotate(7deg);color:#52734b;flex-shrink:0}
+.postcard-preview h3{font:27px/1.5 var(--serif);letter-spacing:1px;margin:12px 0 8px;overflow-wrap:anywhere}
+.postcard-preview p{font-size:12px;line-height:1.95;overflow-wrap:anywhere;color:#5e705b}
+.postcard-preview .postcard-souvenir{font-size:11px;margin:0 0 18px;color:#526845}
+.postcard-preview .postcard-note{border-top:1px dashed #c4ceba;padding-top:16px;color:var(--ink);white-space:pre-wrap}
+.postcard-footer{border-top:1px solid #d8decd;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:14px;margin-top:20px;color:#5e705b;font-size:10px}
+.journal-note-label{display:block;margin:26px 0 10px;font-size:13px}
+.journal-note-label span:last-child{font-size:11px;color:#5e705b;margin-left:8px}
+#journal-note{display:block;width:100%;min-height:108px;max-height:320px;resize:vertical;padding:12px;font:13px/1.9 var(--sans);color:var(--ink);border:1px solid #afbea5;border-radius:3px;background:#faf9f3}
+#journal-note:focus-visible,.journal-heading select:focus-visible{outline:2px solid #719156;outline-offset:3px}
+.journal-note-help{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:10px;line-height:1.7;color:#5e705b}
+#journal-count{white-space:nowrap;font-variant-numeric:tabular-nums}
+.postcard-export{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:20px;padding:13px 16px;min-height:46px;border:1px solid #b6cc8c;border-radius:3px;background:#d8edac;font-size:13px}
+.postcard-export:hover{background:#c9df98}
+.postcard-export span[aria-hidden]{font-size:20px}
+.journal-export-help{margin:8px 0 0}
+@media(max-width:540px){
+  .journal-heading{align-items:stretch;flex-direction:column;gap:8px}
+  .journal-heading select{width:100%;max-width:100%;font-size:16px}
+  #journal-note{font-size:16px}
+  .postcard-preview{padding:18px}
+  .postcard-preview h3{font-size:24px}
+  .book-views button{flex:1;padding:9px 10px}
+}
+
+/* Page themes share semantic colours; the railway keeps its night palette. */
+:root,:root[data-theme="light"]{
+  color-scheme:light;
+  --paper:#f0efe7;--ink:#17383b;--muted:#5e705b;--line:#c3cdb7;
+  --surface:#faf9f3;--surface-raised:#fafaf3;--surface-soft:#e4ebd8;--surface-hover:#dce6cd;--input-surface:#f7f8ed;
+  --control-border:#7a8d6c;--accent:#b76e46;--stamp-ink:#52734b;--meter:#7a965a;--focus:#9b5737;--invalid:#a94f2f;
+  --action-bg:#d8f493;--action-hover:#c9e782;--action-ink:#17383b;--action-border:#a5bd71;
+  --selected-bg:#17383b;--selected-ink:#edf1de;--postcard-shadow:#dce1d1;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#101e21;--ink:#e8eee0;--muted:#b7c5ae;--line:#4b655d;
+  --surface:#192d30;--surface-raised:#20373a;--surface-soft:#294139;--surface-hover:#365047;--input-surface:#142629;
+  --control-border:#829b8a;--accent:#e2ab79;--stamp-ink:#d3e7ad;--meter:#bfd694;--focus:#edbc82;--invalid:#f0b187;
+  --selected-bg:#d8edac;--selected-ink:#17383b;--postcard-shadow:#0b1618;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme]){
+    color-scheme:dark;
+    --paper:#101e21;--ink:#e8eee0;--muted:#b7c5ae;--line:#4b655d;
+    --surface:#192d30;--surface-raised:#20373a;--surface-soft:#294139;--surface-hover:#365047;--input-surface:#142629;
+    --control-border:#829b8a;--accent:#e2ab79;--stamp-ink:#d3e7ad;--meter:#bfd694;--focus:#edbc82;--invalid:#f0b187;
+    --selected-bg:#d8edac;--selected-ink:#17383b;--postcard-shadow:#0b1618;
+  }
+}
+body{background:var(--paper);color:var(--ink)}
+.masthead,.collection,.ticket-bottom,.book-views{border-color:var(--line)}
+.intro .eyebrow,.ticket-top .eyebrow,.ticket-type,.route-direction,.destination-description,.destination-en,.ticket-details dt,.journey-summary,.secondary-actions button,.collection-header,.collection>p,.ticket-bottom>span,.footer,.keyboard-hints,.book-header .eyebrow,.book-intro,.book-footnote,.book-empty,.book-ticket p,.book-ticket .serial,#naming-feedback,.journal-meta,.journal-export-help,.postcard-heading,.postcard-preview p,.postcard-footer,.journal-note-label span:last-child,.journal-note-help{color:var(--muted)}
+.title-star,.footer-star{color:var(--accent)}
+.folio-button,.ticket-type,.keyboard-hints kbd{border-color:var(--control-border)}
+.folio-button:hover{background:var(--surface-hover)}
+.folio-button #ticket-count{background:var(--surface-soft);color:var(--ink)}
+.operating i{background:var(--stamp-ink)}
+.dispatch-panel{background:var(--surface);border-color:var(--line)}
+.ticket-rule{border-color:var(--line)}
+.ticket-rule:before,.ticket-rule:after{background:var(--paper);border-color:var(--line)}
+.ticket-rule:before{border-left-color:transparent;border-bottom-color:transparent}
+.ticket-rule:after{border-right-color:transparent;border-bottom-color:transparent}
+.ticket-rule i{background:var(--surface);color:var(--muted)}
+.journey-track{background:var(--surface-soft)}
+.journey-track>span{background:var(--meter)}
+.depart-button,.naming-fields button,.postcard-export{background:var(--action-bg);color:var(--action-ink);border-color:var(--action-border)}
+.depart-button:hover,.naming-fields button:hover,.postcard-export:hover{background:var(--action-hover)}
+.secondary-actions button:hover,.secondary-actions button[aria-pressed=true]{color:var(--ink)}
+.auto-dot{border-color:var(--control-border)}
+[aria-pressed=true] .auto-dot{background:var(--stamp-ink)}
+.stamp{border-color:var(--control-border);color:var(--muted)}
+.stamp:hover,.stamp.earned{border-color:var(--control-border);color:var(--stamp-ink)}
+.stamp.earned{background:var(--surface-soft)}
+.barcode{background:repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 3px,var(--ink) 3px 5px,transparent 5px 6px,var(--ink) 6px 7px,transparent 7px 10px,var(--ink) 10px 13px,transparent 13px 15px)}
+dialog{background:var(--paper);color:var(--ink);border-color:var(--control-border)}
+.book-header button{background:var(--surface-soft);color:var(--ink)}
+.book-empty{border-color:var(--control-border)}
+.book-ticket{background:var(--surface-raised);border-color:var(--line)}
+.book-ticket.secret-ticket,#secret-naming{background:var(--surface-soft);border-color:var(--line)}
+.book-ticket .big-stamp,.postcard-stamp{color:var(--stamp-ink);border-color:var(--control-border)}
+.book-views button{border-color:var(--control-border);color:var(--ink)}
+.book-views button[aria-pressed=true]{background:var(--selected-bg);border-color:var(--selected-bg);color:var(--selected-ink)}
+.book-views button:hover{background:var(--surface-hover);color:var(--ink)}
+.naming-fields input,.journal-heading select,#journal-note,.setting-field select{background:var(--input-surface);color:var(--ink);border-color:var(--control-border)}
+.naming-fields input::placeholder,#journal-note::placeholder{color:var(--muted);opacity:1}
+.naming-fields input[aria-invalid=true]{border-color:var(--invalid)}
+.postcard-preview{background:var(--surface-raised);border-color:var(--line);box-shadow:4px 5px 0 var(--postcard-shadow)}
+.postcard-preview .postcard-souvenir{color:var(--stamp-ink)}
+.postcard-preview .postcard-note{border-color:var(--line);color:var(--ink)}
+.postcard-footer{border-color:var(--line)}
+button:focus-visible,a:focus-visible,.naming-fields input:focus-visible,#journal-note:focus-visible,.journal-heading select:focus-visible,.setting-field select:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.world :focus-visible{outline-color:#e8c58e}
+
+/* Settings and wrapping remain usable when labels become longer in translation. */
+.page-settings{display:flex;justify-content:flex-end;align-items:center;flex-wrap:wrap;gap:12px 24px;padding:18px 0 0}
+.setting-field{display:flex;align-items:center;gap:9px;min-width:0;color:var(--muted);font-size:11px}
+.setting-field label,.setting-field>span{white-space:nowrap}
+.setting-field select{font:12px var(--sans);min-height:40px;max-width:100%;min-width:0;padding:9px 28px 9px 11px;border:1px solid var(--control-border);border-radius:3px}
+.intro>div,.intro-copy,.dispatch-panel,.book-header>div{min-width:0}
+.intro h1{flex-wrap:wrap}
+.book-header{gap:14px}
+.book-header button,.scene-tools,.status-light{flex-shrink:0}
+.book-header h2,.intro-copy,.destination-en,.book-ticket .serial{overflow-wrap:anywhere}
+.book-header .eyebrow{line-height:1.6}
+.ticket-top{flex-wrap:wrap;row-gap:8px}
+.depart-button,.postcard-export{gap:12px;line-height:1.55;text-align:left}
+.depart-button>span:last-child,.postcard-export>span:last-child{flex-shrink:0}
+.secondary-actions{flex-wrap:wrap;justify-content:flex-start;gap:6px 14px}
+.secondary-actions button{white-space:normal;text-align:left;line-height:1.5}
+.collection-header{gap:12px;line-height:1.6}
+.collection-header>span:last-child{flex-shrink:0}
+.stamp{min-width:0}
+.stamp small{white-space:normal;overflow-wrap:anywhere;line-height:1.45;text-align:center}
+.ticket-bottom>span{white-space:normal;text-align:right;line-height:1.6}
+.barcode{flex-shrink:0}
+.ticket-details>div{gap:12px;line-height:1.55}
+.ticket-details dd{text-align:right;overflow-wrap:anywhere}
+.journey-summary{flex-wrap:wrap;row-gap:3px}
+.book-views button{line-height:1.5;min-width:0;overflow-wrap:anywhere}
+.journal-heading label{flex-shrink:1}
+.journal-note-help{flex-wrap:wrap;row-gap:3px}
+#journal-count{margin-left:auto}
+.naming-fields button{white-space:normal;line-height:1.5}
+.postcard-heading{line-height:1.7}
+.postcard-heading>span:first-child{min-width:0;overflow-wrap:anywhere}
+.station-label{max-width:31%;white-space:normal;text-align:left;line-height:1.4}
+.station-label .station-number{flex-shrink:0}
+.station-label>span:not(.station-number):not(.station-dot){min-width:0;overflow-wrap:anywhere}
+html:lang(en) h1{font-size:clamp(30px,3.7vw,52px);letter-spacing:.01em;line-height:1.12}
+html:lang(en) .intro{gap:24px}
+html:lang(en) .intro-copy{max-width:32%;font-family:var(--sans);font-size:14px;letter-spacing:0}
+html:lang(en) .dispatch-panel h2{font-size:25px;letter-spacing:.2px}
+html:lang(en) .station-label{letter-spacing:0}
+html:lang(en) .station-label.secret #secret-name{max-width:none}
+html:lang(ja) h1{letter-spacing:2px}
+html:lang(ja){--sans:"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",sans-serif;--serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+html:lang(en){--serif:Georgia,"Times New Roman",serif}
+@media(max-width:760px){
+  .page-settings{justify-content:flex-start;gap:12px 18px}
+  html:lang(en) .intro{align-items:flex-start;flex-direction:column;gap:12px}
+  html:lang(en) .intro-copy{max-width:none;margin:0}
+  .footer{flex-wrap:wrap;row-gap:14px}
+  .keyboard-hints{flex-wrap:wrap;row-gap:8px}
+}
+@media(max-width:540px){
+  .page-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding-top:16px}
+  .setting-field{display:flex;align-items:stretch;flex-direction:column;gap:6px;font-size:11px}
+  .setting-field label,.setting-field>span{white-space:normal}
+  .setting-field select{width:100%;font-size:16px;padding:9px 22px 9px 9px;min-height:44px}
+  .intro h1{gap:10px}
+  html:lang(en) h1{font-size:34px}
+  html:lang(ja) h1{font-size:32px}
+  .book-header h2{font-size:23px;letter-spacing:.5px;line-height:1.35}
+  html:lang(en) .scene-surface .station-label{max-width:30%;font-size:10px;gap:4px;padding:5px;min-height:32px}
+  html:lang(en) .scene-surface .station-label[data-station="1"]{top:26%}
+  html:lang(en) .scene-surface .station-label.secret{max-width:29%}
+  html:lang(en) .scene-surface .depot-label{top:94%;font-size:8px;letter-spacing:0}
+  html:lang(en) .scene-surface .depot-label small{font-size:6px;letter-spacing:.3px}
+  html:lang(en) .dispatch-panel,html:lang(ja) .dispatch-panel{display:flex;gap:0;padding:22px}
+  html:lang(en) .ticket-details,html:lang(ja) .ticket-details{margin:19px 0;gap:10px;font-size:12px}
+  html:lang(en) .journey-meter,html:lang(ja) .journey-meter{margin:0 0 17px;align-self:auto}
+  html:lang(en) .depart-button,html:lang(ja) .depart-button{font-size:13px;align-self:auto}
+  html:lang(en) .secondary-actions,html:lang(ja) .secondary-actions{align-self:auto;margin:13px 0 19px;gap:8px 16px}
+  html:lang(en) .collection,html:lang(ja) .collection{margin-top:0}
+  html:lang(en) .stamp-grid{gap:6px}
+  html:lang(en) .stamp small{font-size:10px}
+  html:lang(en) .folio-button{gap:7px;max-width:132px;font-size:11px;text-align:left;line-height:1.35}
+  html:lang(en) .wordmark{max-width:54%;font-size:11px;letter-spacing:.3px}
+  html:lang(en) .brand-sub{font-size:6px;letter-spacing:0;line-height:1.4}
+  html:lang(en) .world-heading #view-caption{display:none}
+  html:lang(en) .view-toggle button{font-size:10px;padding:5px 10px}
+}
